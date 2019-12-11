@@ -7014,6 +7014,8 @@ a.close.disabled {
 
 .bg-primary {
   background-color: #E73C4E !important;
+  box-shadow: 0 1.5em 2em -1em rgba(0, 0, 0, .25);
+
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
