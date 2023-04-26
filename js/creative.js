@@ -38,5 +38,20 @@
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
+    
+      // Initialize zoom plugin on image
+ $(document).ready(function(){
+  $('#zoom-image').zoom();
+});
+    $(document).ready(function(){
+  $('#zoom-image').zoom({
+    zoomWidth: 500,
+    zoomHeight: 500,
+    zoomType: 'inner',
+    lensSize: 200,
+    zoomWindowPosition: 1
+  });
+});
+
 
 })(jQuery); // End of use strict

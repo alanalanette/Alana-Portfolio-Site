@@ -10907,3 +10907,75 @@ header.masthead h1 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+    .zoom {
+        display:inline-block;
+        position:relative;
+    }
+    
+    .zoom img {
+        display:block;
+        width:100%;
+        height:100%;
+    }
+    
+    .zoom img:hover {
+        transform: scale(2);
+        transform-origin: 0 0;
+    }
+}
+
+  .zoomable-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+span {
+  text-align: center;
+  width: 100%;
+}
+
+span > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+span:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.zoomContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container:hover .zoom-box {
+  display: block;
+}
+
+.image-container {
+  position: relative;
+}
+
+.zoom-box {
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 500px !important; 
+  height: 500px !important; 
+  border: 1px solid gray;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: none;
+}
