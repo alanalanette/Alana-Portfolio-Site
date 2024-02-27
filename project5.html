@@ -39,6 +39,18 @@
     
 </head>
 <link rel='shortcut icon' type='image/x-icon' href='img/alanalanette_favicon.png'/>
+    
+   
+  <!-- Your script for initializing Bootstrap components -->
+  <script>
+    $(document).ready(function () {
+      $('#myTab a').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+      });
+    });
+  </script>
+
 
 <body id="page-top">
     
@@ -198,7 +210,7 @@ The Consumer Grade Experience Layer serves as the linchpin, with the Segmentatio
 
 <div class="tab-content" id="myTabContent">
    <!-- Service Blueprint -->
-<div class="tab-pane fade show active" id="blueprint-tab" role="tabpanel" aria-labelledby="blueprint-tab">
+    <div class="tab-pane fade show active" id="blueprint" role="tabpanel" aria-labelledby="blueprint-tab">
     <div class="row">
         <div class="col-md-4">
             <!-- Left column content for Service Blueprint if any -->
