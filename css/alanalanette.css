@@ -4963,6 +4963,8 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
+
+
 .card {
   position: relative;
   display: -webkit-box;
@@ -4977,7 +4979,7 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 0.505rem;
 }
 
 .card > hr {
@@ -7024,14 +7026,25 @@ button.bg-primary:focus {
   background-color: #DC143C !important;
 }
 
+
+.bg-light-gray {
+    background-color: #f2f2f2 !important;
+  }
+
 .bg-secondary {
-  background-color: #6c757d !important;
+  background-color: #f2f2f2 !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #545b62 !important;
+  background-color: #f2f2f2 !important;
+}
+
+a.bg-primary:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+  background-color: #DC143C !important;
 }
 
 .bg-success {
@@ -10979,3 +10992,135 @@ span:before {
   background-size: 100% 100%;
   display: none;
 }
+
+
+/* ADDED CSS */
+
+
+/* Section Background */
+
+.full-width-background {
+    background-color: #f0f0f0; /* Very light gray background color */
+}
+
+.content-container {
+    max-width: 100%; /* Adjust the maximum width of your content container */
+    margin: 0 auto; /* Center the content container on the page */
+    padding: 20px; /* Adjust the padding as needed */
+}
+
+
+/* Card styles */
+.card {
+    border: 0px solid #e1e1e1;
+    border-radius: 12px; /* Increased border-radius for more rounded corners */
+    padding: 50px; /* Increased padding for more space inside */
+    margin-bottom: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styles */
+.card b {
+    font-size: 1.2em;
+    color: #333;
+    display: block;
+    margin-bottom: 15px; /* Increased margin for more space between title and content */
+}
+
+/* List styles */
+.card ul {
+    margin-top: 15px; /* Increased margin for more space between title and content */
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+.card li {
+    margin-bottom: 8px; /* Increased margin for more space between list items */
+    color: #555;
+}
+/* Card styles End */
+
+  .table-cell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+    border-radius: 10px; /* Adjust border-radius for rounded corners */
+  }
+
+  .table-header {
+    background-color: #E73C4E;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    flex-shrink: 0; /* Prevent header from growing */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .table-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+/* ZOOM */
+
+  /* Style the modal overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Style the modal content (the image) */
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    /* Style the close button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+ /* Style for the modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Style for the modal content */
+    .modal-content {
+      position: relative;
+      margin: 15% auto;
+      padding: 20px;
+      width: 80%;
+      background-color: #fff;
+      border-radius: 10px;
+    }
