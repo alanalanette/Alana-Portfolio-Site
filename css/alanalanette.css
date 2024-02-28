@@ -11057,13 +11057,13 @@ span:before {
   .table-header {
     background-color: #E73C4E;
     color: white;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    font-weight: lighter;
     padding: 25px;
     flex-shrink: 0; /* Prevent header from growing */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
   }
 
   .table-content {
