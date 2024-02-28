@@ -11051,7 +11051,7 @@ span:before {
     flex-direction: column;
     height: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
-    border-radius: 12px; /* Adjust border-radius for rounded corners */
+    border-radius: 0px; /* Adjust border-radius for rounded corners */
   }
 
   .table-header {
