@@ -2669,14 +2669,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #E73C4E;
-  border-color: #E73C4E;
+  background-color: #C93E4F;
+  border-color: #C93E4F;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #DC143C;
-  border-color: #DC143C;
+  background-color: #7e232e;
+  border-color: #7e232e;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -4462,7 +4462,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #E73C4E;
+  background-color: #c93e4f;
 }
 
 .nav-fill .nav-item {
@@ -7014,7 +7014,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #E73C4E !important;
+  background-color: #C93E4F !important;
   box-shadow: 0 1.5em 2em -1em rgba(0, 0, 0, .25);
 
 }
@@ -10711,7 +10711,7 @@ html {
 hr.divider {
   max-width: 3.25rem;
   border-width: 0.2rem;
-  border-color: #E73C4E;
+  border-color: #C93E4F;
 }
 
 hr.light {
@@ -10762,11 +10762,11 @@ hr.light {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #E73C4E;
+  color: #C93E4F;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #E73C4E !important;
+  color: #C93E4F !important;
 }
 
 @media (min-width: 992px) {
@@ -10800,13 +10800,13 @@ text-decoration: none;  }
     color: #212529;
   }
   #mainNav.navbar-scrolled .navbar-brand:hover {
-    color: #E73C4E;
+    color: #C93E4F;
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
     color: #212529;
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: #E73C4E;
+    color: #C93E4F;
   }
 }
 
@@ -10876,7 +10876,7 @@ header.masthead h1 {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: #e73c4e;
+  background: #C93E4F;
   -webkit-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
   text-align: center;
@@ -11054,7 +11054,7 @@ span:before {
   }
 
   .table-header {
-    background-color: #E73C4E;
+    background-color: #c93e4f;
     color: white;
     text-align: left;
     font-size: 20px;
