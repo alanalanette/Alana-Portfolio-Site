@@ -10877,10 +10877,10 @@ header.masthead h1 {
   bottom: 0;
   text-align: center;
   font-family: 'Work Sans', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #fff;
-  background:rgba(33, 37, 41, 0.7);
+  background:rgba(92, 77, 66, 0.7);
   -webkit-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
   text-align: center;
@@ -10891,7 +10891,7 @@ header.masthead h1 {
 
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {
   font-family: 'Work Sans', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
     color: #fff;
     
@@ -10901,17 +10901,17 @@ header.masthead h1 {
   font-family: 'Work Sans', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.85rem;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: 1.5px;
   line-height: 35px;
     
 }
 
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption {
-  opacity: 0.91;
+  opacity: 0.85;
   width: 100%;
   height: 100%;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   background: #C93E4F;
   -webkit-transition: opacity 0.25s ease;
