@@ -10881,8 +10881,6 @@ header.masthead h1 {
   font-weight: 600;
   color: #fff;
   background:rgba(92, 77, 66, 0.7);
-  -webkit-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
   text-align: center;
     
     
@@ -10914,8 +10912,6 @@ header.masthead h1 {
   font-weight: 600;
   color: #fff;
   background: #C93E4F;
-  -webkit-transition: opacity 0.25s ease;
-  transition: opacity 0.25s ease;
   text-align: center;
     
     }
