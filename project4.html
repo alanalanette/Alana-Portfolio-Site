@@ -66,7 +66,7 @@
           <hr class="divider my-3">
         </div>
         <div class="col-lg-10 align-self-baseline">
-          <h5 class="text-white-75 font-weight-light mb-3">Digital artifacts compliance | Pursuant Health</h5>
+          <h5 class="text-white-75 font-weight-light mb-3">Digital artifacts compliance remediation</h5>
           
         </div>
       </div>
@@ -85,39 +85,276 @@
              <img class="img-fluid col-lg-4 col-sm-6" style= "max-width: 500px" src="img/portfolio/fullsize/4_1.png" alt="Graphic Illustration Depicting Man at Kiosk In-store and Woman at home Sitting at Desk with Desktop Computer">
             
         </div>
-         <div class="col-lg-12 col-md-12 justify-content-center"><br><br>
-              <h2 class="text-left mt-0">Project Overview</h2>
-          <p class="text-dark mb-4" style= "font-family: sans-serif">
+<div class="col-lg-12 col-md-12 justify-content-center"><br><br>
+<h2 class="text-left mt-0">Project Overview</h2>
+<p class="text-dark mb-4" style= "font-family: sans-serif">
 
-This project aimed to address accessibility concerns raised by the National Federation of the Blind regarding the health assessment information provided to visually impaired users. The goal was to create an inclusive user experience for the visually impaired, as well as for those with auditory and mobility impairments, on both the web and kiosk platforms.
+Over a span of two years, I led the UX efforts in collaboration with a visual accessibility consulting firm to mitigate accessibility issues for users with low vision, blindness, mobility impairments, and hearing impairments. This involved bringing the kiosk into compliance with CFR 382.57 (c) Accessibility Standards and bringing the web into compliance with WCAG 2.0 Accessibility Guidelines. We studied user experience best practices with accessibility experts, including one who was totally blind, to guide the design and implementation of accessible experiences.
 <br><br>
-To achieve this goal, the project required new hardware and external accessibility experts to guide and teach the technology and user experience team to design and implement accessible experiences. The project spanned two years and involved studying user experience best practices with accessibility experts, including one who was totally blind.
+To ensure a comprehensive and inclusive experience, we undertook a multifaceted approach. This involved retrofitting existing kiosk hardware and updating software, alongside implementing website enhancements to meet accessibility standards. A key component of the retrofitting process was the inclusion of an assistive audio navigator tactile keypad for kiosks. This device enables menu navigation through audio direction, benefiting users with impaired vision, reading difficulties, or impaired fine motor skills. Paired with headset or handset audio, it facilitates scanning and selection of menu options in a responsive and highly tactile manner. Collectively, these efforts were instrumental in ensuring equitable access to Pursuant Health's health assessment services.
 <br><br>
-The project's primary objective was to mitigate accessibility issues for low vision, blind, mobility impaired, and hearing impaired users. The ultimate goal was to provide an "Inclusive Experience" that would allow users to launch an accessible experience with minimal interaction with the touch screen. The Inclusive Experience would contain guided audio instructions to guide users through the experience and allow them to obtain Biometric Measurements ("Results") through audio feedback, rather than onscreen display.
-<br><br>
-To further enhance the Inclusive Experience, the project team incorporated the ability to navigate using an assistive audio navigator tactile keypad. This keypad device offers menu navigation by means of audio direction, allowing users with impaired vision, reading difficulties, or impaired fine motor skills to navigate through menus or directories that would typically be presented on a visual display or touch screen. The screen content is presented and summarized by recorded or synthesized language via a headset or handset, and menu pages and available options can be scanned and selected using this responsive and highly tactile keypad device. Overall, the project aimed to create an inclusive user experience that ensures equitable access to Pursuant Health's health assessment services.
-<br><br>              
-          </div>
-    </div>
-       
+              
+<h2 class="text-left mt-0">Website Accessibility</h2>
+              
+<br>             
+                    
+<h4 class="text-left mt-0">Website Current State Problems</h4>
+<p class="text-dark mb-4" style= "font-family: sans-serif">
+Ensuring web accessibility is vital to provide equal access and usability for all users, including those with disabilities. However, the current state of the website presents several challenges for users with disabilities, particularly blind and low vision users. These challenges stem from non-compliance with WCAG 2.0 Accessibility Guidelines, resulting in various accessibility barriers that hinder user experience. Below are the key issues identified:
 
-        <div class="container" >
-      <div class="row">
+
+  <ol p class="text-dark mb-4" style= "font-family: sans-serif">              
+
+<li>         
+<h5 class="text-left mt-0">Blind users</h5>
+<p class="text-dark mb-4" style= "font-family: sans-serif">
+Pages have a number of WCAG 2.0 issues, creating some accessibility barriers for users who are blind using a screen reading program. Following were the key issues:
+ 
+ <ul p class="text-dark mb-4" style= "font-family: sans-serif"> 
+ <li>Lack of hierarchical heading structure on many pages.</li> 
+ <li>Poor semantic structure on multiple pages.</li> 
+ <li>Elements displayed inconsistently with their on-screen order.</li>
+ <li>Tabbed controls and expandable/collapsible elements are not properly marked up, rendering them inaccessible to screen reader users.</li> 
+ <li>Expandable/collapsible elements are not marked up as such, and do not appear as interactive to screen reader users.</li>
+ <li>Error messages are not associated with form fields, leading to confusion for users.</li> 
+ <li>Decorative images are not hidden from screen reader users, causing unnecessary distractions.</li> 
+ </ul>
+ </li>
+  
+<li>
+<h5 class="text-left mt-0">Low vision users</h5>
+<p class="text-dark mb-4" style= "font-family: sans-serif">
+Insufficient color contrast observed across the website, impacting readability and usability for users with low vision.</li>
+</ol>
+
+<p class="text-dark mb-4" style= "font-family: sans-serif">    
+Addressing these accessibility issues is crucial to ensure an inclusive and user-friendly web experience for all users, regardless of their abilities or disabilities.<br>
+
+
+<br><h4 class="text-left mt-0">WCAG 2.0 Accessibility Guidelines Remediated on Website</h4>
+<p class="text-dark mb-4" style= "font-family: sans-serif">     
+To ensure compliance with WCAG 2.0 Accessibility Guidelines, we successfully implemented the following standards on our website:
+
+<p class="text-dark mb-4" style= "font-family: sans-serif">            
+<ol p class="text-dark mb-4" style= "font-family: sans-serif">
+
+<li>
+<h5 class="text-left mt-0">Non-text Content</h5>
+All non-text content now has a text alternative, ensuring an equivalent purpose is served except in certain situations (noted below) as per Level A standards. This includes images, videos, and other multimedia elements.
+<ul p class="text-dark mb-4" style= "font-family: sans-serif">
+<li>Controls, Input </li>  
+<li>Time-Based Media</li> 
+<li>Test</li> 
+<li>Sensory</li> 
+<li>CAPTCHA</li> 
+<li>Decoration, Formatting, Invisible</li>    
+    
+</ul>  
+
+
           
-        <div class="col-lg-6 col-md-12 text-left" >
-          <div class="mt-1">
-           <img class="img-fluid my-2" style="max-width: 400px"  src="img/accessibilityicons-001.png" alt="Graphic Icon Depicting Tactile Kiosk Keypad and Head Phones">
-            <p class="mb-0" style= "font-family: sans-serif">After the implementation of the speech functionality, visually impaired and blind users are able to operate the kiosk using the Audio-Nav keypad while also receiving audio feedback through their connected headphones. The Speech Output mode enables the user to navigate through menus and directories using the tactile keypad and the touch screen, if visible. In addition, users can now blank the screen to reduce visual distractions without affecting the use of the tactile keypad. This can be done when the application opens or by navigating to the "Help" section and selecting the screen blank option. These improvements enhance the inclusivity and accessibility of the kiosk for visually impaired and blind users..</p>
-          </div>
-        </div>
-      
-        <div class="col-lg-6 col-md-12 text-left">
-          <div class="mt-1">
-           <img class="img-fluid my-2" style="max-width: 400px" src="img/accessibilityicons-002.png" alt="Graphic Icon Depicting Tactile Kiosk Keypad and The Kiosk Touch Screen">
-            <p class= "mb-0" style= "font-family: sans-serif">As a result of the project, we integrated a tactile keypad device with an audio-navigation feature that enables users with impaired vision, reading difficulties, or fine motor skill impairments to easily navigate through menus and directories that are typically presented on a visual display or touch screen. The device also includes a speech output interface that is activated when the user connects their headphones to the audio jack on the tactile keypad. This allows the user to operate the kiosk using the Audio-Nav keypad and, if the display is visible, via the touch screen. To further enhance accessibility, we implemented a screen blank option that can be turned on or off when the application opens or by selecting "Help" and navigating to the screen blank option.</p>
-          </div>
-        </div>  
+<li p class="text-dark mb-4" style= "font-family: sans-serif">
+<h5 class="text-left mt-0">Info and Relationships</h5>
+Information, structure, and relationships conveyed through presentation are now programmatically determined or available in text (Level A). This ensures that users with assistive technologies can navigate and understand the content's organization and meaning.</li>  
+    
+<li p class="text-dark mb-4" style= "font-family: sans-serif"> 
+<h5 class="text-left mt-0">Meaningful Sequence</h5>
+A correct reading sequence has been programmatically determined where content presentation affects its meaning (Level A). This ensures that the order of content presentation does not hinder comprehension, particularly for screen reader users.</li> 
+ 
+<li p class="text-dark mb-4" style= "font-family: sans-serif"> 
+<h5 class="text-left mt-0">Page Titles</h5>
+Web pages have descriptive titles that accurately describe their topic or purpose (Level A). This helps users navigate and understand the content of each page, especially when using screen readers or other assistive technologies.</li> 
+    
+    
+<li p class="text-dark mb-4" style= "font-family: sans-serif"> 
+<h5 class="text-left mt-0">Link Purpose (In Context)</h5>
+The purpose of each link can be determined from the link text alone or in conjunction with its programmatically determined link context, except where the purpose may be ambiguous to users (Level A). This ensures that users can understand the destination or action associated with each link.</li> 
+ 
+<li p class="text-dark mb-4" style= "font-family: sans-serif"> 
+<h5 class="text-left mt-0">Labels or Instructions</h5>
+Clear labels or instructions are now provided wherever user input is required (Level A). This helps users with disabilities understand what action is expected of them in various interactive elements such as forms or controls.</li> 
+    
+<li p class="text-dark mb-4" style= "font-family: sans-serif">
+<h5 class="text-left mt-0">Name, Role, Value</h5>
+User interface components have programmatically determined names, roles, and values, with changes to these items being notified to user agents and assistive technologies (Level A). This ensures that users with disabilities can interact effectively with various elements on the website and receive feedback about their actions.</li>    
+</ol>   
+
+<br> <br>              
+             
+             
+ <h2 class="text-left mt-0">Kiosk Accessibility</h2>
+              
+<br>           
+<h4 class="text-left mt-0">Kiosk Current State Problems</h4>   
+ <p class="text-dark mb-4" style= "font-family: sans-serif"> 
+Ensuring kiosk accessibility is crucial for providing an inclusive experience to all users, including those with disabilities. However, the current state of kiosk accessibility reveals several challenges that need to be addressed to meet the CFR 382.57 (c) Accessibility Standards. These challenges include:
+
+
+<ol p class="text-dark mb-4" style= "font-family: sans-serif">              
+<li><h5 class="text-left mt-0">Limited Operability</h5>
+The kiosk relies solely on a touch screen for operation, making it inaccessible to users who are blind or have difficulty using touch screens.</li><br>
+    
+<li><h5 class="text-left mt-0">Lack of tactile controls</h5>
+Apart from a Stop button, the kiosk lacks tactilely discernible input controls, further limiting accessibility for users who rely on tactile feedback.</li><br>
+    
+<li><h5 class="text-left mt-0">Visual impairments</h5>
+Insufficient text size and contrast levels hinder the usability of the kiosk for users with reduced vision</li><br>
+    
+  
+<li><h5 class="text-left mt-0">Multimedia accessibility</h5>  
+Some multimedia elements such as videos and audio instructions lack captions or described audio, posing challenges for users with hearing impairments.</li><br>
+             </ol>
+ <p class="text-dark mb-4" style= "font-family: sans-serif">     
+Addressing these issues is essential to ensure equitable access and usability for all users interacting with the kiosk.<br><br>
+
+    
+       
+<h4 class="text-left mt-0">CFR 382.57 (c) Accessibility Standards Addressed on Kiosk</h4>
+<p class="text-dark mb-4" style= "font-family: sans-serif">     
+    
+<ol p class="text-dark mb-4" style= "font-family: sans-serif">  
+    
+<li><h5 class="text-left mt-0">Standard: 382.57(a)(5)(i) Visually and tactilely identifiable</h5>
+The standard requires kiosks to be visually and tactilely identifiable as accessible. The remediated kiosks have been designed with clear signage and tactile features to ensure users can easily identify them as accessible. These features also provide information about the operator of the kiosk and its functions, meeting the requirements of the standard effectively.
+</li><br>
+        
+    
+ <li><h5 class="text-left mt-0">Standard:382.57(c)(1) Self contained</h5>
+According to this standard, kiosks must not require users to attach their own assistive technology, except for personal headphones. The redesigned kiosk allows users to connect their personal headphones seamlessly, eliminating the need for additional assistive technology and ensuring compliance with the standard.
+</li><br>
+    
+<li><h5 class="text-left mt-0">Standard: 382.57(c)(3)(i) Identification</h5>
+This standard requires that operable parts be tactilely discernible without activation. The kiosk has some components that can be identified by touch including the Stop button. However, the touch screen controls are not tactilely discernible and touching the screen can activate a control. This guideline is necessary for future products to ensure that blind users are able to touch and identify tactile keys without activating the control. The kiosks have been retrofitted with a Storm keypad, allowing blind users to touch and identify tactile keys without activating the control.
+</li><br>
+    
+<li><h5 class="text-left mt-0">Standard: 382.57(c)(3)(ii) Timing</h5>
+According to this standard, users must be alerted visually and through sound when a timed response is required. The current application times out after a period of inactivity (1.5 minutes) and users are presented with the option to request more time. Users must respond within 10 seconds but this may not be sufficient for some users. The user should be warned before time expires and given at least 20 seconds to extend the time limit with a simple action (for example, "press the space bar"). The redesigned kiosks incorporate visual and auditory alerts to inform users before timing out, providing ample time for user interaction and meeting the standard's requirements effectively.
+</li><br>
+    
+<li><h5 class="text-left mt-0">Standard: 382.57(c)(4) Privacy</h5>
+The standard emphasizes the need for kiosks to provide privacy options equivalent to those available to all individuals. However, if an option is provided to blank the screen in the speech output mode, the screen must blank when activated by the user, not automatically. The remediated kiosks offer a screen blank option during speech output mode, ensuring user privacy and control over their interactions with the kiosk, aligning with the standard's privacy requirements.
+</li><br>
+
+<li><h5 class="text-left mt-0">Standards: 382.57(c)(5)(i – iii) Output – Speech Output Enabled</h5>
+These standards focus on ensuring that kiosks provide accessible output, including speech output options. The kiosks do not meet these standards as they do not provide an option for speech output. Operating instructions and orientation, visible transaction prompts, user input verification, error messages, and all other visual information for full use must be accessible to and independently usable by individuals with vision impairments. The new kiosk design incorporates speech output features, making operating instructions, transaction prompts, error messages, and other visual information accessible to individuals with vision impairments, in compliance with the standards.
+</li><br> 
+    
+<li><h5 class="text-left mt-0">Standards: 382.57(c)(6)(i-iv) Input</h5>
+The standards outline requirements for tactile controls in kiosks, which have been included in the Kiosk Accessibility Guidelines as part of the remediation process. The kiosk can only be operated via a touch screen and therefore do not meet any of these standards. Kiosk Accessibility Guidelines have been developed as a part of this remediation and includes the full text for the tactile controls standards.
+</li><br>
+    
+<li><h5 class="text-left mt-0">Standards: 382.57(c)(7)(ii) Characters</h5>
+This standard requires that all characters displayed on the screen must be in a sans serif font. Characters must be 3/16 inch (4.8 mm) high minimum based on the uppercase letter “I.”<br>
+
+<ul p class="text-dark mb-4" style= "font-family: sans-serif">  
+<li>The text in several places within the applications is smaller than the minimum font size.</li>
+<li>The font used in the left side menu is approximately .140" and should be .187" (3/16”).</li> 
+<li>The small fonts used for the “duration” text in the main menu approximately .110".</li> 
+<li>The smaller font used in the “results” page is approximately .120".</li> 
+<li>The small text used in the “BMI risk factor” message is approximately .150”.</li> 
+</ul>   
+</li>
+    
+The text size in various sections of the application has been adjusted to meet the minimum font size requirement, ensuring readability and compliance with the standard.<br>
+    
+</ol>   <br>
+    
+<h4 class="text-left mt-0">Retrofitted Kiosk Storm Keypad Components</h4>
+<p class="text-dark mb-4" style= "font-family: sans-serif"> 
+The retrofitted Storm keypad is an assistive USB device designed to enhance accessibility for users with impaired vision, reading difficulties, or fine motor skill impairments. It provides menu navigation through audio direction, allowing users to browse and select options presented on menus or directories typically displayed on a visual screen or touch interface.<br><br>
+    
+<h5 class="text-left mt-0">Storm Keypad Key Features</h5><br>
+    
+<ol p class="text-dark mb-4" style= "font-family: sans-serif">  
+<li><h5 class="text-left mt-0">Audio Direction</h5>
+The keypad offers menu navigation through recorded or synthesized language, providing audio feedback and guidance to users wearing a headset or using a handset.
+</li><br>
+    
+<li><h5 class="text-left mt-0">Tactile Interface</h5>
+It is highly tactile, allowing users to feel and navigate through menu pages and available options easily
+</li><br>
+    
+<li><h5 class="text-left mt-0">Versatile Application</h5> 
+The device is intended for use as the tactile and audio interface for any ADA (Americans with Disabilities Act) or DDA (Disability Discrimination Act) compliant applications. It can be integrated into various systems such as kiosks, ticketing machines, vending machines, voting terminals, and more, ensuring accessibility and usability for a wide range of users.
+</li><br>
+
+</ol>     
+ <br>   
+ 
+ 
+<div class="container" >
+<div class="row">
+          
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <div class="d-flex align-items-center">
+        <img class="img-fluid my-5" style="max-width: 300px;" src="img/portfolio/fullsize/Storm%20Keypad%20Components%201.webp" alt="Graphic Icon Depicting Tactile Kiosk Keypad and Head Phones">
       </div>
+    </div>
+    
+    <div class="col-lg-8 col-md-12">
+      <div class="mt-3">
+        <h5 class="text-left mt-0">Audio-Nav™ with Speech Output</h5>
+        <p style="font-family: sans-serif">
+          The Speech Output interface activates when headphones are connected to the audio jack. In Speech Output mode, users can operate the kiosk via the Audio-Nav keypad or, if the display is visible, through the touch screen. When the screen is blanked, the touch screen remains inactive. Users can toggle screen blanking in the application settings or by navigating to the Help section.<br><br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <div class="d-flex align-items-center">
+        <img class="img-fluid my-5" style="max-width: 300px;" src="img/portfolio/fullsize/Storm%20Keypad%20Components%202.webp" alt="Graphic Icon Depicting Tactile Kiosk Keypad and The Kiosk Touch Screen">
+      </div>
+    </div>
+    
+    <div class="col-lg-8 col-md-12">
+      <div class="mt-3">
+        <h5 class="text-left mt-0">Audio-Nav™ with Kiosk Display</h5>
+        <p style="font-family: sans-serif">
+          This mode allows users to interact with the kiosk using either the touch screen or the Audio-Nav keypad. It's activated when the kiosk displays the Attract screen, and users can engage by pressing any button on the diamond-shaped keypad. Visual focus, indicated by a colored outline, helps users identify the active element on-screen. Some screens may include instruction text for clarity.<br><br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-">
+      <div class="d-flex align-items-center">
+        <img class="img-fluid my-5" style="max-width: 300px;" src="img/portfolio/fullsize/Storm%20Keypad%20Components%203.webp" alt="Graphic Icon Depicting Accessible Features on the Kiosk Touch Screen">
+      </div>
+    </div>
+    
+    <div class="col-lg-8 col-md-12">
+      <div class="mt-3">
+        <h5 class="text-left mt-0">Kiosk Display - Low Vision Settings</h5>
+        <p style="font-family: sans-serif">
+         As a future enhancement, the kiosk would introduce various touch screen display options catering to users with low vision. These settings exceed standard accessibility requirements, offering features like font enlargement, screen magnification, and higher contrast font and background color options for improved visibility.<br><br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>    
+    
+    
+    
+</div>
+ 
+<h2 class="text-left mt-0">Reflection</h2>
+<p class="text-dark mb-4" style= "font-family: sans-serif">
+Leading the UX efforts to enhance accessibility for both the website and kiosk platforms was an enlightening journey. Collaborating closely with visual accessibility experts and navigating WCAG 2.0 guidelines and CFR 382.57 (c) Accessibility Standards provided invaluable insights into the importance of inclusive design and user-centered approaches. This experience included direct engagement with users with disabilities, which highlighted the real-world impact of accessibility barriers and reinforced the need for proactive solutions. Learning from these individuals deepened my understanding of inclusive design principles and emphasized the continuous evolution of accessibility standards, shaping my commitment to championing accessibility in all future endeavors.
+    
+       
+ </div>
+    </div>
+    </div>
     </div>    </div>
 
   </section>
