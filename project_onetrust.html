@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI-first Platform Design — Alana Lanette</title>
+  <meta name="description" content="UX strategy for transforming OneTrust into an AI-first enterprise platform.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --ink: #1A1A1A; --ink-mid: #4A4A4A; --ink-dim: #787878;
+  --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --surface: #FFFFFF;
+  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --pad: clamp(1.25rem, 5vw, 4.5rem); --max: 1240px; --r: 14px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--pad); height: 52px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-size: 0.9rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; gap: 0.15rem; align-items: center; }
+.nav-links a { font-size: 0.82rem; color: var(--ink-mid); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 8px; transition: background 0.15s; }
+.nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--ink); }
+.nav-cta { background: var(--ink) !important; color: #fff !important; border-radius: 100px !important; font-weight: 500 !important; }
+.nav-cta:hover { background: #333 !important; }
+.back-wrap { padding: 1.5rem 0 0; }
+.back-link { font-size: 0.78rem; color: var(--ink-dim); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.15s; }
+.back-link:hover { color: var(--ink); }
+.back-link::before { content: '←'; }
+.proj-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+.proj-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.65rem; }
+.proj-title { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1.1; color: var(--ink); margin-bottom: 0.85rem; }
+.proj-summary { font-size: 1rem; color: var(--ink-mid); max-width: 560px; line-height: 1.7; margin-bottom: 1.75rem; }
+.meta-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.25rem; }
+.meta-cell { padding: 0.75rem 1rem; border-right: 1px solid var(--border); }
+.meta-cell:last-child { border-right: none; }
+.meta-k { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.25rem; }
+.meta-v { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
+.tag-row { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.tag { font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 6px; background: rgba(0,0,0,0.06); color: var(--ink-dim); }
+.hero-card { border-radius: 14px; overflow: hidden; margin: 2rem 0; border: 1px solid var(--border); }
+.hero-card-visual { min-height: 240px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.doc-section { margin: 2.5rem 0; }
+.doc-section h2 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; font-style: normal; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.doc-section h2:first-child { border-top: none; padding-top: 0; }
+.doc-section h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin: 1.25rem 0 0.4rem; }
+.doc-p { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 0.85rem; }
+.doc-list { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 0.85rem; }
+.doc-list li { margin-bottom: 0.3rem; }
+.doc-img { width: 100%; border-radius: 10px; border: 1px solid var(--border); margin: 1.25rem 0; display: block; }
+.callout { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1.25rem 0; display: flex; gap: 0.75rem; }
+.callout-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.7; }
+.callout p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.75; margin: 0; }
+.callout p strong { color: var(--ink); }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1.25rem 0; }
+.stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-align: center; }
+.stat-n { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.stat-l { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.25rem; }
+.deliverable { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.1rem; text-decoration: none; color: inherit; margin: 0.5rem 0; transition: background 0.15s; }
+.deliverable:hover { background: rgba(0,0,0,0.02); }
+.dl-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.15rem; }
+.dl-n { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+.dl-arr { font-size: 0.9rem; color: var(--ink-dim); }
+.divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.next-bar { border-top: 1px solid var(--border); background: var(--surface); margin-top: 4rem; }
+.next-inner { max-width: 1180px; margin: 0 auto; padding: 2rem var(--pad); }
+.next-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1rem; }
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.next-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; text-decoration: none; color: inherit; transition: background 0.15s; }
+.next-card:hover { background: rgba(0,0,0,0.03); }
+.next-co { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.35rem; }
+.next-title { font-size: 0.88rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+footer { border-top: 1px solid var(--border); }
+.footer-wrap { max-width: 1180px; margin: 0 auto; padding: 1.25rem var(--pad); display: flex; justify-content: space-between; align-items: center; }
+.footer-name { font-size: 0.82rem; font-weight: 600; color: var(--ink-mid); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.75rem; color: var(--ink-dim); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: var(--ink); }
+@media (max-width: 700px) {
+  .meta-table { grid-template-columns: 1fr 1fr; }
+  .meta-cell { border-bottom: 1px solid var(--border); }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .footer-wrap { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-wrap">
+    <a class="nav-logo" href="../index.html">Alana Lanette</a>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
+      <a href="mailto:alanalanette@gmail.com" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="back-wrap"><a class="back-link" href="../index.html">Back to work</a></div>
+  <header class="proj-header">
+    <div class="proj-cat">AI Platform Strategy · OneTrust</div>
+    <h1 class="proj-title">Transforming OneTrust into<br>an AI-first platform.</h1>
+    <p class="proj-summary">Leading UX strategy for OneTrust's transition from a monolithic governance suite into a connected, AI-first enterprise platform — making AI visible, understandable, governable, and extensible across the product ecosystem.</p>
+    <div class="meta-table">
+      <div class="meta-cell"><div class="meta-k">Company</div><div class="meta-v">OneTrust</div></div>
+      <div class="meta-cell"><div class="meta-k">Role</div><div class="meta-v">Principal UX Designer</div></div>
+      <div class="meta-cell"><div class="meta-k">Scope</div><div class="meta-v">Platform strategy · AI UX · MCP</div></div>
+      <div class="meta-cell"><div class="meta-k">Status</div><div class="meta-v">Currently shipping</div></div>
+    </div>
+    <div class="tag-row"><span class="tag">AI/ML UX</span><span class="tag">Platform Design</span><span class="tag">Design Systems</span><span class="tag">Enterprise</span><span class="tag">0→1</span><span class="tag">MCP</span><span class="tag">Developer Experience</span></div>
+  </header>
+</div>
+
+<!-- Hero visual -->
+<div style="margin:0; overflow:hidden; border-top:1px solid rgba(0,0,0,0.08); border-bottom:1px solid rgba(0,0,0,0.08);">
+  <div style="background:linear-gradient(135deg,#ECEAF6 0%,#D8D4F0 100%); padding:2.5rem 2rem 0; min-height:320px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+    <div style="width:100%; max-width:680px; display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+      <!-- Left: AI discovery panel -->
+      <div style="background:#fff; border:1px solid rgba(0,0,0,0.1); border-radius:10px 10px 0 0; padding:1rem 1.1rem; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+        <div style="font-size:0.55rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#888; margin-bottom:0.6rem;">AI in your workflow</div>
+        <div style="display:flex; flex-direction:column; gap:0.35rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.55rem; background:#F3F2FF; border-radius:6px; border:1px solid rgba(99,102,241,0.15);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#6366f1;flex-shrink:0;"></div>
+            <div style="font-size:0.58rem; font-weight:600; color:#4338ca;">Risk summarization</div>
+            <div style="margin-left:auto; font-size:0.48rem; background:rgba(34,197,94,0.1); color:#15803d; border-radius:3px; padding:0.1rem 0.3rem; font-weight:600;">Active</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.55rem; background:#FAFAFA; border-radius:6px; border:1px solid rgba(0,0,0,0.07);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#d1d5db;flex-shrink:0;"></div>
+            <div style="font-size:0.58rem; font-weight:600; color:#888;">Vendor AI scoring</div>
+            <div style="margin-left:auto; font-size:0.48rem; background:rgba(245,158,11,0.1); color:#92400e; border-radius:3px; padding:0.1rem 0.3rem; font-weight:600;">Review required</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.55rem; background:#FAFAFA; border-radius:6px; border:1px solid rgba(0,0,0,0.07);">
+            <div style="width:6px;height:6px;border-radius:50%;background:#d1d5db;flex-shrink:0;"></div>
+            <div style="font-size:0.58rem; font-weight:600; color:#888;">Consent analysis</div>
+            <div style="margin-left:auto; font-size:0.48rem; background:rgba(0,0,0,0.05); color:#888; border-radius:3px; padding:0.1rem 0.3rem; font-weight:600;">Not enabled</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: MCP credential panel -->
+      <div style="background:#fff; border:1px solid rgba(0,0,0,0.1); border-radius:10px 10px 0 0; padding:1rem 1.1rem; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+        <div style="font-size:0.55rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#888; margin-bottom:0.6rem;">MCP agent access</div>
+        <div style="background:#F8F7FF; border:1px solid rgba(99,102,241,0.15); border-radius:6px; padding:0.5rem 0.65rem; margin-bottom:0.35rem;">
+          <div style="font-size:0.52rem; color:#6366f1; font-weight:600; margin-bottom:0.2rem;">Agent credential</div>
+          <div style="font-size:0.58rem; color:#1A1A1A; font-weight:600;">risk-copilot-prod</div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.3rem; margin-bottom:0.35rem;">
+          <div style="background:#F0FDF4; border:1px solid rgba(34,197,94,0.15); border-radius:5px; padding:0.35rem 0.45rem;">
+            <div style="font-size:0.48rem; color:#888; margin-bottom:0.1rem;">Scope</div>
+            <div style="font-size:0.52rem; font-weight:600; color:#15803d;">read:assessments</div>
+          </div>
+          <div style="background:#F0FDF4; border:1px solid rgba(34,197,94,0.15); border-radius:5px; padding:0.35rem 0.45rem;">
+            <div style="font-size:0.48rem; color:#888; margin-bottom:0.1rem;">Audit</div>
+            <div style="font-size:0.52rem; font-weight:600; color:#15803d;">Enabled</div>
+          </div>
+        </div>
+        <div style="font-size:0.5rem; color:#888; display:flex; align-items:center; gap:0.3rem;">
+          <div style="width:5px;height:5px;border-radius:50%;background:#22c55e;"></div>
+          Least-privilege · User-context bound
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="doc-section">
+    <h2>Overview</h2>
+    <p class="doc-p">OneTrust is a large enterprise governance platform with a broad legacy product ecosystem spanning privacy, risk, compliance, third-party management, and AI governance. I led the UX strategy for transforming that experience from a monolithic product suite into a more connected, AI-first platform.</p>
+    <p class="doc-p">The work centered on two distinct customer paths — those who expect AI to appear naturally inside the product through guided, trustworthy workflows, and those who are building their own copilots, agents, and automation layers requiring governed platform access.</p>
+    <div class="callout"><div class="callout-icon">🎯</div><p>The goal was to make AI <strong>visible, understandable, governable, and extensible</strong> across the platform — not to ship a set of features, but to define how AI should show up across an entire product ecosystem.</p></div>
+  </div>
+
+  <div class="doc-section">
+    <h2>The problem</h2>
+    <p class="doc-p">OneTrust had powerful AI capabilities, but they were often hidden behind settings, packaging, feature toggles, and disconnected enablement paths. Customers did not always know what AI was available, whether they were eligible to use it, or how to activate it.</p>
+    <p class="doc-p">At the same time, advanced enterprise customers were beginning to build their own AI agents and needed a secure way to connect those agents to OneTrust data and workflows. The challenge was bigger than designing a set of AI features — it required defining how AI should show up across the entire product ecosystem.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>My role</h2>
+    <p class="doc-p">As OneTrust's senior-most UX designer, I led the experience strategy across AI platform transformation — including in-product AI discovery, guided enablement, MCP credentialing, developer experience, and governance patterns.</p>
+    <p class="doc-p">I worked across design, product, engineering, GTM, and leadership to translate a complex technical vision into a clear customer experience strategy.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>Strategy</h2>
+    <p class="doc-p">I framed the experience around two connected modes of AI adoption.</p>
+
+    <h3>Path 1 — Guided AI experiences</h3>
+    <p class="doc-p">For AI-expectant customers, the experience needed to surface AI capabilities directly inside existing workflows. The shift was from hiding AI until it was purchased and enabled, to making AI visible, explainable, and actionable.</p>
+    <ul class="doc-list">
+      <li>Discovering AI in context within existing product workflows</li>
+      <li>Explaining why AI is unavailable, disabled, or gated</li>
+      <li>Requesting access or starting an AI governance review</li>
+      <li>Showing admins clear enablement paths with appropriate controls</li>
+      <li>Supporting legacy customers with preview or metered AI access</li>
+      <li>Connecting AI adoption to trust, transparency, and governance</li>
+    </ul>
+
+    <h3>Path 2 — MCP platform access</h3>
+    <p class="doc-p">For AI-advanced customers building their own copilots and agents, OneTrust needed to support external agents through a governed MCP platform — letting customers safely connect their own AI ecosystems without bespoke integrations or overly broad API credentials.</p>
+    <ul class="doc-list">
+      <li>Creating AI agent and MCP credentials with scoped permissions</li>
+      <li>Selecting tool and workflow-based scopes</li>
+      <li>Binding access to user context with least-privilege permissions</li>
+      <li>Surfacing audit activity for AI-mediated actions</li>
+      <li>Helping developers discover tools, schemas, and test environments</li>
+    </ul>
+
+    <div class="callout"><div class="callout-icon">💡</div><p>The two paths were not separate products. They were two points on the same adoption curve — and the experience strategy needed to connect them into one coherent platform narrative.</p></div>
+  </div>
+
+  <div class="doc-section">
+    <h2>Design principles</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:0.5rem;">
+      <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:1.1rem 1.25rem;">
+        <div style="font-size:0.78rem; font-weight:700; color:#1A1A1A; margin-bottom:0.35rem;">Make AI visible before activation</div>
+        <div style="font-size:0.78rem; color:#555; line-height:1.6;">Customers should be able to see where AI can help, even if it is not yet enabled.</div>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:1.1rem 1.25rem;">
+        <div style="font-size:0.78rem; font-weight:700; color:#1A1A1A; margin-bottom:0.35rem;">Explain the current state</div>
+        <div style="font-size:0.78rem; color:#555; line-height:1.6;">Clearly distinguish between disabled, unavailable, gated, permission-limited, and governance-required states.</div>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:1.1rem 1.25rem;">
+        <div style="font-size:0.78rem; font-weight:700; color:#1A1A1A; margin-bottom:0.35rem;">Treat enablement as a governance journey</div>
+        <div style="font-size:0.78rem; color:#555; line-height:1.6;">Enterprise AI activation often requires legal, privacy, security, and risk review. The experience supports that reality.</div>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:1.1rem 1.25rem;">
+        <div style="font-size:0.78rem; font-weight:700; color:#1A1A1A; margin-bottom:0.35rem;">Make advanced access governable by design</div>
+        <div style="font-size:0.78rem; color:#555; line-height:1.6;">MCP experiences balance developer flexibility with security, permissioning, and auditability.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <h2>Key outcomes</h2>
+    <p class="doc-p">This work helped define a platform strategy for how OneTrust can position itself as a credible AI-first governance platform.</p>
+    <ul class="doc-list">
+      <li>Increased AI awareness across the product through in-context discovery</li>
+      <li>Reduced friction in AI activation with clear enablement paths</li>
+      <li>Supported governance-led AI adoption for enterprise compliance teams</li>
+      <li>Created expansion paths for legacy customers through metered preview access</li>
+      <li>Provided advanced customers with governed MCP access for external agent ecosystems</li>
+      <li>Connected in-product AI experiences with external agent capabilities</li>
+    </ul>
+    <div class="callout"><div class="callout-icon">🔒</div><p><strong>Screens and full case study artifacts are in progress</strong> — including the AI-first platform model, customer maturity framework, AI discovery patterns, MCP credential flows, and governance-led enablement journey. Available on request.</p></div>
+  </div>
+
+  <div class="doc-section">
+    <h2>Case study artifacts</h2>
+    <p class="doc-p">When complete, the full case study will include:</p>
+    <ul class="doc-list">
+      <li>AI-first platform model and architecture narrative</li>
+      <li>Customer maturity model: AI-expectant vs. AI-advanced</li>
+      <li>AI discovery and gated-state framework</li>
+      <li>MCP credential creation flow</li>
+      <li>Governance-led AI enablement journey</li>
+      <li>Developer tool catalog and MCP access model</li>
+      <li>Before-and-after platform experience comparison</li>
+    </ul>
+    <p class="doc-p" style="font-style:italic; color:#888;">Screens from Figma will be added here. Reach out if you'd like to discuss this work directly.</p>
+  </div>
+</div>
+
+<div class="next-bar">
+  <div class="next-inner">
+    <div class="next-label">More work</div>
+    <div class="next-grid">
+      <a class="next-card" href="project5.html"><div class="next-co">EY</div><div class="next-title">Employee Device Experience Strategy</div></a>
+      <a class="next-card" href="project1.html"><div class="next-co">EY</div><div class="next-title">Free Text Analysis Tool</div></a>
+      <a class="next-card" href="project3.html"><div class="next-co">Pursuant Health</div><div class="next-title">Cleveland Clinic Health Age Assessment</div></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-name">Alana Lanette · alanalanette.com</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alanapendleton/" target="_blank">LinkedIn</a>
+      <a href="mailto:alanalanette@gmail.com">Email</a>
+      <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
