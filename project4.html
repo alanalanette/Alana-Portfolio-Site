@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kiosk & Web Accessibility — Alana Lanette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --ink: #1A1A1A; --ink-mid: #4A4A4A; --ink-dim: #787878;
+  --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --surface: #FFFFFF;
+  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem); --max: 860px; --r: 14px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); height: 52px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-size: 0.9rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; gap: 0.15rem; align-items: center; }
+.nav-links a { font-size: 0.82rem; color: var(--ink-mid); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 8px; transition: background 0.15s; }
+.nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--ink); }
+.nav-cta { background: var(--ink) !important; color: #fff !important; border-radius: 100px !important; font-weight: 500 !important; }
+.nav-cta:hover { background: #333 !important; }
+.back-wrap { padding: 1.5rem 0 0; }
+.back-link { font-size: 0.78rem; color: var(--ink-dim); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.15s; }
+.back-link:hover { color: var(--ink); }
+.back-link::before { content: '←'; }
+.proj-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+.proj-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.65rem; }
+.proj-title { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1.1; color: var(--ink); margin-bottom: 0.85rem; }
+.proj-summary { font-size: 1rem; color: var(--ink-mid); max-width: 560px; line-height: 1.7; margin-bottom: 1.75rem; }
+.meta-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.25rem; }
+.meta-cell { padding: 0.75rem 1rem; border-right: 1px solid var(--border); }
+.meta-cell:last-child { border-right: none; }
+.meta-k { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.25rem; }
+.meta-v { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
+.tag-row { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.tag { font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 6px; background: rgba(0,0,0,0.06); color: var(--ink-dim); }
+.hero-card { border-radius: 14px; overflow: hidden; margin: 2rem 0; border: 1px solid var(--border); }
+.hero-card-visual { min-height: 240px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.doc-section { margin: 2.5rem 0; }
+.doc-section h2 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; font-style: normal; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.doc-section h2:first-child { border-top: none; padding-top: 0; }
+.doc-section h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin: 1.25rem 0 0.4rem; }
+.doc-p { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 0.85rem; }
+.doc-list { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 0.85rem; }
+.doc-list li { margin-bottom: 0.3rem; }
+.doc-img { width: 100%; border-radius: 10px; border: 1px solid var(--border); margin: 1.25rem 0; display: block; }
+.callout { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1.25rem 0; display: flex; gap: 0.75rem; }
+.callout-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.7; }
+.callout p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.75; margin: 0; }
+.callout p strong { color: var(--ink); }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1.25rem 0; }
+.stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-align: center; }
+.stat-n { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.stat-l { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.25rem; }
+.deliverable { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.1rem; text-decoration: none; color: inherit; margin: 0.5rem 0; transition: background 0.15s; }
+.deliverable:hover { background: rgba(0,0,0,0.02); }
+.dl-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.15rem; }
+.dl-n { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+.dl-arr { font-size: 0.9rem; color: var(--ink-dim); }
+.divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.next-bar { border-top: 1px solid var(--border); background: var(--surface); margin-top: 4rem; }
+.next-inner { max-width: 1180px; margin: 0 auto; padding: 2rem var(--gutter); }
+.next-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1rem; }
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.next-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; text-decoration: none; color: inherit; transition: background 0.15s; }
+.next-card:hover { background: rgba(0,0,0,0.03); }
+.next-co { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.35rem; }
+.next-title { font-size: 0.88rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+footer { border-top: 1px solid var(--border); }
+.footer-wrap { max-width: 1180px; margin: 0 auto; padding: 1.25rem var(--gutter); display: flex; justify-content: space-between; align-items: center; }
+.footer-name { font-size: 0.82rem; font-weight: 600; color: var(--ink-mid); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.75rem; color: var(--ink-dim); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: var(--ink); }
+@media (max-width: 700px) {
+  .meta-table { grid-template-columns: 1fr 1fr; }
+  .meta-cell { border-bottom: 1px solid var(--border); }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .footer-wrap { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-wrap">
+    <a class="nav-logo" href="../index.html">Alana Lanette</a>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
+      <a href="mailto:alanalanette@gmail.com" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="back-wrap"><a class="back-link" href="../index.html">Back to work</a></div>
+  <header class="proj-header">
+    <div class="proj-cat">Accessibility · Pursuant Health</div>
+    <h1 class="proj-title">Making healthcare access more inclusive.</h1>
+    <p class="proj-summary">A multi-year WCAG 2.0 and CFR 382.57(c) remediation across kiosk and web platforms — ensuring equitable access for users with visual, motor, cognitive, and auditory impairments.</p>
+    <div class="meta-table">
+      <div class="meta-cell"><div class="meta-k">Company</div><div class="meta-v">Pursuant Health</div></div>
+      <div class="meta-cell"><div class="meta-k">Role</div><div class="meta-v">Director of UX</div></div>
+      <div class="meta-cell"><div class="meta-k">Duration</div><div class="meta-v">3-year initiative</div></div>
+      <div class="meta-cell"><div class="meta-k">Standards</div><div class="meta-v">WCAG 2.0 · CFR 382</div></div>
+    </div>
+    <div class="tag-row"><span class="tag">Accessibility</span><span class="tag">WCAG 2.0</span><span class="tag">Inclusive Design</span><span class="tag">Kiosk</span><span class="tag">Healthcare</span></div>
+  </header>
+</div>
+<div class="wrap">
+  <div class="hero-card">
+    <img style="width:100%;max-height:420px;object-fit:cover;display:block;" src="../img/portfolio/thumbnails/10.webp" alt="Accessibility"/>
+  </div>
+
+  <div class="doc-section">
+    <h2>Overview</h2>
+    <p class="doc-p">Over two years, I led UX efforts with a visual accessibility consulting firm — bringing the kiosk into compliance with CFR 382.57(c) and ensuring the website complied with WCAG 2.0 to serve users with low vision, blindness, mobility impairments, and hearing impairments.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>Website accessibility</h2>
+    <h3>Problems identified</h3>
+    <ul class="doc-list">
+      <li>Lack of hierarchical heading structure</li>
+      <li>Poor semantic structure and inconsistent element ordering</li>
+      <li>Tabbed controls not properly marked up for screen readers</li>
+      <li>Error messages not associated with form fields</li>
+      <li>Insufficient color contrast for low vision users</li>
+    </ul>
+    <h3>WCAG 2.0 standards implemented</h3>
+    <p class="doc-p">Non-text content alternatives, programmatically determined structure, descriptive page titles, clear link purpose, labels for all user input, and properly marked-up UI components for assistive technologies.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>Kiosk — Storm keypad integration</h2>
+    <p class="doc-p">We retrofitted kiosks with an assistive USB audio navigator tactile keypad — enabling menu navigation through audio direction for users with impaired vision, reading difficulties, or impaired fine motor skills.</p>
+    <img class="doc-img" src="../img/portfolio/fullsize/Storm Keypad.webp" alt="Storm keypad"/>
+    <div class="callout"><div class="callout-icon">💡</div><p>The Storm keypad allows users to explore tactile keys without activating controls — critical for blind users who need to identify options before selecting.</p></div>
+    <img class="doc-img" src="../img/portfolio/fullsize/Storm Keypad Components 1.webp" alt="Keypad components"/>
+    <img class="doc-img" src="../img/portfolio/fullsize/Storm Keypad Components 2.webp" alt="Audio-Nav with speech"/>
+  </div>
+
+  <div class="doc-section">
+    <h2>Reflection</h2>
+    <p class="doc-p">Leading accessibility efforts across both web and kiosk platforms was genuinely enlightening. Direct engagement with users with disabilities highlighted the real-world impact of accessibility barriers in ways that guidelines alone cannot capture. This work deepened my commitment to championing accessibility in all future design.</p>
+  </div>
+</div>
+<div class="next-bar">
+  <div class="next-inner">
+    <div class="next-label">More work</div>
+    <div class="next-grid"><a class="next-card" href="project5.html"><div class="next-co">EY</div><div class="next-title">Employee Device Experience Strategy</div></a><a class="next-card" href="project1.html"><div class="next-co">EY</div><div class="next-title">Free Text Analysis Tool</div></a><a class="next-card" href="project3.html"><div class="next-co">Pursuant Health</div><div class="next-title">Cleveland Clinic Health Age</div></a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-name">Alana Lanette · alanalanette.com</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alanapendleton/" target="_blank">LinkedIn</a>
+      <a href="mailto:alanalanette@gmail.com">Email</a>
+      <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
