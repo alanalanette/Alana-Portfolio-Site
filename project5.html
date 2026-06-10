@@ -1,482 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-601MB1ZBCD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-601MB1ZBCD');
-</script>
-  
-    
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Alana Lanette</title>
-
-  <!-- Font Awesome-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-      <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-
-
-  <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Suranna|Work+Sans:400,500,600,700" rel="stylesheet">
-
-
-  <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/alanalanette.css" rel="stylesheet">
-    
-    <!-- Other meta tags and stylesheets -->
-
-  <!-- Include jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Include Zoom library -->
-  <script src="path/to/jquery.zoom.js"></script>
-
-  <!-- Your script using $.zoom -->
-  <script src="path/to/creative.js"></script>
-    
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Device Experience Strategy — Alana Lanette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3; --ink: #1A1A1A; --ink-mid: #4A4A4A; --ink-dim: #787878;
+  --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --surface: #FFFFFF;
+  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem); --max: 860px; --r: 14px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); height: 52px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-size: 0.9rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; gap: 0.15rem; align-items: center; }
+.nav-links a { font-size: 0.82rem; color: var(--ink-mid); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 8px; transition: background 0.15s; }
+.nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--ink); }
+.nav-cta { background: var(--ink) !important; color: #fff !important; border-radius: 100px !important; font-weight: 500 !important; }
+.nav-cta:hover { background: #333 !important; }
+.back-wrap { padding: 1.5rem 0 0; }
+.back-link { font-size: 0.78rem; color: var(--ink-dim); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.15s; }
+.back-link:hover { color: var(--ink); }
+.back-link::before { content: '←'; }
+.proj-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+.proj-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.65rem; }
+.proj-title { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1.1; color: var(--ink); margin-bottom: 0.85rem; }
+.proj-summary { font-size: 1rem; color: var(--ink-mid); max-width: 560px; line-height: 1.7; margin-bottom: 1.75rem; }
+.meta-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.25rem; }
+.meta-cell { padding: 0.75rem 1rem; border-right: 1px solid var(--border); }
+.meta-cell:last-child { border-right: none; }
+.meta-k { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.25rem; }
+.meta-v { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
+.tag-row { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.tag { font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 6px; background: rgba(0,0,0,0.06); color: var(--ink-dim); }
+.hero-card { border-radius: 14px; overflow: hidden; margin: 2rem 0; border: 1px solid var(--border); }
+.hero-card-visual { min-height: 240px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.doc-section { margin: 2.5rem 0; }
+.doc-section h2 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; font-style: normal; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.doc-section h2:first-child { border-top: none; padding-top: 0; }
+.doc-section h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin: 1.25rem 0 0.4rem; }
+.doc-p { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 0.85rem; }
+.doc-list { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 0.85rem; }
+.doc-list li { margin-bottom: 0.3rem; }
+.doc-img { width: 100%; border-radius: 10px; border: 1px solid var(--border); margin: 1.25rem 0; display: block; }
+.callout { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1.25rem 0; display: flex; gap: 0.75rem; }
+.callout-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.7; }
+.callout p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.75; margin: 0; }
+.callout p strong { color: var(--ink); }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1.25rem 0; }
+.stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-align: center; }
+.stat-n { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+.stat-l { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.25rem; }
+.deliverable { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.1rem; text-decoration: none; color: inherit; margin: 0.5rem 0; transition: background 0.15s; }
+.deliverable:hover { background: rgba(0,0,0,0.02); }
+.dl-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.15rem; }
+.dl-n { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+.dl-arr { font-size: 0.9rem; color: var(--ink-dim); }
+.divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.next-bar { border-top: 1px solid var(--border); background: var(--surface); margin-top: 4rem; }
+.next-inner { max-width: 1180px; margin: 0 auto; padding: 2rem var(--gutter); }
+.next-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1rem; }
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.next-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; text-decoration: none; color: inherit; transition: background 0.15s; }
+.next-card:hover { background: rgba(0,0,0,0.03); }
+.next-co { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.35rem; }
+.next-title { font-size: 0.88rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+footer { border-top: 1px solid var(--border); }
+.footer-wrap { max-width: 1180px; margin: 0 auto; padding: 1.25rem var(--gutter); display: flex; justify-content: space-between; align-items: center; }
+.footer-name { font-size: 0.82rem; font-weight: 600; color: var(--ink-mid); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.75rem; color: var(--ink-dim); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: var(--ink); }
+@media (max-width: 700px) {
+  .meta-table { grid-template-columns: 1fr 1fr; }
+  .meta-cell { border-bottom: 1px solid var(--border); }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .next-grid { grid-template-columns: 1fr; }
+  .footer-wrap { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+</style>
 </head>
-<link rel='shortcut icon' type='image/x-icon' href='img/alanalanette_favicon.png'/>
-    
-   
-  <!-- Your script for initializing Bootstrap components -->
-  <script>
-    $(document).ready(function () {
-      $('#myTab a').on('click', function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-      });
-    });
-  </script>
-
-
-<body id="page-top">
-    
-
-   
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.html">Alana Lanette</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive" align="right">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0 ">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">PORTFOLIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">CONTACT</a>
-          </li>
-        </ul>
-      </div>
+<body>
+<nav>
+  <div class="nav-wrap">
+    <a class="nav-logo" href="../index.html">Alana Lanette</a>
+    <div class="nav-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
+      <a href="mailto:alanalanette@gmail.com" class="nav-cta">Get in touch</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Masthead -->
-  <header class="page-section bg-dark text-white">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-0 align-self-end">
-          <h1 class="text-white font-weight-regular">Employee Device Experience Strategy<br>
-
-</h1>
-          <hr class="divider my-3">
-        </div>
-        <div class="col-lg-10 align-self-baseline">
-          <h6 class="text-white-75 font-weight-light mb-3">Paradigm Shift in the Often Overlooked Device Acquisiton Experience
-</h6>
-          
-        </div>
-      </div>
+<div class="wrap">
+  <div class="back-wrap"><a class="back-link" href="../index.html">Back to work</a></div>
+  <header class="proj-header">
+    <div class="proj-cat">Service Design · EY</div>
+    <h1 class="proj-title">Simplifying the employee technology journey.</h1>
+    <p class="proj-summary">A three-pillar strategy to reduce friction across device refresh, support, and employee touchpoints for 400,000+ global EY employees.</p>
+    <div class="meta-table">
+      <div class="meta-cell"><div class="meta-k">Company</div><div class="meta-v">EY</div></div>
+      <div class="meta-cell"><div class="meta-k">Role</div><div class="meta-v">Asst Director, UX Lead</div></div>
+      <div class="meta-cell"><div class="meta-k">Scope</div><div class="meta-v">Strategy · Service Design</div></div>
+      <div class="meta-cell"><div class="meta-k">Impact</div><div class="meta-v">400k+ employees</div></div>
     </div>
+    <div class="tag-row"><span class="tag">UX Strategy</span><span class="tag">Service Design</span><span class="tag">Enterprise</span><span class="tag">Research</span><span class="tag">Roadmapping</span></div>
   </header>
-    
-<!-- PROJECT 7 Overview-->   
-<section class="page-section" id="portfolio_p1">
-    <div class="container">
-    <div class="col-lg-12 col-md-12 justify-content-center" ><br>
-               <h2 class="text-left mt-0">Project Overview</h2>
-          <p class="text-dark mb-4" style= "font-family: sans-serif">Since the onset of COVID-19, organizations globally have embarked on a journey to redefine work in a highly digitized and interconnected world.
-
-Hybrid working has emerged as a predominant model with EY employees spending an average of 49% of their time working remotely in FY24 compared to 10% in FY19. This shift has presented opportunities and challenges related to productivity, talent attraction and retention, employee wellbeing, organizational culture, and brand equity. As the prevalence of hybrid working continues, the virtual dimension of the "EY experience" has become more significant, making the tools and technology enabling this experience critical for success.<br>
-
-<br><br>  
-                         
-              
-<div class="section-with-background">
-    <h2 class="text-left mt-0">Current State Problems</h2><br>
-    
-    <h5 class="text-left mt-0">Cost Optimization:</h5>
-     <p class="text-dark mb-4" style="font-family: sans-serif">
-         Proliferation of localized customization in device lifecycle management results in inefficiencies and inflated total cost of ownership. Conversely, rigid and highly standardized approaches may not fully address NPS.
-        <br><br>
-    <h5 class="text-left mt-0"> Attracting and Retaining Talent:</h5>
-        <ul class="text-dark mb-4" style="font-family: sans-serif">
-            <li>Poor device performance leads to extended working hours, impacting employee stress, frustration, and overall wellbeing. It hinders engagement with the EY employer brand.</li>
-            <li>Disparities in device access between home and office spaces create challenges for employees, affecting wellbeing and limiting flexibility in work choices.</li>
-            <li>Suboptimal device setups impede productivity, requiring a shift from a one-size-fits-all approach to accommodate varied role and personal context needs.</li>
-        </ul><br>
-       
-    <h5 class="text-left mt-0">Brand Equity:</h5>
-     <p class="text-dark mb-4" style="font-family: sans-serif">
-         Client expectations for quality align with EY's brand, requiring devices that reinforce, not undermine, the EY image.
-        <br><br>
-    </p>
 </div>
+<div class="wrap">
+  <div class="hero-card">
+    <img style="width:100%;max-height:420px;object-fit:cover;display:block;" src="../img/woman_devices.webp" alt="Device strategy"/>
+  </div>
 
-<h2 class="text-left mt-0">Approach: Empower Employees by Addressing Device Needs</h2>
-         <p class="text-dark mb-4" style= "font-family: sans-serif">       
-       <b>Technology's Impact on Employee Engagement, Satisfaction, and Productivity:</b>
-             <br> Seamless workflow, or 'flow,' is achieved when technology is purpose-fit, frictionless, and unobtrusive – the core of the Device Needs Strategy. In this state, employees can fully engage with the EY employer brand, find satisfaction in their technology and broader EY experience, and enhance their productivity.<br><br>
+  <div class="doc-section">
+    <h2>The problem</h2>
+    <p class="doc-p">Since COVID-19, hybrid working became the dominant model at EY — employees spending 49% of their time remotely in FY24, up from 10% in FY19. As virtual work became central, the tools enabling that work became critical to employee experience and productivity.</p>
+    <p class="doc-p">The proliferation of localized device lifecycle customization created inefficiencies, inflated costs, and inconsistent experiences across global member firms.</p>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-n">49%</div><div class="stat-l">Remote FY24</div></div>
+      <div class="stat-box"><div class="stat-n">400k+</div><div class="stat-l">Employees</div></div>
+      <div class="stat-box"><div class="stat-n">3</div><div class="stat-l">Pillars</div></div>
+      <div class="stat-box"><div class="stat-n">5</div><div class="stat-l">Work packages</div></div>
+    </div>
+  </div>
 
-The Device Needs strategy consists of three pillars, each playing a pivotal role in enhancing the employee experience, optimizing operational efficiency, and contributing to the overall success of EY Member Firms.<br><br></p>
-  
- 
-    <!-- Pillar 1 -->
-<div class="container-fluid p-0">
-  <div class="row">
-    <div class="col-lg-12 col-sm-12">
-      <div class="table table-cell">
-        <div class="table-header" style= "font-family: sans-serif">Pillar 1: Consumer Grade Experience</div>
-        <div class="text-dark table-content">
-          <ul style="font-family: sans-serif;">
-            <li><b>Elevated Acquisition Experience:</b> Enhance device acquisition process, meeting consumer-grade expectations to strengthen the brand, engage employees, and retain top talent in EY Member Firms.</li>
-              <li><b>Guided and Informed Decision-Making:</b> Present a curated consumer-grade menu aligned with unique performance needs for an intuitive end-to-end experience.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Pillar 2 -->
-    <div class="col-lg-12 col-sm-12">
-      <div class="table table-cell">
-        <div class="table-header" style= "font-family: sans-serif">Pillar 2: Segmentation Model</div>
-        <div class="text-dark table-content">
-          <ul style="font-family: sans-serif;">
-            <li><b>The Right Menu and Match:</b> Tailor laptops based on role-driven, unique performance needs. Leverage segmentation to understand employee populations, enabling the provision of the right laptops, and offer choice for individual preferences.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <div class="doc-section">
+    <h2>Strategic framework</h2>
+    <h3>Pillar 1 — Consumer grade experience</h3>
+    <p class="doc-p">Elevate device acquisition to meet consumer-grade expectations — a curated, guided end-to-end experience that strengthens EY's employer brand and retains top talent.</p>
+    <h3>Pillar 2 — Segmentation model</h3>
+    <p class="doc-p">Tailor device offerings based on role-driven performance needs — matching the right laptop to the right employee using telemetry and application-level analysis across 191 specialist apps.</p>
+    <h3>Pillar 3 — Telemetry-driven refresh</h3>
+    <p class="doc-p">Proactively address poor-performing devices before users are impacted — improving NPS and productivity while extending asset lifecycles when performance data supports it.</p>
+    <div class="callout"><div class="callout-icon">💡</div><p>Seamless workflow is achieved when technology is purpose-fit, frictionless, and unobtrusive. The Device Needs strategy is built around this principle: right tools, right people, right time.</p></div>
+  </div>
 
-    <!-- Pillar 3 -->
-    <div class="col-lg-12 col-sm-12">
-      <div class="table table-cell">
-        <div class="table-header" style= "font-family: sans-serif">Pillar 3: Telemetry-Driven Refresh</div>
-        <div class="text-dark table-content">
-          <ul style="font-family: sans-serif;">
-            <li><b>Data-driven, Performance-based Refresh:</b>  Proactively address poor-performing laptops before user impact, improving NPS and increasing productivity. Realizing cost savings by extending the typical asset lifecycle when possible.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <div class="doc-section">
+    <h2>Deliverables</h2>
+    <a class="deliverable" href="https://docs.google.com/presentation/d/1DAvGrP9KSVj-_Z_hZRZXr8i4_DL1YjaZ/view" target="_blank"><div><div class="dl-l">Workshop deck</div><div class="dl-n">Refresh Shipped Device — Workshop Summary</div></div><span class="dl-arr">↗</span></a>
+    <a class="deliverable" href="https://docs.google.com/presentation/d/1PuChe9gMmWl910mW37JA9SPlC5z6-z22/view" target="_blank"><div><div class="dl-l">Strategy deck</div><div class="dl-n">Refresh Shipped Device — Target State</div></div><span class="dl-arr">↗</span></a>
+    <a class="deliverable" href="https://docs.google.com/presentation/d/1cqrMLjfJOpPinxYwnFiQwexZX5EpVtuq/view" target="_blank"><div><div class="dl-l">Research deck</div><div class="dl-n">Experience Insights</div></div><span class="dl-arr">↗</span></a>
+    <a class="deliverable" href="https://docs.google.com/presentation/d/1ueqJ4rPlZdC98xKIXi4D8cz6hhUptUGa/view" target="_blank"><div><div class="dl-l">Analysis</div><div class="dl-n">Experience Enhancement Analysis</div></div><span class="dl-arr">↗</span></a>
+  </div>
+</div>
+<div class="next-bar">
+  <div class="next-inner">
+    <div class="next-label">More work</div>
+    <div class="next-grid"><a class="next-card" href="project1.html"><div class="next-co">EY</div><div class="next-title">Free Text Analysis Tool</div></a><a class="next-card" href="project2.html"><div class="next-co">NCR Corporation</div><div class="next-title">Self-checkout Benchmark Audit</div></a><a class="next-card" href="project3.html"><div class="next-co">Pursuant Health</div><div class="next-title">Cleveland Clinic Health Age</div></a></div>
   </div>
 </div>
 
-
-
-              <br><br>
-
-<h2 class="text-left mt-0">The Consumer Grade Experience</h2>
-         <p class="text-dark mb-4" style= "font-family: sans-serif">
-                                    
-The Consumer Grade Experience Layer serves as the linchpin, with the Segmentation Model and Telemetry-Driven Refresh acting as integral components, collectively shaping and enhancing the overall user experience. Through this integration, users experience the full spectrum of benefits, resulting in an easy-to-use and enjoyable overall device journey. <br><br>Leading the charge in this transformative initiative, I curated a comprehensive work package consisting of a Service Blueprint, Experience Audit, Visioning Workshop, Near-term Enhancements, and a Target State framework to deliver immediate value while laying the groundwork for future opportunities. This work package serves as a template for other device acquisition use cases, providing a scalable and adaptable model for achieving excellence in user experience.<br><br>
-             
-             <h2 class="text-left mt-0">Deliverables: Work Package Components</h2>
-         <br> <br>
-         <div class="container-fluid">
-    <div class="row">
-
- <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" class="text-dark mb-4" style="font-family: sans-serif" id="blueprint-tab" data-toggle="tab" href="#blueprint" role="tab" aria-controls="Service Blueprint" aria-selected="true"><h6>Service Blueprint</h6></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" class="text-dark mb-4" style="font-family: sans-serif" id="audit-tab" data-toggle="tab" href="#audit" role="tab" aria-controls="Experience Audit" aria-selected="false"><h6>Experience Audit</h6></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" class="text-dark mb-4" style="font-family: sans-serif" id="workshop-tab" data-toggle="tab" href="#workshop" role="tab" aria-controls="Visioning Workshop" aria-selected="false"><h6>Visioning Workshop</h6></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" class="text-dark mb-4" style="font-family: sans-serif" id="enhancements-tab" data-toggle="tab" href="#enhancements" role="tab" aria-controls="Near-term Enhancements" aria-selected="false"><h6>Near-term Enhancements</h6></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" class="text-dark mb-4" style="font-family: sans-serif" id="state-tab" data-toggle="tab" href="#state" role="tab" aria-controls="Target State" aria-selected="false"><h6>Target State</h6></a>
-    </li>
-</ul>
-
-<div class="tab-content" id="myTabContent">
-   <!-- Service Blueprint -->
-    <div class="tab-pane fade show active" id="blueprint" role="tabpanel" aria-labelledby="blueprint-tab">
-    <div class="row">
-        <div class="col-md-4">
-            <!-- Left column content for Service Blueprint if any -->
-        </div>
-        <div class="col-md-12 text-dark mb-4" style="font-family: sans-serif">
-            <br><br>
-            <h5 class="text-left mt-0">Service Blueprint</h5><br>
-            <p>The first phase of the process entails the creation of a visual service blueprint, meticulously detailing the end-to-end user experience. This comprehensive illustration focuses on every facet of user interactions, touchpoints, and processes, providing a clear and holistic view of the user journey. Its primary purpose is to assist designers and stakeholders in gaining a profound understanding of the use case from its initiation to completion, showcasing how it impacts users at each crucial touchpoint. By offering this panoramic insight, the blueprint becomes a valuable tool to identify and optimize processes, enhance the overall user experience, and pinpoint specific areas for improvement and refinement.</p><br>
-
-            <!-- Embed PDF -->
-            <embed src="img/portfolio/fullsize/serviceblueprint.pdf" type="application/pdf" width="100%" height="600px" />
-        </div>
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-name">Alana Lanette · alanalanette.com</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alanapendleton/" target="_blank">LinkedIn</a>
+      <a href="mailto:alanalanette@gmail.com">Email</a>
+      <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
     </div>
-</div>
- <!-- Experience Audit -->
-<div class="tab-pane fade" id="audit" role="tabpanel" aria-labelledby="audit-tab">
-    <div class="row">
-        <div class="col-md-4">
-            <!-- Left column content for Experience Audit if any -->
-        </div>
-        <div class="col-md-12 text-dark mb-4" style="font-family: sans-serif"><br><br>
-            <h5 class="text-left mt-0">Experience Audit</h5><br>
-            <p>In the subsequent phase, research and data insights are seamlessly integrated into the service blueprint, shaping the comprehensive view of the user experience. This integration enables the transformation of complex design findings into a format easily understood by non-design professionals. The goal is to provide internal teams and stakeholders with a clear grasp of the current state of the experience, aiding them in understanding the use case intricacies from start to finish. The culmination of this process results in the generation of high-level recommendations, carefully informed by an experience priority framework. These recommendations serve as strategic insights, guiding decision-making processes for the subsequent steps in the design journey.</p><br><br>
-            <!-- Embed Google Slides presentation -->
-         <div class="container" style="width: 100%;">
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ5ht4P5kNBY622Udrcl2DYRE30b6XswvBNDOdKSKg4W2b-wO_1-dTe0xMm-45c5A/embed?start=false&loop=true&delayms=60000" frameborder="0" width="100%" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">Loading...</iframe>
-</div>
-        </div>
-    </div>
-</div>
-
-<!-- Visioning Workshop -->
-<div class="tab-pane fade" id="workshop" role="tabpanel" aria-labelledby="workshop-tab">
-    <div class="row">
-        <div class="col-md-4">
-           
-            <!-- Left column content for Visioning Workshop if any -->
-        </div>
-        <div class="col-md-12 text-dark mb-4" style="font-family: sans-serif"><br><br>
-             <h5 class="text-left mt-0">Visioning Workshop</h5><br>
-            <p>Once a comprehensive understanding of the current experience has been captured and shared, a series of collaborative visioning workshops begins with the goal of surfacing key themes and insights. The primary objective is to articulate the north star or the ideal vision that will profoundly shape the strategic direction.<br><br>
-
- This workshop is structured by identifying key experience moments outlined in the experience audit. Participants are given time for each key moment to outline their ideal vision. After this session, a synthesis is performed, and discussion points are identified for further exploration in the next session. Additionally, success criteria are defined for each key moment.<br><br>
-                    
- Following the collaborative workshops, high-level recommendations emerge, informing the roadmap for the target state of the use case. The outputs of the visioning workshops are summarized, emphasizing key themes and insights that guide the strategic direction.</p><br><br>
-  <h5 class="text-left mt-0">Workshop Summary</h5><br><br> 
-            <!-- Embed Google Slides presentation -->
-             <div class="container" style="width: 100%;">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSijAqpjSNR3IXJjHUEyYxRDu_hvNn9Sdp8HfSJolotCoEwfXm9NJWZTTiButeKhA/embed?start=false&loop=true&delayms=60000" frameborder="0" width="100%" height="591" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">Loading...</iframe> <br> <br> 
-</div>
-                 <br><br>
-                 
-            <!-- Visioning Workshop Images -->
-            <h5 class="text-left mt-0">Workshop Artifacts</h5><br><br>
-            <img src="img/workshop1.png" alt="Visioning Workshop Image 1" class="img-fluid">
-            <img src="img/workshop2.png" alt="Visioning Workshop Image 2" class="img-fluid">
-            <img src="img/workshop3.png" alt="Visioning Workshop Image 3" class="img-fluid">
-        </div>
-      
-    </div>
-</div>
-
-
-<!-- Near-term Enhancements -->
-<div class="tab-pane fade" id="enhancements" role="tabpanel" aria-labelledby="enhancements-tab">
-    <div class="row">
-        <div class="col-md-4">
-            <!-- Left column content for Near-term Enhancements if any -->
-        </div>
-        <div class="col-md-12 text-dark mb-4" style="font-family: sans-serif"><br><br>
-            <h5 class="text-left mt-0">Near-term Experience Enhancements</h5><br>
-            <p>Considering budget, resourcing, and large-scale solution planning timelines is crucial in our delivery. To meet the immediate need for experience improvement while longer-term efforts are initiated, I developed a near-term, low-lift approach that yields significant enhancements. In this phase, I systematically assess the current user experience, identifying opportunities for immediate improvement. The focus is on improving low-lift, user-facing touchpoints without finalizing end-state designs.</p><br><br>
-            <!-- Embed Google Slides presentation -->
-            <div class="container" style="width: 100%;">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRXT1NOBRXQFtGGRqm7rUC29KNMPoLO1qLCmQ8SkUWKVu1miNxaAsjoMu817IC6iA/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">Loading...</iframe>
-        </div>   </div>
-    </div>
-</div>
-
-<!-- Target State -->
-<div class="tab-pane fade" id="state" role="tabpanel" aria-labelledby="state-tab">
-    <div class="row">
-        <div class="col-md-4">
-            <!-- Left column content for Target State if any -->
-        </div>
-        <div class="col-md-12 text-dark mb-4" style="font-family: sans-serif"><br><br>
-            <h5 class="text-left mt-0">Target State</h5><br>
-            <p>As a concluding element of the work package, a high-level strategic roadmap for the target state is presented. This initiative outlines key pillars and guides future design efforts, particularly emphasizing user experience, telemetry-driven refresh, and segmentation modeling as fundamental elements of the strategic framework.  This roadmap acts as a guide for upcoming design endeavors with the objective of identifying opportunities to advocate for the larger-scale solution. It succinctly summarizes the holistic target state, underscoring the Devices core strategic pillars, including user experience, telemetry-driven refresh, and segmentation modeling as pivotal components of the target state's strategic framework.
-
-</p><br><br>
-            <!-- Embed Google Slides presentation -->
-               <div class="container" style="width: 100%;">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQTjhn6oFYWQSu6YfiKeERM3Okf2R8Ae4x1Ty-Urke20X3aRzDbF6wMgfIt5zo_FA/embed?start=false&loop=true&delayms=60000" frameborder="0" width="100%" height="600" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">Loading...</iframe>
-        </div>
-        </div>
-    </div>
-</div>
-
-
-       
-
-        </section>
-    
-    
-
-<!-- Portfolio Gallery -->
-             
-    
-  <section id="portfolio">
-        <h2 class="text-center mt-0">Portfolio</h2>
-      <hr class="divider my-4"><br>
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-          
-          
-   <!-- Feature Image (spanning the top) -->
-<div class="col-lg-12" style="margin-left: 0; margin-right: 0;">
-    <a class="portfolio-box" href="project5.html">
-        <img class="img-fluid" src="img/woman_devices.webp" alt="Watercolor of female deliberating over various devices">
-        <div class="portfolio-box-caption">
-            <div class="project-name"><br>Employee Device Experience Strategy<br></div>
-            <div class="project-category text-white-50">EY</div>
-        </div>
-        
-    </a>
-</div>
-          
-<!-- Project 1 -->
-
-   <div class="col-lg-6 col-sm-12">          
-       <a class="portfolio-box" href="project1.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/FTA_thumb.webp" alt="Black and white photograph of female with graphics overlayed">
-            <div class="portfolio-box-caption">
-             
-              <div class="project-name"><br>
-                Free Text Analysis<br>
-              </div>
-                 <div class="project-category text-white-50">
-                EY
-              </div>
-            </div>
-          </a>
-        </div>
-          
-<!-- Project 2 -->
-
-   <div class="col-lg-6 col-sm-12">          <a class="portfolio-box" href="project2.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/8.webp" alt="Self Checkout UI Screen Capture">
-            <div class="portfolio-box-caption">
-             
-              <div class="project-name"><br>
-                Self-checkout Benchmark Audit<br>
-              </div>
-                 <div class="project-category text-white-50">
-               NCR
-              </div>
-            </div>
-          </a>
-        </div>
-          
-
-<!-- Project 3 -->
-          
-   
-   <div class="col-lg-6 col-sm-12">          <a class="portfolio-box" href="project3.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="Health Age Assessment Displayed on iMac Computer Desktop">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-name"><br>
-                Cleveland Clinic Health Age Assessment<br>
-              </div>
-                  <div class="project-category text-white-50">
-            Pursuant Health
-              </div>
-            </div>
-          </a>
-        </div>            
-          
-<!-- Project 4 -->                     
-          
-   <div class="col-lg-6 col-sm-12">
-          <a class="portfolio-box" href="project4.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="Graphic Icons Depicting Visual, Cognitive, Motor Skill and Audiory Aspects of Accessible Design">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-name"><br>
-                Kiosk and Web Accessibility<br>
-              </div>
-                  <div class="project-category text-white-50">
-             Pursuant Health              </div>
-            </div>
-          </a>
-        </div>
-
-        </div></div>        
-
-
-  </section>
-        
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center">
-            
-                  <h4 class="mb-4"></h4>
-
-                  <h4 class="mb-4">Let's collaborate on your next project<br><br></h4>
-               
-
-          <hr class="divider my-4">
-          <p class="h6 mb-5"></p>
-            <p class="text-dark mb-3" style= "font-family: sans-serif">
- With a background spanning both corporate giants and startup environments, I've led initiatives that significantly enhance user experiences and drive business success. Let's discuss how I can help bring your next project to life.<br><br>
-                
-        </div>
-      </div>
-              <div class="container">
-                  <div class="row justify-content-center">
-                       <div class="text-center">
-            <a class="container text-center btn btn-primary btn-xl" href="mailto:alanalanette@gmail.com">Get in touch</a></div>
-             </div>
-      </div>    
-         </div> 
-
-  </section>
-    
-    <!-- Resume -->
-   
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h5 class="mb-4">Curious about how my expertise could benefit your team? <br>Grab a copy of my resume to dive deeper into my skills and experience. </h5><br> 
-       
-      <a class="btn btn-light btn-xl" href="resume/alanalanette_resume.pdf">Download now</a>
-    </div>
-  </section>
-    
-    
-    <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center h6">alanalanette &copy; 2024</div>
-    </div>
-  </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template --> 
-  <script src="js/creative.js"></script>
-
+  </div>
+</footer>
 </body>
-
 </html>

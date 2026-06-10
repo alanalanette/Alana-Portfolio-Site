@@ -1,287 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alana Lanette — Principal UX Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #F7F6F3;
+  --ink: #1A1A1A;
+  --ink-mid: #4A4A4A;
+  --ink-dim: #787878;
+  --border: rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.14);
+  --surface: #FFFFFF;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+  --max: 1180px;
+  --r: 16px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-601MB1ZBCD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); height: 52px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-size: 0.9rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; gap: 0.15rem; align-items: center; }
+.nav-links a { font-size: 0.82rem; color: var(--ink-mid); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 8px; transition: background 0.15s, color 0.15s; }
+.nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--ink); }
+.nav-cta { background: var(--ink) !important; color: #fff !important; border-radius: 100px !important; font-weight: 500 !important; }
+.nav-cta:hover { background: #333 !important; }
 
-  gtag('config', 'G-601MB1ZBCD');
-</script>
+/* HERO */
+.hero { padding: 4rem 0 3.5rem; text-align: center; }
+.hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+.hero-sub { font-size: 0.875rem; color: var(--ink-dim); max-width: 520px; margin: 0 auto 2rem; line-height: 1.6; font-weight: 400; letter-spacing: 0.01em; }
+.hero-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 600; padding: 0.7rem 1.5rem; border-radius: 100px; text-decoration: none; transition: all 0.15s; }
+.btn-black { background: var(--ink); color: #fff; }
+.btn-black:hover { background: #333; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border-mid); }
+.btn-outline:hover { background: var(--surface); border-color: rgba(0,0,0,0.25); }
+.hero-proof { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.proof-item { text-align: center; }
+.proof-num { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); line-height: 1; }
+.proof-label { font-size: 0.72rem; color: var(--ink-dim); margin-top: 0.2rem; }
 
-    
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+/* SECTION HEADER */
+.section-header { padding: 4rem 0 2.5rem; }
+.section-header h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; color: var(--ink); line-height: 1.15; }
+.section-header p { font-size: 1rem; color: var(--ink-mid); margin-top: 0.65rem; max-width: 480px; }
 
-  <title>Alana Lanette</title>
+/* CARD GRID */
+.card-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.card-full { margin-bottom: 1rem; }
+.card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 4rem; }
 
-  <!-- Font Awesome-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+/* PROJECT CARD */
+.proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
+.proj-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.proj-card-header { padding: 1.75rem 2rem 1.5rem; }
+.proj-company { font-size: 0.7rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.35rem; }
+.proj-company::before { content: ''; width: 8px; height: 8px; border-radius: 2px; background: var(--ink); display: inline-block; flex-shrink: 0; }
+.proj-cat { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.6rem; }
+.proj-title { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); line-height: 1.25; margin-bottom: 0.5rem; }
+.proj-desc { font-size: 0.85rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 1.1rem; }
+.proj-footer { display: flex; align-items: center; justify-content: space-between; }
+.proj-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.proj-tag { font-size: 0.62rem; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 6px; background: rgba(0,0,0,0.05); color: var(--ink-dim); }
+.proj-arrow { width: 34px; height: 34px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.85rem; flex-shrink: 0; transition: background 0.15s; }
+.proj-card:hover .proj-arrow { background: #333; }
+/* Wide card header */
+.proj-card.wide .proj-card-header { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; padding: 2rem 2.5rem; }
+/* Visual panel */
+.proj-visual { flex: 1; min-height: 220px; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 1.5rem 1.5rem 0; position: relative; }
+.proj-card.wide .proj-visual { min-height: 260px; }
 
-  <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Suranna|Work+Sans:400,500,600,700" rel="stylesheet">
+/* MOCKUP ELEMENTS — reusable building blocks */
+.mock-window { background: #fff; border: 1px solid rgba(0,0,0,0.12); border-radius: 10px 10px 0 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 0.75rem; width: 100%; overflow: hidden; }
+.mock-bar { height: 8px; background: rgba(0,0,0,0.07); border-radius: 4px; margin-bottom: 0.5rem; }
+.mock-bar.short { width: 55%; }
+.mock-bar.med { width: 75%; }
+.mock-bar.long { width: 90%; }
+.mock-bar.full { width: 100%; }
+.mock-row { display: flex; gap: 0.4rem; align-items: center; margin-bottom: 0.35rem; }
+.mock-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,0.2); flex-shrink: 0; }
+.mock-chip { font-size: 0.55rem; font-weight: 600; padding: 0.12rem 0.45rem; border-radius: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+.mock-chip.green { background: rgba(34,197,94,0.15); color: #15803d; }
+.mock-chip.blue { background: rgba(59,130,246,0.15); color: #1d4ed8; }
+.mock-chip.amber { background: rgba(245,158,11,0.15); color: #b45309; }
+.mock-chip.gray { background: rgba(0,0,0,0.07); color: #555; }
+.mock-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; padding: 0.6rem 0.75rem; margin-bottom: 0.35rem; }
+.mock-card-title { font-size: 0.6rem; font-weight: 600; color: #1A1A1A; margin-bottom: 0.25rem; }
+.mock-card-body { font-size: 0.52rem; color: #666; line-height: 1.4; }
+.mock-panel { background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 0.65rem 0.85rem; margin-bottom: 0.4rem; }
+.mock-panel-label { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #888; margin-bottom: 0.3rem; }
+.mock-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; }
+.stacked { display: flex; flex-direction: column; gap: 0.35rem; width: 100%; }
+.layers { position: relative; width: 100%; height: 180px; }
+.layer { position: absolute; background: #fff; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; }
 
+/* ABOUT STRIP */
+.about-strip { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin: 1rem 0 4rem; overflow: hidden; }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; }
+.about-left { padding: 3rem; border-right: 1px solid var(--border); }
+.about-right { padding: 3rem; }
+.about-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1rem; }
+.about-h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; font-style: italic; letter-spacing: -0.01em; color: var(--ink); line-height: 1.2; margin-bottom: 1rem; }
+.about-p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.75rem; }
+.about-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--border-mid); margin-bottom: 1.25rem; display: block; }
+.timeline { margin-top: 1.25rem; }
+.tl { display: grid; grid-template-columns: 86px 1fr; gap: 0 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+.tl:last-child { border-bottom: none; }
+.tl-y { font-size: 0.68rem; color: var(--ink-dim); }
+.tl-r { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
+.tl-c { font-size: 0.72rem; color: var(--ink-dim); }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+.skill-item { background: rgba(0,0,0,0.04); border-radius: 8px; padding: 0.65rem 0.85rem; font-size: 0.78rem; font-weight: 500; color: var(--ink-mid); }
+.resume-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.5rem; font-size: 0.82rem; font-weight: 600; background: var(--ink); color: #fff; padding: 0.55rem 1.25rem; border-radius: 100px; text-decoration: none; transition: background 0.15s; }
+.resume-btn:hover { background: #333; }
+.resume-btn::after { content: '→'; }
 
-  <!-- Plugin CSS -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+/* FOOTER */
+footer { border-top: 1px solid var(--border); }
+.footer-wrap { max-width: var(--max); margin: 0 auto; padding: 1.5rem var(--gutter); display: flex; justify-content: space-between; align-items: center; }
+.footer-name { font-size: 0.82rem; font-weight: 600; color: var(--ink-mid); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.75rem; color: var(--ink-dim); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: var(--ink); }
 
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="css/alanalanette.css" rel="stylesheet">
-
+@media (max-width: 860px) {
+  .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+  .proj-card.wide .proj-card-header { grid-template-columns: 1fr; }
+  .about-inner { grid-template-columns: 1fr; }
+  .about-left { border-right: none; border-bottom: 1px solid var(--border); }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero-proof { gap: 1.25rem; }
+  .footer-wrap { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+</style>
 </head>
-<link rel='shortcut icon' type='image/x-icon' href='img/alanalanette_favicon.png'/>
+<body>
 
-<body id="page-top">
-    
-
-  
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="index.html">Alana Lanette</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive" align="right">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0 ">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">PORTFOLIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">CONTACT</a>
-          </li>
-        </ul>
-      </div>
+<nav>
+  <div class="nav-wrap">
+    <a class="nav-logo" href="#">Alana Lanette</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
+      <a href="mailto:alanalanette@gmail.com" class="nav-cta">Get in touch</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-<!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-0 align-self-end">
-          <h1 class="text text-white font-weight-regular">UX Design | Strategy | Research
-</h1>
-        
-        </div>
-        <div class="col-lg-10 align-self-baseline">
-          <h6 class="text-white-75 font-weight-light mb-3">CREATING REMARKABLE DIGITAL EXPERIENCES
-</h6><br><br>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#hello">About Me</a>
-        </div>
-      </div>
+<!-- HERO -->
+<div class="wrap">
+  <section class="hero">
+    <h1>Where complex systems<br>meet clear design.</h1>
+    <p class="hero-sub">Principal UX Designer leading AI and enterprise product design. 15+ years across complex systems, healthcare, and global enterprise.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-black">View work</a>
+      <a href="resume/alanalanette_resume.pdf" class="btn btn-outline" target="_blank">Download résumé</a>
     </div>
-  </header>
-
-<!-- About Section -->
-  <section class="page-section bg-primary" id="hello">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="text-white mt-0 row justify-content-center">Nice to meet you</h2>
-          <hr class="divider light mb-5">
-          <p class="text-white mb-3" style= "font-family: sans-serif">As a seasoned UX professional with extensive experience in design, strategy and research, I'm driven to create evidence-based designs that prioritize user needs. With a natural sense of empathy and curiosity, I've been drawn to user-centered design for over a decade.<br><br>
-
-After leading experience design at a healthcare technology startup, I expanded my expertise by completing the MS HCI (Master of Science in Human-Computer Interaction) program at The Georgia Institute of Technology. In my recent role at EY, I have utilized my advanced skillset to design user-centered enterprise technology, focusing on enhancing the employee experience and optimizing costs. <br><br>
-              
-</p>        
-          <div class="btn-xl col-mb-0 text-center"> 
-    <a class="btn btn-light btn-xl js-scroll-trigger" href="#corecompetencies">See What I Can Do</a> 
+  </section>
 </div>
-          </div>
-      </div>
-    </div>
-  </section>
-    
-    
 
-  <!-- Skills Section -->
-  <section class="page-section" id="corecompetencies">
-    <div class="container" >
-      <h2 class="text-center mt-0">Core Competencies</h2>
-      <hr class="divider my-4">
-      <div class="row ">
-          
-      
-        <div class="col-lg-4 col-md-12 text-left">
-          <div class="mt-5">
-           <img class="img-fluid my-4" style="max-width: 220px" src="img/web_icons-01.png" alt="Graphic Icon Depicting Wireframing and Prototyping Activities">
-            <h3 class="h4 mb-4">DESIGN</h3>
-            <p class="mb-0" style= "font-family: sans-serif">I create user-centered systems by blending a strong foundation in visual design with an iterative, collaborative design process, resulting in a holistic and effective end product.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-12 text-left">
-          <div class="mt-5">
-           <img class="img-fluid my-4" style="max-width: 220px" src="img/web_icons-02.png" alt="Graphic Icon Depicting Front-End Coding Activities">
-            <h3 class="h4 mb-4">STRATEGY</h3>
-            <p class= "mb-0" style= "font-family: sans-serif">I combine strategic thinking and management skills to guide cross-functional teams in the creation of innovative solutions that meet business objectives and user needs.</p>
-          </div>
-        </div>  
-            <div class="col-lg-4 col-md-12 text-left" >
-          <div class="mt-5">
-           <img class="img-fluid my-4" style="max-width: 220px"  src="img/web_icons-03.png" alt="Graphic Icon Depicting User Research Activities">
-            <h3 class="h4 mb-4">RESEARCH</h3>
-            <p class="mb-0" style= "font-family: sans-serif">I employ an evidence-driven design approach that leverages comprehensive formative and summative research methods to inform the design process.</p>
-          </div>
-        </div>
-          
-      </div>
-    </div> 
-  </section>
+<!-- WORK -->
+<div class="wrap" id="work">
+  <div class="section-header">
+    <h2>Selected work.</h2>
+    <p>Projects across AI platform design, enterprise UX, healthcare, and accessibility.</p>
+  </div>
 
-<!-- Portfolio Gallery -->
-             
-    
-  <section id="portfolio">
-        <h2 class="text-center mt-0">Portfolio</h2>
-      <hr class="divider my-4"><br>
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-          
-          
-   <!-- Feature Image (spanning the top) -->
-<div class="col-lg-12" style="margin-left: 0; margin-right: 0;">
-    <a class="portfolio-box" href="project5.html">
-        <img class="img-fluid" src="img/woman_devices.webp" alt="Watercolor of female deliberating over various devices">
-        <div class="portfolio-box-caption">
-            <div class="project-name"><br>Employee Device Experience Strategy<br></div>
-            <div class="project-category text-white-50">EY</div>
+  <!-- Row 1: 2 cards -->
+  <div class="card-grid-2">
+    <!-- Card 1: AI Platform -->
+    <a class="proj-card" href="portfolio/project5.html" style="--panel:#E8E6F0;">
+      <div class="proj-card-header">
+        <div>
+          <div class="proj-company">OneTrust</div>
+          <div class="proj-cat">AI Platform Strategy</div>
+          <div class="proj-title">Making enterprise AI feel connected.</div>
+          <p class="proj-desc">A platform strategy for Copilot, agents, orchestration, and governed AI experiences at OneTrust.</p>
+          <div class="proj-footer">
+            <div class="proj-tags"><span class="proj-tag">AI/ML UX</span><span class="proj-tag">Platform</span><span class="proj-tag">0→1</span></div>
+            <div class="proj-arrow">→</div>
+          </div>
         </div>
-        
+      </div>
+      <div class="proj-visual" style="background:#ECEAF6; padding:0; overflow:hidden; min-height:220px;">
+        <img src="img/woman_devices.webp" alt="AI Platform Design" style="width:100%;height:100%;min-height:220px;object-fit:cover;object-position:center;display:block;opacity:0.92;"/>
+      </div>
     </a>
-</div>
-          
-<!-- Project 1 -->
-
-   <div class="col-lg-6 col-sm-12">          
-       <a class="portfolio-box" href="project1.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/FTA_thumb.webp" alt="Black and white photograph of female with graphics overlayed">
-            <div class="portfolio-box-caption">
-             
-              <div class="project-name"><br>
-                Free Text Analysis<br>
-              </div>
-                 <div class="project-category text-white-50">
-                EY
-              </div>
-            </div>
-          </a>
-        </div>
-          
-<!-- Project 2 -->
-
-   <div class="col-lg-6 col-sm-12">          
-       <a class="portfolio-box" href="project2.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/8.webp" alt="Self Checkout UI Screen Capture">
-            <div class="portfolio-box-caption">
-              <div class="project-name"><br>
-                Self-checkout Benchmark Audit<br>
-              </div>
-                 <div class="project-category text-white-50">
-               NCR
-              </div>
-            </div>
-          </a>
-        </div>
-          
-
-<!-- Project 3 -->
-          
-   
-   <div class="col-lg-6 col-sm-12">          
-       <a class="portfolio-box" href="project3.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.webp" alt="Health Age Assessment Displayed on iMac Computer Desktop">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-name"><br>
-                Cleveland Clinic Health Age Assessment<br>
-              </div>
-                  <div class="project-category text-white-50">
-            Pursuant Health
-              </div>
-            </div>
-          </a>
-        </div>            
-          
-<!-- Project 4 -->                     
-          
-   <div class="col-lg-6 col-sm-12">
-          <a class="portfolio-box" href="project4.html">
-            <img class="img-fluid" src="img/portfolio/thumbnails/10.webp" alt="Graphic Icons Depicting Visual, Cognitive, Motor Skill and Auditory Aspects of Accessible Design">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-name"><br>
-                Kiosk and Web Accessibility<br>
-              </div>
-                  <div class="project-category text-white-50">
-             Pursuant Health              </div>
-            </div>
-          </a>
-        </div>
-
-        </div></div>        
-
-
-  </section>
-        
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center">         
-<h4 class="mb-4"></h4>
-<h4 class="mb-4">Let's collaborate on your next project<br><br></h4>            
-
-<hr class="divider my-4">
-<p class="h6 mb-5"></p>
-<p class="text-dark mb-3" style= "font-family: sans-serif">
-    With a background spanning both corporate giants and startup environments, I've led initiatives that significantly enhance user experiences and drive business success. Let's discuss how I can help bring your next project to life.</p><br><br>
-                
+    <!-- Card 2: EY Device Strategy -->
+    <a class="proj-card" href="portfolio/project5.html">
+      <div class="proj-card-header">
+        <div>
+          <div class="proj-company">EY</div>
+          <div class="proj-cat">Service Design</div>
+          <div class="proj-title">Simplifying the employee technology journey.</div>
+          <p class="proj-desc">A three-pillar strategy to reduce friction across device refresh, support, and touchpoints for 400,000+ global employees.</p>
+          <div class="proj-footer">
+            <div class="proj-tags"><span class="proj-tag">Service Design</span><span class="proj-tag">Enterprise</span><span class="proj-tag">Strategy</span></div>
+            <div class="proj-arrow">→</div>
+          </div>
         </div>
       </div>
-              <div class="container">
-                  <div class="row justify-content-center">
-                       <div class="text-center">
-            <a class="container text-center btn btn-primary btn-xl" href="mailto:alanalanette@gmail.com">Get in touch</a></div>
-             </div>
-      </div>    
-         </div> 
+      <div class="proj-visual" style="background:#F0EDE6; padding:0; overflow:hidden; min-height:220px;">
+        <img src="img/woman_devices.webp" alt="EY Device Strategy" style="width:100%;height:100%;min-height:220px;object-fit:cover;object-position:center;display:block;opacity:0.92;"/>
+      </div>
+    </a>
+  </div>
 
-  </section>
-    
-    <!-- Resume -->
-   
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h5 class="mb-4">Curious about how my expertise could benefit your team? <br>Grab a copy of my resume to dive deeper into my skills and experience.</h5><br> 
-       
-      <a class="btn btn-light btn-xl" href="resume/alanalanette_resume.pdf">Download now</a>
+  <!-- Row 2: 4 project cards 2x2 -->
+  <div class="card-grid-2" style="margin-bottom:4rem;">
+
+    <!-- Card: Free Text Analysis -->
+    <a class="proj-card" href="portfolio/project1.html">
+      <div class="proj-card-header">
+        <div class="proj-company">EY</div>
+        <div class="proj-cat">Research Synthesis</div>
+        <div class="proj-title">Turning open feedback into actionable insight.</div>
+        <p class="proj-desc">A qualitative research framework for interpreting unstructured employee feedback at global scale.</p>
+        <div class="proj-footer" style="margin-top:1rem;">
+          <div class="proj-tags"><span class="proj-tag">Research</span><span class="proj-tag">IA</span></div>
+          <div class="proj-arrow">→</div>
+        </div>
+      </div>
+      <div class="proj-visual" style="background:#F0EFEC; padding:0; overflow:hidden; min-height:200px;">
+        <img src="img/portfolio/thumbnails/FTA_thumb.webp" alt="Free Text Analysis" style="width:100%;height:100%;min-height:200px;object-fit:cover;object-position:center;display:block;opacity:0.92;"/>
+      </div>
+    </a>
+
+    <!-- Card: SCO Audit -->
+    <a class="proj-card" href="portfolio/project2.html">
+      <div class="proj-card-header">
+        <div class="proj-company">NCR Corporation</div>
+        <div class="proj-cat">Benchmarking</div>
+        <div class="proj-title">Finding friction in everyday retail flows.</div>
+        <p class="proj-desc">A competitive UX audit of self-checkout experiences for Walmart, using heatmaps and task analysis.</p>
+        <div class="proj-footer" style="margin-top:1rem;">
+          <div class="proj-tags"><span class="proj-tag">UX Audit</span><span class="proj-tag">Retail</span></div>
+          <div class="proj-arrow">→</div>
+        </div>
+      </div>
+      <div class="proj-visual" style="background:#E8EEF5; padding:0; overflow:hidden; min-height:200px;">
+        <img src="img/portfolio/thumbnails/8.webp" alt="Self-checkout Audit" style="width:100%;height:100%;min-height:200px;object-fit:cover;object-position:center;display:block;opacity:0.92;"/>
+      </div>
+    </a>
+
+    <!-- Card: Cleveland Clinic -->
+    <a class="proj-card" href="portfolio/project3.html">
+      <div class="proj-card-header">
+        <div class="proj-company">Pursuant Health</div>
+        <div class="proj-cat">Healthcare UX</div>
+        <div class="proj-title">Helping people understand their health story.</div>
+        <p class="proj-desc">NCQA-certified health assessment deployed across 5,000 Walmart kiosks reaching 30M+ users annually.</p>
+        <div class="proj-footer" style="margin-top:1rem;">
+          <div class="proj-tags"><span class="proj-tag">Healthcare</span><span class="proj-tag">NCQA</span></div>
+          <div class="proj-arrow">→</div>
+        </div>
+      </div>
+      <div class="proj-visual" style="background:#EEF2F0; padding:0; overflow:hidden; min-height:200px;">
+        <img src="img/portfolio/thumbnails/1.webp" alt="Cleveland Clinic Health Age" style="width:100%;height:100%;min-height:200px;object-fit:cover;object-position:center;display:block;opacity:0.92;"/>
+      </div>
+    </a>
+
+    <!-- Card: Accessibility -->
+    <a class="proj-card" href="portfolio/project4.html">
+      <div class="proj-card-header">
+        <div class="proj-company">Pursuant Health</div>
+        <div class="proj-cat">Accessibility</div>
+        <div class="proj-title">Making healthcare access more inclusive.</div>
+        <p class="proj-desc">A multi-year WCAG 2.0 and CFR 382 remediation across kiosk and web platforms.</p>
+        <div class="proj-footer" style="margin-top:1rem;">
+          <div class="proj-tags"><span class="proj-tag">WCAG 2.0</span><span class="proj-tag">Kiosk</span></div>
+          <div class="proj-arrow">→</div>
+        </div>
+      </div>
+      <div class="proj-visual" style="background:#E6F2F0; padding:0; overflow:hidden; min-height:200px;">
+        <img src="img/portfolio/thumbnails/10.webp" alt="Kiosk Accessibility" style="width:100%;height:100%;min-height:200px;object-fit:cover;object-position:center;display:block;opacity:0.92;"/>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="wrap" id="about">
+  <div class="about-strip">
+    <div class="about-inner">
+      <div class="about-left">
+        <img class="about-avatar" src="img/alana_headshot.jpg" alt="Alana Lanette"/>
+        <div class="about-tag">About</div>
+        <h2 class="about-h2">Evidence-based. Human-centered. Built to scale.</h2>
+        <p class="about-p">I'm a Principal UX Designer driven to create evidence-based designs that prioritize user needs. With 15+ years across healthcare technology, retail, enterprise consulting, and AI platform design, I've learned that the best experiences come from deep research, clear thinking, and close collaboration.</p>
+        <p class="about-p">I began my UX career at Pursuant Health — scaling a kiosk health platform to 30M+ users — then brought that expertise to EY, and now to AI-first product design at OneTrust. MS HCI, Georgia Tech.</p>
+        <div class="timeline">
+          <div class="tl"><div class="tl-y">2024–now</div><div><div class="tl-r">Principal UX Designer</div><div class="tl-c">OneTrust</div></div></div>
+          <div class="tl"><div class="tl-y">2021–2024</div><div><div class="tl-r">Asst Director, UX Lead</div><div class="tl-c">EY</div></div></div>
+          <div class="tl"><div class="tl-y">2020–2021</div><div><div class="tl-r">UX Designer</div><div class="tl-c">NCR Corporation</div></div></div>
+          <div class="tl"><div class="tl-y">2013–2019</div><div><div class="tl-r">Director of UX</div><div class="tl-c">Pursuant Health</div></div></div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-tag">Core competencies</div>
+        <div class="skills-grid">
+          <div class="skill-item">UX Strategy</div>
+          <div class="skill-item">AI Experience Design</div>
+          <div class="skill-item">Research &amp; Synthesis</div>
+          <div class="skill-item">Service Design</div>
+          <div class="skill-item">Enterprise Product</div>
+          <div class="skill-item">Accessibility (WCAG)</div>
+          <div class="skill-item">Design Systems</div>
+          <div class="skill-item">Stakeholder Alignment</div>
+          <div class="skill-item">Journey Mapping</div>
+          <div class="skill-item">Usability Testing</div>
+        </div>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+          <div class="about-tag">Education</div>
+          <div style="font-size:0.88rem;font-weight:600;color:var(--ink);margin-top:0.4rem;">MS Human-Computer Interaction</div>
+          <div style="font-size:0.8rem;color:var(--ink-dim);margin-top:0.15rem;">Georgia Institute of Technology</div>
+        </div>
+        <a class="resume-btn" href="resume/alanalanette_resume.pdf" target="_blank">Download résumé</a>
+      </div>
     </div>
-  </section>
-    
-    <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center h6">alanalanette &copy; 2024</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-name">Alana Lanette · alanalanette.com</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/alanapendleton/" target="_blank">LinkedIn</a>
+      <a href="mailto:alanalanette@gmail.com">Email</a>
+      <a href="resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
     </div>
-  </footer>
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template --> 
-  <script src="js/creative.js"></script>
+  </div>
+</footer>
 
 </body>
-
 </html>
