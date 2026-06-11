@@ -12,29 +12,17 @@
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #F7F6F3;
-  --surface: #FFFFFF;
-  --surface2: #F1F0ED;
-  --ink: #1A1A1A;
-  --ink-mid: #4A4A4A;
-  --ink-dim: #888;
-  --border: rgba(0,0,0,0.08);
-  --border-mid: rgba(0,0,0,0.14);
+  --bg: #F7F6F3; --surface: #FFFFFF; --surface2: #F1F0ED;
+  --ink: #1A1A1A; --ink-mid: #4A4A4A; --ink-dim: #888;
+  --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14);
   --sans: 'Inter', system-ui, sans-serif;
   --serif: 'Playfair Display', Georgia, serif;
-  --max: 1240px;
-  --pad: clamp(1.25rem, 5vw, 4.5rem);
-  --r: 14px;
-  --card-gap: 1.25rem;
-  --panel-h: 260px;
+  --max: 1240px; --pad: clamp(1.25rem, 5vw, 4.5rem);
+  --r: 14px; --card-gap: 1.25rem; --panel-h: 340px;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-
-/* ── LAYOUT ── */
 .page { max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
-
-/* ── NAV ── */
 nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); height: 52px; display: flex; justify-content: space-between; align-items: center; }
 .nav-logo { font-size: 0.875rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
@@ -43,10 +31,8 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--ink); }
 .nav-cta { background: var(--ink) !important; color: #fff !important; border-radius: 100px !important; font-weight: 500 !important; }
 .nav-cta:hover { background: #333 !important; }
-
-/* ── HERO ── */
 .hero { padding: 4rem 0 3rem; }
-.hero-kicker { font-size: 0.75rem; color: var(--ink-dim); margin-bottom: 1.1rem; display: flex; align-items: center; gap: 0.45rem; letter-spacing: 0.01em; }
+.hero-kicker { font-size: 0.75rem; color: var(--ink-dim); margin-bottom: 1.1rem; display: flex; align-items: center; gap: 0.45rem; }
 .hero-dot { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; flex-shrink: 0; }
 .hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 3.5vw, 3.4rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1.12; color: var(--ink); margin-bottom: 1rem; max-width: 620px; }
 .hero-sub { font-size: 0.9375rem; color: var(--ink-mid); max-width: 480px; line-height: 1.7; margin-bottom: 1.75rem; }
@@ -56,21 +42,12 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .btn-black:hover { background: #333; transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border-mid); }
 .btn-outline:hover { background: var(--surface); border-color: rgba(0,0,0,0.25); }
-
-/* ── WORK SECTION ── */
 .work { padding-top: 3.5rem; padding-bottom: 5rem; }
 .work-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1.5rem; }
-
-/* ── 2-COLUMN CARD GRID ── */
 .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--card-gap); margin-bottom: var(--card-gap); }
 .card-grid.last-row { margin-bottom: 0; }
-/* Full-width final card */
-.card-full { margin-bottom: 0; }
-
-/* ── PROJECT CARD ── */
 .proj { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: box-shadow 0.18s, transform 0.18s; }
 .proj:hover { box-shadow: 0 6px 32px rgba(0,0,0,0.09); transform: translateY(-2px); }
-/* Header — equal height via flex */
 .proj-hd { padding: 1.625rem 1.75rem 1.375rem; display: flex; flex-direction: column; flex: 1; }
 .proj-co { font-size: 0.7rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.3rem; }
 .proj-co::before { content: ''; width: 7px; height: 7px; border-radius: 2px; background: var(--ink); display: inline-block; flex-shrink: 0; }
@@ -82,33 +59,11 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .proj-tag { font-size: 0.6rem; font-weight: 500; padding: 0.17rem 0.5rem; border-radius: 5px; background: rgba(0,0,0,0.05); color: var(--ink-dim); }
 .proj-arrow { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8rem; flex-shrink: 0; transition: background 0.15s; }
 .proj:hover .proj-arrow { background: #333; }
-
-/* ── VISUAL PANEL ── */
 .proj-vis { height: var(--panel-h); flex-shrink: 0; position: relative; overflow: hidden; }
-.proj-vis img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.proj-vis .fade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.1) 45%, transparent 100%); }
-.proj-vis .vcaps { position: absolute; top: 0.75rem; left: 0.75rem; display: flex; gap: 0.3rem; }
-.vcap { background: rgba(0,0,0,0.48); backdrop-filter: blur(8px); border-radius: 100px; padding: 0.18rem 0.45rem; }
-.vcap-l { display:none; }
-.vcap-v { font-size: 0.6rem; font-weight: 600; color: #fff; letter-spacing:0.01em; }
-
-/* ── MOCKUP PANEL (no photo) ── */
-.mock-panel { height: var(--panel-h); flex-shrink: 0; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 1.25rem 1.25rem 0; }
-.mock-win { background: #fff; border: 1px solid rgba(0,0,0,0.1); border-radius: 10px 10px 0 0; box-shadow: 0 4px 24px rgba(0,0,0,0.1); padding: 0.875rem 1rem; width: 100%; }
-.mw-bar { height: 5px; background: #E5E7EB; border-radius: 3px; margin-bottom: 0.35rem; }
-.mw-bar.s { width: 45%; } .mw-bar.m { width: 68%; } .mw-bar.l { width: 88%; }
-.mw-row { display: flex; gap: 0.35rem; margin-bottom: 0.45rem; align-items: center; }
-.mw-chip { font-size: 0.5rem; font-weight: 600; padding: 0.1rem 0.4rem; border-radius: 4px; }
-.mw-chip.blue { background: rgba(99,102,241,0.12); color: #4338ca; }
-.mw-chip.green { background: rgba(34,197,94,0.12); color: #15803d; }
-.mw-chip.amber { background: rgba(245,158,11,0.12); color: #92400e; }
-.mw-chip.gray { background: rgba(0,0,0,0.06); color: #555; }
-.mw-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.35rem; margin-bottom: 0.45rem; }
-.mw-card { background: #FAFAFA; border: 1px solid rgba(0,0,0,0.07); border-radius: 6px; padding: 0.45rem 0.5rem; }
-.mw-card-t { font-size: 0.52rem; font-weight: 600; color: #1A1A1A; margin-bottom: 0.2rem; }
-.mw-card-b { font-size: 0.46rem; color: #888; line-height: 1.4; }
-
-/* ── ABOUT ── */
+.proj-vis img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.proj-vis .grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 50%, transparent 100%); }
+.pill { background: rgba(0,0,0,0.07); border-radius: 100px; padding: 0.2rem 0.65rem; font-size: 0.62rem; font-weight: 600; color: var(--ink-dim); white-space: nowrap; }
+.pill.light { background: rgba(255,255,255,0.88); color: var(--ink); }
 .about-section { background: var(--surface); border-top: 1px solid var(--border); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .about-l { padding: 3rem 3rem 3rem 0; border-right: 1px solid var(--border); }
@@ -116,11 +71,11 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .about-tag { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.85rem; }
 .about-h { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; font-style: italic; color: var(--ink); line-height: 1.2; margin-bottom: 1rem; }
 .about-p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.75rem; }
-.avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--border-mid); margin-bottom: 1.25rem; display: block; transform: scale(1.15); transform-origin: center top; }
+.avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 2px solid var(--border-mid); margin-bottom: 1.25rem; display: block; }
 .tl { margin-top: 1.25rem; }
 .tl-row { display: grid; grid-template-columns: 82px 1fr; gap: 0 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
 .tl-row:last-child { border-bottom: none; }
-.tl-y { font-size: 0.67rem; color: var(--ink-dim); padding-top: 0.05rem; }
+.tl-y { font-size: 0.67rem; color: var(--ink-dim); }
 .tl-r { font-size: 0.8rem; font-weight: 600; color: var(--ink); }
 .tl-c { font-size: 0.7rem; color: var(--ink-dim); }
 .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; margin-top: 0.75rem; }
@@ -129,31 +84,17 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .resume-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.5rem; font-size: 0.8rem; font-weight: 600; background: var(--ink); color: #fff; padding: 0.52rem 1.2rem; border-radius: 100px; text-decoration: none; }
 .resume-btn:hover { background: #333; }
 .resume-btn::after { content: '→'; }
-
-/* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); }
 .footer-inner { max-width: var(--max); margin: 0 auto; padding: 1.25rem var(--pad); display: flex; justify-content: space-between; align-items: center; }
 .footer-name { font-size: 0.8rem; font-weight: 600; color: var(--ink-mid); }
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a { font-size: 0.72rem; color: var(--ink-dim); text-decoration: none; transition: color 0.15s; }
 .footer-links a:hover { color: var(--ink); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 860px) {
-  :root { --pad: 2rem; }
-  .card-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-l { padding: 2.5rem 0; border-right: none; border-bottom: 1px solid var(--border); }
-  .about-r { padding: 2.5rem 0; }
-}
-@media (max-width: 520px) {
-  :root { --pad: 1.25rem; }
-  .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; }
-}
+@media (max-width: 860px) { :root { --pad: 2rem; } .card-grid { grid-template-columns: 1fr; } .about-grid { grid-template-columns: 1fr; } .about-l { padding: 2.5rem 0; border-right: none; border-bottom: 1px solid var(--border); } .about-r { padding: 2.5rem 0; } }
+@media (max-width: 520px) { :root { --pad: 1.25rem; } .footer-inner { flex-direction: column; gap: 0.75rem; text-align: center; } }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#">Alana Lanette</a>
@@ -180,9 +121,12 @@ footer { border-top: 1px solid var(--border); }
   <section class="work" id="work">
     <div class="work-label">Selected work</div>
     <div class="card-grid">
-      <a class="proj" href="portfolio/project_onetrust.html">
+    <a class="proj" href="portfolio/project_onetrust.html">
       <div class="proj-hd">
-        <div class="proj-co">OneTrust</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+          <div class="proj-co" style="margin-bottom:0;">OneTrust</div>
+          <div class="pill">Currently shipping</div>
+        </div>
         <div class="proj-cat">MCP · Developer Experience</div>
         <div class="proj-title">Governing AI agent access to OneTrust.</div>
         <p class="proj-desc">One piece of a larger AI-first platform strategy — the UX that lets enterprise developers create, scope, and audit AI agent credentials for governed MCP access to OneTrust.</p>
@@ -191,66 +135,16 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:linear-gradient(160deg,#E8E6F4 0%,#D4D0EE 100%); overflow:hidden;">
-        <div style="position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);width:92%;box-shadow:0 -4px 32px rgba(80,60,160,0.15),0 8px 32px rgba(0,0,0,0.14);border-radius:10px 10px 0 0;overflow:hidden;border:1px solid rgba(255,255,255,0.6);background:#fff;">
-          <!-- Mock OneTrust nav bar -->
-          <div style="background:#1a1a2e;padding:0.4rem 0.75rem;display:flex;align-items:center;gap:0.5rem;">
-            <div style="width:18px;height:18px;border-radius:4px;background:#e85d3a;display:flex;align-items:center;justify-content:center;font-size:0.45rem;font-weight:700;color:#fff;flex-shrink:0;">OT</div>
-            <div style="font-size:0.52rem;color:rgba(255,255,255,0.9);font-weight:600;">OneTrust</div>
-            <div style="margin-left:auto;background:rgba(255,255,255,0.1);border-radius:100px;padding:0.18rem 0.5rem;font-size:0.45rem;color:rgba(255,255,255,0.8);font-weight:500;">✦ Ask Copilot</div>
-          </div>
-          <!-- Credential type step -->
-          <div style="padding:0.65rem 0.75rem 0;background:#f9f9f9;">
-            <!-- Stepper -->
-            <div style="display:flex;align-items:center;gap:0;margin-bottom:0.6rem;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:6px;padding:0.35rem 0.6rem;">
-              <div style="display:flex;align-items:center;gap:0.25rem;flex:1;">
-                <div style="width:14px;height:14px;border-radius:50%;background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-size:0.38rem;color:#fff;font-weight:700;flex-shrink:0;">1</div>
-                <div style="font-size:0.48rem;font-weight:600;color:#1a1a2e;">Credential type</div>
-              </div>
-              <div style="width:20px;height:1px;background:#d1d5db;"></div>
-              <div style="display:flex;align-items:center;gap:0.25rem;flex:1;justify-content:center;">
-                <div style="width:14px;height:14px;border-radius:50%;border:1px solid #d1d5db;display:flex;align-items:center;justify-content:center;font-size:0.38rem;color:#888;font-weight:700;flex-shrink:0;">2</div>
-                <div style="font-size:0.48rem;color:#888;">Name</div>
-              </div>
-              <div style="width:20px;height:1px;background:#d1d5db;"></div>
-              <div style="display:flex;align-items:center;gap:0.25rem;flex:1;justify-content:center;">
-                <div style="width:14px;height:14px;border-radius:50%;border:1px solid #d1d5db;display:flex;align-items:center;justify-content:center;font-size:0.38rem;color:#888;font-weight:700;flex-shrink:0;">3</div>
-                <div style="font-size:0.48rem;color:#888;">Access</div>
-              </div>
-              <div style="width:20px;height:1px;background:#d1d5db;"></div>
-              <div style="display:flex;align-items:center;gap:0.25rem;flex:1;justify-content:center;">
-                <div style="width:14px;height:14px;border-radius:50%;border:1px solid #d1d5db;display:flex;align-items:center;justify-content:center;font-size:0.38rem;color:#888;font-weight:700;flex-shrink:0;">4</div>
-                <div style="font-size:0.48rem;color:#888;">User context</div>
-              </div>
-            </div>
-            <!-- Type selector -->
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem;">
-              <div style="background:#fff;border:2px solid #1a1a2e;border-radius:6px;padding:0.45rem 0.55rem;">
-                <div style="display:flex;align-items:center;gap:0.3rem;margin-bottom:0.2rem;">
-                  <div style="width:8px;height:8px;border-radius:50%;border:2px solid #1a1a2e;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><div style="width:3px;height:3px;border-radius:50%;background:#1a1a2e;"></div></div>
-                  <div style="font-size:0.5rem;font-weight:700;color:#1a1a2e;">AI Agent / MCP</div>
-                </div>
-                <div style="font-size:0.42rem;color:#666;line-height:1.4;">OBO user binding and tool-level scoping for external agents</div>
-              </div>
-              <div style="background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:6px;padding:0.45rem 0.55rem;opacity:0.6;">
-                <div style="display:flex;align-items:center;gap:0.3rem;margin-bottom:0.2rem;">
-                  <div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #aaa;flex-shrink:0;"></div>
-                  <div style="font-size:0.5rem;font-weight:600;color:#555;">Standard API</div>
-                </div>
-                <div style="font-size:0.42rem;color:#888;line-height:1.4;">Module-based access for server-to-server integrations</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="vcaps">
-          <div class="vcap"><div class="vcap-l">Scope</div><div class="vcap-v">MCP credentialing</div></div>
-          <div class="vcap"><div class="vcap-l">Status</div><div class="vcap-v">Currently shipping</div></div>
-        </div>
+      <div class="proj-vis" style="background:#B8D4C4; overflow:hidden; display:flex; align-items:flex-end; justify-content:center; padding:1.25rem 1.25rem 0;">
+        <img src="img/onetrust/mcp-step1-type.png" alt="MCP Credential Experience" style="width:100%; display:block; border-radius:8px 8px 0 0; box-shadow:0 -2px 24px rgba(0,0,0,0.18); object-fit:cover; object-position:top; max-height:240px;"/>
       </div>
     </a>
-      <a class="proj" href="portfolio/project5.html">
+    <a class="proj" href="portfolio/project5.html">
       <div class="proj-hd">
-        <div class="proj-co">EY</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+          <div class="proj-co" style="margin-bottom:0;">EY</div>
+          <div class="pill">400k+ employees</div>
+        </div>
         <div class="proj-cat">Service Design</div>
         <div class="proj-title">Simplifying the employee technology journey.</div>
         <p class="proj-desc">A three-pillar strategy to reduce friction across device refresh, support, and touchpoints for 400,000+ global employees.</p>
@@ -259,60 +153,51 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:linear-gradient(150deg,#F5EFE4 0%,#E8DDD0 100%); overflow:hidden;">
-        <div style="position:absolute;inset:0;padding:1.25rem 1.25rem 0;display:flex;flex-direction:column;gap:0.4rem;">
-          <!-- Blueprint label row -->
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.2rem;">
-            <div style="font-size:0.48rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9a7f5a;">Service blueprint · EY Device Refresh</div>
-            <div style="font-size:0.44rem;color:#b09070;">400k+ employees</div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#F5EFE4,#E8DDD0); overflow:hidden;">
+        <div style="position:absolute;inset:0;padding:1rem 1.1rem 0;">
+          <div style="font-size:0.44rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9a7f5a;margin-bottom:0.45rem;">Service blueprint · EY Device Refresh</div>
+          <div style="display:grid;grid-template-columns:60px 1fr 1fr 1fr 1fr;gap:0.22rem;">
+            <div style="font-size:0.36rem;font-weight:700;color:#9a7f5a;letter-spacing:0.05em;text-transform:uppercase;padding-top:0.15rem;"></div>
+            <div style="font-size:0.36rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Request</div>
+            <div style="font-size:0.36rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Provision</div>
+            <div style="font-size:0.36rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Support</div>
+            <div style="font-size:0.36rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Refresh</div>
           </div>
-          <!-- Lane headers -->
-          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;">
-            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;letter-spacing:0.06em;text-transform:uppercase;">Phase</div>
-            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Request</div>
-            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Provision</div>
-            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Support</div>
-            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Refresh</div>
+          <div style="height:1px;background:rgba(154,127,90,0.2);margin:0.3rem 0;"></div>
+          <div style="display:grid;grid-template-columns:60px 1fr 1fr 1fr 1fr;gap:0.22rem;margin-bottom:0.22rem;">
+            <div style="font-size:0.36rem;font-weight:600;color:#7a6040;">User actions</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Selects via role profile</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Tracks delivery</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Self-service or escalate</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Receives alert</div>
           </div>
-          <!-- Divider -->
-          <div style="height:1px;background:rgba(154,127,90,0.2);"></div>
-          <!-- User actions row -->
-          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;align-items:start;">
-            <div style="font-size:0.4rem;font-weight:600;color:#7a6040;padding-top:0.2rem;">User<br/>actions</div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Selects device via role profile portal</div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Tracks delivery status</div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Self-service portal or escalate</div>
-            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Receives proactive alert</div>
+          <div style="height:1px;background:rgba(154,127,90,0.15);margin-bottom:0.22rem;"></div>
+          <div style="display:grid;grid-template-columns:60px 1fr 1fr 1fr 1fr;gap:0.22rem;margin-bottom:0.22rem;">
+            <div style="font-size:0.36rem;font-weight:600;color:#7a6040;">Front stage</div>
+            <div style="background:rgba(220,180,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Role catalog</div>
+            <div style="background:rgba(220,180,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Auto-config</div>
+            <div style="background:rgba(220,180,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Smart triage</div>
+            <div style="background:rgba(220,180,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#5a4a30;line-height:1.35;">Telemetry</div>
           </div>
-          <!-- Divider -->
-          <div style="height:1px;background:rgba(154,127,90,0.15);"></div>
-          <!-- Frontstage row -->
-          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;align-items:start;">
-            <div style="font-size:0.4rem;font-weight:600;color:#7a6040;padding-top:0.2rem;">Front<br/>stage</div>
-            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Role-based catalog</div>
-            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Auto-config + delivery</div>
-            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Smart triage</div>
-            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Telemetry trigger</div>
-          </div>
-          <!-- Divider -->
-          <div style="height:1px;background:rgba(154,127,90,0.15);"></div>
-          <!-- Backstage row -->
-          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;align-items:start;">
-            <div style="font-size:0.4rem;font-weight:600;color:#7a6040;padding-top:0.2rem;">Back<br/>stage</div>
-            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">SCCM · ServiceNow</div>
-            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">MDM · Logistics API</div>
-            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">AI triage model</div>
-            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">Device telemetry</div>
+          <div style="height:1px;background:rgba(154,127,90,0.15);margin-bottom:0.22rem;"></div>
+          <div style="display:grid;grid-template-columns:60px 1fr 1fr 1fr 1fr;gap:0.22rem;">
+            <div style="font-size:0.36rem;font-weight:600;color:#7a6040;">Back stage</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#7a6040;line-height:1.35;">ServiceNow</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#7a6040;line-height:1.35;">MDM · Logistics</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#7a6040;line-height:1.35;">AI triage</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:3px;padding:0.25rem 0.35rem;font-size:0.36rem;color:#7a6040;line-height:1.35;">Device telemetry</div>
           </div>
         </div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-v">400k+ employees</div></div><div class="vcap"><div class="vcap-v">Service blueprint</div></div></div>
       </div>
     </a>
     </div>
     <div class="card-grid">
-      <a class="proj" href="portfolio/project1.html">
+    <a class="proj" href="portfolio/project1.html">
       <div class="proj-hd">
-        <div class="proj-co">EY</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+          <div class="proj-co" style="margin-bottom:0;">EY</div>
+          <div class="pill">400k+ employees</div>
+        </div>
         <div class="proj-cat">Research Synthesis</div>
         <div class="proj-title">Turning open feedback into actionable insight.</div>
         <p class="proj-desc">A qualitative research framework for interpreting unstructured employee feedback at global scale.</p>
@@ -321,48 +206,22 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:linear-gradient(150deg,#EEECEA 0%,#E3E0DC 100%); overflow:hidden;">
-        <div style="position:absolute;inset:0;padding:1.1rem;display:flex;flex-direction:column;gap:0.5rem;">
-          <div style="font-size:0.48rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:0.1rem;">Free text clusters · IT support tickets</div>
-          <!-- Cluster 1 -->
-          <div style="background:#fff;border-radius:8px;padding:0.55rem 0.7rem;border:1px solid rgba(0,0,0,0.07);">
-            <div style="font-size:0.46rem;font-weight:700;color:#555;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.3rem;"><div style="width:6px;height:6px;border-radius:2px;background:#6366f1;flex-shrink:0;"></div>Hardware</div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.25rem;">
-              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">laptop</span>
-              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">computer</span>
-              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">screen</span>
-              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">keyboard</span>
-              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">battery</span>
-            </div>
-          </div>
-          <!-- Cluster 2 -->
-          <div style="background:#fff;border-radius:8px;padding:0.55rem 0.7rem;border:1px solid rgba(0,0,0,0.07);">
-            <div style="font-size:0.46rem;font-weight:700;color:#555;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.3rem;"><div style="width:6px;height:6px;border-radius:2px;background:#0891b2;flex-shrink:0;"></div>Connectivity</div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.25rem;">
-              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">VPN</span>
-              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">wifi</span>
-              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">remote connect</span>
-              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">network</span>
-            </div>
-          </div>
-          <!-- Cluster 3 -->
-          <div style="background:#fff;border-radius:8px;padding:0.55rem 0.7rem;border:1px solid rgba(0,0,0,0.07);">
-            <div style="font-size:0.46rem;font-weight:700;color:#555;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.3rem;"><div style="width:6px;height:6px;border-radius:2px;background:#059669;flex-shrink:0;"></div>Applications</div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.25rem;">
-              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">Teams</span>
-              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">Outlook</span>
-              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">email</span>
-              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">calendar</span>
-              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">SharePoint</span>
-            </div>
-          </div>
+      <div class="proj-vis" style="background:#EEECEA; overflow:hidden;">
+        <img class="bg" src="img/portfolio/fullsize/FTA_2.webp" style="object-position:center top; opacity:0.12;"/>
+        <div style="position:absolute;inset:0;padding:1rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.44rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.1rem;">Free text clusters · IT support</div>
+          <div style="background:rgba(255,255,255,0.92);border-radius:7px;padding:0.45rem 0.6rem;border:1px solid rgba(0,0,0,0.07);"><div style="font-size:0.42rem;font-weight:700;color:#4338ca;margin-bottom:0.22rem;">Hardware</div><div style="display:flex;flex-wrap:wrap;gap:0.2rem;"><span style="font-size:0.46rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">laptop</span><span style="font-size:0.46rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">computer</span><span style="font-size:0.46rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">screen</span><span style="font-size:0.46rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">keyboard</span><span style="font-size:0.46rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">battery</span></div></div>
+          <div style="background:rgba(255,255,255,0.92);border-radius:7px;padding:0.45rem 0.6rem;border:1px solid rgba(0,0,0,0.07);"><div style="font-size:0.42rem;font-weight:700;color:#0e7490;margin-bottom:0.22rem;">Connectivity</div><div style="display:flex;flex-wrap:wrap;gap:0.2rem;"><span style="font-size:0.46rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">VPN</span><span style="font-size:0.46rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">wifi</span><span style="font-size:0.46rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">remote connect</span><span style="font-size:0.46rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">network</span></div></div>
+          <div style="background:rgba(255,255,255,0.92);border-radius:7px;padding:0.45rem 0.6rem;border:1px solid rgba(0,0,0,0.07);"><div style="font-size:0.42rem;font-weight:700;color:#047857;margin-bottom:0.22rem;">Applications</div><div style="display:flex;flex-wrap:wrap;gap:0.2rem;"><span style="font-size:0.46rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">Teams</span><span style="font-size:0.46rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">Outlook</span><span style="font-size:0.46rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">email</span><span style="font-size:0.46rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.07rem 0.38rem;font-weight:600;">SharePoint</span></div></div>
         </div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-v">Free text clustering</div></div><div class="vcap"><div class="vcap-v">400k+ employees</div></div></div>
       </div>
     </a>
-      <a class="proj" href="portfolio/project2.html">
+    <a class="proj" href="portfolio/project2.html">
       <div class="proj-hd">
-        <div class="proj-co">NCR Corporation</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+          <div class="proj-co" style="margin-bottom:0;">NCR Corporation</div>
+          <div class="pill">46%→91% success</div>
+        </div>
         <div class="proj-cat">Benchmarking</div>
         <div class="proj-title">Finding friction in everyday retail flows.</div>
         <p class="proj-desc">A competitive UX audit of self-checkout experiences for Walmart, using heatmaps and task analysis.</p>
@@ -372,16 +231,18 @@ footer { border-top: 1px solid var(--border); }
         </div>
       </div>
       <div class="proj-vis" style="background:#E6EDF6;">
-        <img src="img/portfolio/thumbnails/8.webp" style="object-position:center;"/>
-        <div class="fade"></div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-l">Finding</div><div class="vcap-v">Animation blocker</div></div><div class="vcap"><div class="vcap-l">Impact</div><div class="vcap-v">46%→91% success</div></div></div>
+        <img class="bg" src="img/portfolio/thumbnails/8.webp" style="object-position:center;"/>
+        <div class="grad"></div>
       </div>
     </a>
     </div>
     <div class="card-grid last-row">
-      <a class="proj" href="portfolio/project3.html">
+    <a class="proj" href="portfolio/project3.html">
       <div class="proj-hd">
-        <div class="proj-co">Pursuant Health</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+          <div class="proj-co" style="margin-bottom:0;">Pursuant Health</div>
+          <div class="pill">30M+ users/yr</div>
+        </div>
         <div class="proj-cat">Healthcare UX</div>
         <div class="proj-title">Helping people understand their health story.</div>
         <p class="proj-desc">NCQA-certified health assessment across 5,000 Walmart kiosks reaching 30M+ users annually.</p>
@@ -390,61 +251,38 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:linear-gradient(150deg,#E8F2EC 0%,#D4E8DA 100%); overflow:hidden;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1rem;">
-          <!-- Kiosk illustration -->
-          <div style="display:flex;align-items:flex-end;gap:1rem;">
-            <!-- Person silhouette -->
-            <div style="display:flex;flex-direction:column;align-items:center;gap:0.2rem;flex-shrink:0;">
-              <div style="width:22px;height:22px;border-radius:50%;background:rgba(40,100,60,0.25);"></div>
-              <div style="width:28px;height:36px;border-radius:6px 6px 0 0;background:rgba(40,100,60,0.2);"></div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#E8F2EC,#D0E4D8); overflow:hidden;">
+        <img class="bg" src="img/portfolio/thumbnails/1.webp" style="object-position:center; opacity:0.15;"/>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1.25rem;">
+          <div style="background:rgba(255,255,255,0.95);border-radius:12px;border:1px solid rgba(0,0,0,0.08);box-shadow:0 4px 24px rgba(0,0,0,0.1);padding:1rem 1.25rem;width:220px;">
+            <div style="background:#1a6b3a;border-radius:6px;padding:0.35rem 0.65rem;margin-bottom:0.75rem;display:flex;align-items:center;justify-content:space-between;">
+              <div style="font-size:0.48rem;color:#fff;font-weight:700;">Health Age Assessment</div>
+              <div style="font-size:0.4rem;color:rgba(255,255,255,0.7);">Cleveland Clinic</div>
             </div>
-            <!-- Kiosk -->
-            <div style="background:#fff;border-radius:10px 10px 4px 4px;border:2px solid rgba(40,140,80,0.25);box-shadow:0 4px 24px rgba(0,0,0,0.1);width:130px;overflow:hidden;flex-shrink:0;">
-              <!-- Kiosk header bar -->
-              <div style="background:#1a6b3a;padding:0.3rem 0.5rem;display:flex;align-items:center;gap:0.3rem;">
-                <div style="font-size:0.45rem;color:#fff;font-weight:700;">Health Age Assessment</div>
-                <div style="margin-left:auto;font-size:0.4rem;color:rgba(255,255,255,0.7);">Cleveland Clinic</div>
-              </div>
-              <!-- Score display -->
-              <div style="padding:0.5rem;text-align:center;border-bottom:1px solid rgba(0,0,0,0.06);">
-                <div style="font-size:0.44rem;color:#888;margin-bottom:0.15rem;">Your Health Age</div>
-                <div style="font-size:1.4rem;font-weight:800;color:#1a6b3a;letter-spacing:-0.04em;line-height:1;">42</div>
-                <div style="font-size:0.4rem;color:#15803d;margin-top:0.15rem;">▼ 3 years younger than calendar age</div>
-              </div>
-              <!-- Metrics -->
-              <div style="padding:0.4rem 0.5rem;display:flex;flex-direction:column;gap:0.25rem;">
-                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.42rem;">
-                  <span style="color:#666;">BMI</span>
-                  <div style="flex:1;height:3px;background:#E5E7EB;border-radius:2px;margin:0 0.4rem;overflow:hidden;"><div style="width:65%;height:100%;background:#1a6b3a;border-radius:2px;"></div></div>
-                  <span style="color:#1a6b3a;font-weight:600;">Good</span>
-                </div>
-                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.42rem;">
-                  <span style="color:#666;">Blood pressure</span>
-                  <div style="flex:1;height:3px;background:#E5E7EB;border-radius:2px;margin:0 0.4rem;overflow:hidden;"><div style="width:80%;height:100%;background:#1a6b3a;border-radius:2px;"></div></div>
-                  <span style="color:#1a6b3a;font-weight:600;">Normal</span>
-                </div>
-                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.42rem;">
-                  <span style="color:#666;">Stress</span>
-                  <div style="flex:1;height:3px;background:#E5E7EB;border-radius:2px;margin:0 0.4rem;overflow:hidden;"><div style="width:45%;height:100%;background:#f59e0b;border-radius:2px;"></div></div>
-                  <span style="color:#f59e0b;font-weight:600;">Moderate</span>
-                </div>
-              </div>
-              <div style="background:#1a6b3a;margin:0.35rem 0.5rem 0.5rem;border-radius:4px;padding:0.3rem;text-align:center;font-size:0.44rem;color:#fff;font-weight:600;">View full report →</div>
+            <div style="text-align:center;margin-bottom:0.75rem;">
+              <div style="font-size:0.48rem;color:#888;margin-bottom:0.2rem;">Your Health Age</div>
+              <div style="font-size:2.2rem;font-weight:800;color:#1a6b3a;line-height:1;letter-spacing:-0.04em;">42</div>
+              <div style="font-size:0.44rem;color:#15803d;margin-top:0.15rem;">▼ 3 years younger</div>
             </div>
-            <!-- Walmart shelf suggestion -->
-            <div style="display:flex;flex-direction:column;gap:0.3rem;flex-shrink:0;">
-              <div style="background:rgba(255,255,255,0.7);border-radius:5px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#333;border:1px solid rgba(0,0,0,0.08);max-width:55px;line-height:1.4;">Walmart Health Kiosk</div>
-              <div style="background:rgba(34,197,94,0.12);border-radius:5px;padding:0.25rem 0.4rem;font-size:0.4rem;color:#15803d;border:1px solid rgba(34,197,94,0.2);max-width:55px;line-height:1.4;font-weight:600;">NCQA ✓</div>
+            <div style="display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.65rem;">
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.44rem;"><span style="color:#666;">BMI</span><div style="width:90px;height:3px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:65%;height:100%;background:#1a6b3a;border-radius:2px;"></div></div><span style="color:#1a6b3a;font-weight:600;">Good</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.44rem;"><span style="color:#666;">Blood pressure</span><div style="width:90px;height:3px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:80%;height:100%;background:#1a6b3a;border-radius:2px;"></div></div><span style="color:#1a6b3a;font-weight:600;">Normal</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:0.44rem;"><span style="color:#666;">Stress</span><div style="width:90px;height:3px;background:#e5e7eb;border-radius:2px;overflow:hidden;"><div style="width:45%;height:100%;background:#f59e0b;border-radius:2px;"></div></div><span style="color:#f59e0b;font-weight:600;">Moderate</span></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:100px;padding:0.15rem 0.5rem;font-size:0.42rem;font-weight:700;color:#15803d;">✓ NCQA Certified</div>
+              <div style="font-size:0.4rem;color:#888;">5,000 kiosks</div>
             </div>
           </div>
         </div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-v">30M+ users/yr</div></div><div class="vcap"><div class="vcap-v">NCQA Certified</div></div></div>
       </div>
     </a>
-      <a class="proj" href="portfolio/project4.html">
+    <a class="proj" href="portfolio/project4.html">
       <div class="proj-hd">
-        <div class="proj-co">Pursuant Health</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+          <div class="proj-co" style="margin-bottom:0;">Pursuant Health</div>
+          <div class="pill">3-year initiative</div>
+        </div>
         <div class="proj-cat">Accessibility</div>
         <div class="proj-title">Making healthcare access more inclusive.</div>
         <p class="proj-desc">A multi-year WCAG 2.0 and CFR 382 remediation across kiosk and web platforms ensuring equitable access.</p>
@@ -453,39 +291,21 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:linear-gradient(150deg,#E6F2EE 0%,#D0E8E2 100%); overflow:hidden;">
-        <div style="position:absolute;inset:0;padding:1rem;display:flex;flex-direction:column;gap:0.4rem;">
-          <div style="font-size:0.48rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#2d7a60;margin-bottom:0.1rem;">Accessibility audit results</div>
-          <!-- Compliance badges row -->
-          <div style="display:flex;gap:0.35rem;margin-bottom:0.15rem;">
-            <div style="background:#fff;border:1.5px solid rgba(34,197,94,0.4);border-radius:100px;padding:0.2rem 0.6rem;font-size:0.46rem;font-weight:700;color:#15803d;">✓ WCAG 2.0 AA</div>
-            <div style="background:#fff;border:1.5px solid rgba(34,197,94,0.4);border-radius:100px;padding:0.2rem 0.6rem;font-size:0.46rem;font-weight:700;color:#15803d;">✓ CFR 382.57(c)</div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#E6F2EE,#D0E8E2); overflow:hidden;">
+        <img class="bg" src="img/portfolio/thumbnails/10.webp" style="object-position:center; opacity:0.13;"/>
+        <div style="position:absolute;inset:0;padding:1rem;display:flex;flex-direction:column;gap:0.35rem;">
+          <div style="display:flex;gap:0.28rem;flex-wrap:wrap;margin-bottom:0.15rem;">
+            <div style="background:rgba(255,255,255,0.9);border:1.5px solid rgba(34,197,94,0.4);border-radius:100px;padding:0.14rem 0.5rem;font-size:0.42rem;font-weight:700;color:#15803d;">✓ WCAG 2.0 AA</div>
+            <div style="background:rgba(255,255,255,0.9);border:1.5px solid rgba(34,197,94,0.4);border-radius:100px;padding:0.14rem 0.5rem;font-size:0.42rem;font-weight:700;color:#15803d;">✓ CFR 382</div>
           </div>
-          <!-- Checklist items -->
-          <div style="background:#fff;border-radius:8px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;">
-            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
-              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
-              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Heading structure — H1 → H3 hierarchy</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
-              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
-              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Color contrast — 4.5:1 minimum ratio</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
-              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
-              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Screen reader markup — ARIA labels</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
-              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
-              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Storm keypad — audio tactile navigation</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;">
-              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
-              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Error messages — form field association</div>
-            </div>
+          <div style="background:rgba(255,255,255,0.9);border-radius:8px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.55rem;border-bottom:1px solid rgba(0,0,0,0.05);"><div style="width:11px;height:11px;border-radius:2px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.4rem;color:#15803d;font-weight:700;">✓</div><div style="font-size:0.46rem;font-weight:500;color:#1A1A1A;">Heading structure — H1→H3</div></div>
+            <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.55rem;border-bottom:1px solid rgba(0,0,0,0.05);"><div style="width:11px;height:11px;border-radius:2px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.4rem;color:#15803d;font-weight:700;">✓</div><div style="font-size:0.46rem;font-weight:500;color:#1A1A1A;">Color contrast — 4.5:1</div></div>
+            <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.55rem;border-bottom:1px solid rgba(0,0,0,0.05);"><div style="width:11px;height:11px;border-radius:2px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.4rem;color:#15803d;font-weight:700;">✓</div><div style="font-size:0.46rem;font-weight:500;color:#1A1A1A;">Screen reader markup</div></div>
+            <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.55rem;border-bottom:1px solid rgba(0,0,0,0.05);"><div style="width:11px;height:11px;border-radius:2px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.4rem;color:#15803d;font-weight:700;">✓</div><div style="font-size:0.46rem;font-weight:500;color:#1A1A1A;">Storm keypad integrated</div></div>
+            <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.55rem;"><div style="width:11px;height:11px;border-radius:2px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.4rem;color:#15803d;font-weight:700;">✓</div><div style="font-size:0.46rem;font-weight:500;color:#1A1A1A;">Error — form field association</div></div>
           </div>
         </div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-v">WCAG 2.0 AA</div></div><div class="vcap"><div class="vcap-v">3-year initiative</div></div></div>
       </div>
     </a>
     </div>
@@ -511,16 +331,11 @@ footer { border-top: 1px solid var(--border); }
       <div class="about-r">
         <div class="about-tag">Core competencies</div>
         <div class="skills">
-          <div class="skill">UX Strategy</div>
-          <div class="skill">AI Experience Design</div>
-          <div class="skill">Research &amp; Synthesis</div>
-          <div class="skill">Service Design</div>
-          <div class="skill">Enterprise Product</div>
-          <div class="skill">Accessibility (WCAG)</div>
-          <div class="skill">Design Systems</div>
-          <div class="skill">Stakeholder Alignment</div>
-          <div class="skill">Journey Mapping</div>
-          <div class="skill">Usability Testing</div>
+          <div class="skill">UX Strategy</div><div class="skill">AI Experience Design</div>
+          <div class="skill">Research &amp; Synthesis</div><div class="skill">Service Design</div>
+          <div class="skill">Enterprise Product</div><div class="skill">Accessibility (WCAG)</div>
+          <div class="skill">Design Systems</div><div class="skill">Stakeholder Alignment</div>
+          <div class="skill">Journey Mapping</div><div class="skill">Usability Testing</div>
         </div>
         <div class="edu">
           <div class="about-tag">Education</div>
@@ -543,6 +358,5 @@ footer { border-top: 1px solid var(--border); }
     </div>
   </div>
 </footer>
-
 </body>
 </html>
