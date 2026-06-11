@@ -159,36 +159,66 @@ footer { border-top: 1px solid var(--border); }
   </div>
 
   <div class="doc-section">
-    <h2>The credential creation flow</h2>
-    <p class="doc-p">The creation experience is a two-step stepper. Step one selects the existing system to connect to OneTrust — establishing the integration context before any credential details are configured.</p>
+    <h2>AI Management — the admin entry point</h2>
+    <p class="doc-p">The AI Management section gives admins a single place to govern all AI activity across the tenant — MCP credential counts, usage metrics, OBO failure rates, and an entry point to create new agent credentials. This surface makes AI activity visible before anything goes wrong.</p>
 
     <div class="screen-block">
-      <img src="../img/onetrust/mcp-credentials-list.png" alt="Create credentials — select existing system"/>
-      <div class="screen-caption">Step 1 — Select the existing system to connect. The stepper keeps the user oriented across the two-step flow.</div>
-    </div>
-
-    <p class="doc-p">Step two configures the credential details: name, application type, authentication method, and security settings. Key decisions here include bearer token vs OAuth 2.0, mTLS for mutual transport security, and sensitivity classification for permission-scoped access control.</p>
-
-    <div class="screen-block">
-      <img src="../img/onetrust/mcp-create.png" alt="Enter credential details — auth method, bearer token, mTLS"/>
-      <div class="screen-caption">Step 2 — Credential details. Auth method, token configuration, mTLS toggle, and sensitivity classification give admins precise control over how the credential can be used.</div>
+      <img src="../img/onetrust/mcp-ai-management.png" alt="AI Management overview — MCP access stats, credential count, AI usage"/>
+      <div class="screen-caption">AI Management overview — 3 active MCP credentials, 24 recent actions, AI usage metrics, and a new feature callout for Copilot risk assessments</div>
     </div>
   </div>
 
   <div class="doc-section">
-    <h2>Governance and audit</h2>
-    <p class="doc-p">Once credentials are active, the detail view provides admins with a complete audit trail — every field change, who made it, and when. This closes the governance loop and gives security teams the visibility they need to trust AI-mediated access in a compliance context.</p>
+    <h2>The credential creation flow</h2>
+    <p class="doc-p">The creation experience is a five-step wizard: credential type → name & options → define access → user context → review & issue. A persistent summary panel on the right keeps the developer oriented throughout, showing exactly what they've configured so far.</p>
 
-    <div class="two-up">
-      <div class="screen-block" style="margin:0;">
-        <img src="../img/onetrust/mcp-scopes.png" alt="Credential activity audit log"/>
-        <div class="screen-caption">Credential activity log — full audit trail of field changes and creation events</div>
-      </div>
-      <div class="screen-block" style="margin:0;">
-        <img src="../img/onetrust/mcp-detail.png" alt="Agent credential search — Vendor Intake Agent, Contract Summary Bot"/>
-        <div class="screen-caption">Named agent credentials — developers can search and connect specific agents like Vendor Intake Agent or Contract Summary Bot</div>
-      </div>
+    <p class="doc-p">Step one makes the fork explicit: AI Agent / MCP credentials (OBO user binding, tool-level scoping) versus Standard API credentials (module-based, no OBO). Getting this decision right upfront prevents misconfigured access and sets the right governance expectations from the start.</p>
+
+    <div class="screen-block">
+      <img src="../img/onetrust/mcp-step1-type.png" alt="Create credential — Step 1 credential type selector"/>
+      <div class="screen-caption">Step 1 — Credential type. The two options are clearly differentiated by use case, not just by name. The live summary panel confirms the selection immediately.</div>
     </div>
+
+    <p class="doc-p">Step two configures name, description, access token lifetime, and IP restrictions. The placeholder copy ("e.g. Vendor Intake Agent") reinforces the mental model — this is a named agent, not a generic API key.</p>
+
+    <div class="screen-block">
+      <img src="../img/onetrust/mcp-step2-name.png" alt="Create credential — Step 2 name and options"/>
+      <div class="screen-caption">Step 2 — Name & options. Token lifetime defaults to 1 hour — short by design, reinforcing least-privilege and reducing exposure from leaked credentials.</div>
+    </div>
+
+    <p class="doc-p">Step three is where the governance model comes to life — a matrix of OneTrust objects (Vendor, Assessment, Risk, Contract, Consent record, etc.) across permission types (Read, Create, Update, Delete, Launch workflow, Approve/reject). Developers grant only what the agent needs. This is an early prototype exploring the interaction model for granular object-level scoping.</p>
+
+    <div class="screen-block">
+      <img src="../img/onetrust/mcp-step3-access.png" alt="Create credential — Step 3 define access permissions matrix"/>
+      <div class="screen-caption">Step 3 — Define access. Object-level permission matrix across OneTrust's product domains. Early prototype — the column header treatment and visual hierarchy are areas actively being refined.</div>
+    </div>
+
+    <p class="doc-p">Step four is arguably the most important governance decision: how should OneTrust identify the human user behind actions taken by the agent? Dynamic user context (OBO) means the agent passes the current user's identity at token exchange — so every action is attributed to the real person operating the agent, not a generic service account. The activity attribution preview makes this concrete before the developer commits.</p>
+
+    <div class="screen-block">
+      <img src="../img/onetrust/mcp-step4-context.png" alt="Create credential — Step 4 user context OBO binding"/>
+      <div class="screen-caption">Step 4 — User context. "Alana Pendleton via Vendor Intake Agent" — the attribution preview shows exactly how AI-mediated actions will appear in audit logs, making the governance implications tangible at setup time.</div>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <h2>Live prototype</h2>
+    <p class="doc-p">The full interactive prototype is embedded below. This is a live Figma Make prototype — as the design is refined, this view updates automatically.</p>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid var(--border); box-shadow:0 2px 16px rgba(0,0,0,0.08); margin:1.25rem 0;">
+      <div style="background:#F3F4F6; padding:0.6rem 1rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:0.5rem;">
+        <div style="display:flex; gap:0.3rem;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div></div>
+        <div style="font-size:0.7rem; color:#888; margin-left:0.25rem;">MCP Credential Experience — Live prototype</div>
+      </div>
+      <iframe
+        src="https://www.figma.com/make/17O69B3UgnPi9AVCBKqFwm/MCP-Credential-Experience--Copy-?fullscreen=1"
+        width="100%"
+        height="600"
+        style="display:block; border:none;"
+        allowfullscreen
+        title="MCP Credential Experience prototype"
+      ></iframe>
+    </div>
+    <p style="font-size:0.72rem; color:var(--ink-dim); text-align:center; margin-top:0.5rem;">Prototype updates automatically as design work progresses — no re-embed needed.</p>
   </div>
 
   <div class="doc-section">
