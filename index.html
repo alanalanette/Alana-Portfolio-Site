@@ -4,7 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alana Lanette — Principal UX Designer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap"/></noscript>
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -83,10 +87,10 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .proj-vis { height: var(--panel-h); flex-shrink: 0; position: relative; overflow: hidden; }
 .proj-vis img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .proj-vis .fade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.1) 45%, transparent 100%); }
-.proj-vis .vcaps { position: absolute; bottom: 0.8rem; left: 0.8rem; display: flex; gap: 0.35rem; }
-.vcap { background: rgba(0,0,0,0.52); backdrop-filter: blur(8px); border-radius: 6px; padding: 0.32rem 0.55rem; }
-.vcap-l { font-size: 0.44rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.58); margin-bottom: 0.06rem; }
-.vcap-v { font-size: 0.7rem; font-weight: 700; color: #fff; }
+.proj-vis .vcaps { position: absolute; top: 0.75rem; left: 0.75rem; display: flex; gap: 0.3rem; }
+.vcap { background: rgba(0,0,0,0.48); backdrop-filter: blur(8px); border-radius: 100px; padding: 0.18rem 0.45rem; }
+.vcap-l { display:none; }
+.vcap-v { font-size: 0.6rem; font-weight: 600; color: #fff; letter-spacing:0.01em; }
 
 /* ── MOCKUP PANEL (no photo) ── */
 .mock-panel { height: var(--panel-h); flex-shrink: 0; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 1.25rem 1.25rem 0; }
@@ -112,7 +116,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.94)
 .about-tag { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.85rem; }
 .about-h { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; font-style: italic; color: var(--ink); line-height: 1.2; margin-bottom: 1rem; }
 .about-p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.75rem; }
-.avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--border-mid); margin-bottom: 1.25rem; display: block; }
+.avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; object-position: center 10%; border: 2px solid var(--border-mid); margin-bottom: 1.25rem; display: block; transform: scale(1.15); transform-origin: center top; }
 .tl { margin-top: 1.25rem; }
 .tl-row { display: grid; grid-template-columns: 82px 1fr; gap: 0 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
 .tl-row:last-child { border-bottom: none; }
@@ -188,7 +192,7 @@ footer { border-top: 1px solid var(--border); }
         </div>
       </div>
       <div class="proj-vis" style="background:linear-gradient(160deg,#E8E6F4 0%,#D4D0EE 100%); overflow:hidden;">
-        <div style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:86%;box-shadow:0 -4px 32px rgba(80,60,160,0.15),0 8px 32px rgba(0,0,0,0.14);border-radius:10px 10px 0 0;overflow:hidden;border:1px solid rgba(255,255,255,0.6);background:#fff;">
+        <div style="position:absolute;bottom:-24px;left:50%;transform:translateX(-50%);width:92%;box-shadow:0 -4px 32px rgba(80,60,160,0.15),0 8px 32px rgba(0,0,0,0.14);border-radius:10px 10px 0 0;overflow:hidden;border:1px solid rgba(255,255,255,0.6);background:#fff;">
           <!-- Mock OneTrust nav bar -->
           <div style="background:#1a1a2e;padding:0.4rem 0.75rem;display:flex;align-items:center;gap:0.5rem;">
             <div style="width:18px;height:18px;border-radius:4px;background:#e85d3a;display:flex;align-items:center;justify-content:center;font-size:0.45rem;font-weight:700;color:#fff;flex-shrink:0;">OT</div>
@@ -255,10 +259,53 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:#F2EDE4;">
-        <img src="img/workshop1.png" style="object-position:center top;"/>
-        <div class="fade"></div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-l">Scope</div><div class="vcap-v">400k+ employees</div></div><div class="vcap"><div class="vcap-l">Output</div><div class="vcap-v">Service blueprint</div></div></div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#F5EFE4 0%,#E8DDD0 100%); overflow:hidden;">
+        <div style="position:absolute;inset:0;padding:1.25rem 1.25rem 0;display:flex;flex-direction:column;gap:0.4rem;">
+          <!-- Blueprint label row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.2rem;">
+            <div style="font-size:0.48rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9a7f5a;">Service blueprint · EY Device Refresh</div>
+            <div style="font-size:0.44rem;color:#b09070;">400k+ employees</div>
+          </div>
+          <!-- Lane headers -->
+          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;">
+            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;letter-spacing:0.06em;text-transform:uppercase;">Phase</div>
+            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Request</div>
+            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Provision</div>
+            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Support</div>
+            <div style="font-size:0.4rem;font-weight:700;color:#9a7f5a;text-align:center;letter-spacing:0.06em;text-transform:uppercase;">Refresh</div>
+          </div>
+          <!-- Divider -->
+          <div style="height:1px;background:rgba(154,127,90,0.2);"></div>
+          <!-- User actions row -->
+          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;align-items:start;">
+            <div style="font-size:0.4rem;font-weight:600;color:#7a6040;padding-top:0.2rem;">User<br/>actions</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Selects device via role profile portal</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Tracks delivery status</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Self-service portal or escalate</div>
+            <div style="background:rgba(255,255,255,0.7);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Receives proactive alert</div>
+          </div>
+          <!-- Divider -->
+          <div style="height:1px;background:rgba(154,127,90,0.15);"></div>
+          <!-- Frontstage row -->
+          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;align-items:start;">
+            <div style="font-size:0.4rem;font-weight:600;color:#7a6040;padding-top:0.2rem;">Front<br/>stage</div>
+            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Role-based catalog</div>
+            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Auto-config + delivery</div>
+            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Smart triage</div>
+            <div style="background:rgba(232,185,120,0.25);border:1px solid rgba(200,150,80,0.3);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#5a4a30;line-height:1.4;">Telemetry trigger</div>
+          </div>
+          <!-- Divider -->
+          <div style="height:1px;background:rgba(154,127,90,0.15);"></div>
+          <!-- Backstage row -->
+          <div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr 1fr;gap:0.25rem;align-items:start;">
+            <div style="font-size:0.4rem;font-weight:600;color:#7a6040;padding-top:0.2rem;">Back<br/>stage</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">SCCM · ServiceNow</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">MDM · Logistics API</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">AI triage model</div>
+            <div style="background:rgba(255,255,255,0.4);border-radius:4px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#7a6040;line-height:1.4;">Device telemetry</div>
+          </div>
+        </div>
+        <div class="vcaps"><div class="vcap"><div class="vcap-v">400k+ employees</div></div><div class="vcap"><div class="vcap-v">Service blueprint</div></div></div>
       </div>
     </a>
     </div>
@@ -274,10 +321,43 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:#EEECEA;">
-        <img src="img/portfolio/thumbnails/FTA_thumb.webp" style="object-position:center top;"/>
-        <div class="fade"></div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-l">Method</div><div class="vcap-v">Free text clustering</div></div><div class="vcap"><div class="vcap-l">Scale</div><div class="vcap-v">400k+ employees</div></div></div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#EEECEA 0%,#E3E0DC 100%); overflow:hidden;">
+        <div style="position:absolute;inset:0;padding:1.1rem;display:flex;flex-direction:column;gap:0.5rem;">
+          <div style="font-size:0.48rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:0.1rem;">Free text clusters · IT support tickets</div>
+          <!-- Cluster 1 -->
+          <div style="background:#fff;border-radius:8px;padding:0.55rem 0.7rem;border:1px solid rgba(0,0,0,0.07);">
+            <div style="font-size:0.46rem;font-weight:700;color:#555;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.3rem;"><div style="width:6px;height:6px;border-radius:2px;background:#6366f1;flex-shrink:0;"></div>Hardware</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.25rem;">
+              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">laptop</span>
+              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">computer</span>
+              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">screen</span>
+              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">keyboard</span>
+              <span style="font-size:0.5rem;background:#EEF2FF;color:#4338ca;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">battery</span>
+            </div>
+          </div>
+          <!-- Cluster 2 -->
+          <div style="background:#fff;border-radius:8px;padding:0.55rem 0.7rem;border:1px solid rgba(0,0,0,0.07);">
+            <div style="font-size:0.46rem;font-weight:700;color:#555;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.3rem;"><div style="width:6px;height:6px;border-radius:2px;background:#0891b2;flex-shrink:0;"></div>Connectivity</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.25rem;">
+              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">VPN</span>
+              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">wifi</span>
+              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">remote connect</span>
+              <span style="font-size:0.5rem;background:#ECFEFF;color:#0e7490;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">network</span>
+            </div>
+          </div>
+          <!-- Cluster 3 -->
+          <div style="background:#fff;border-radius:8px;padding:0.55rem 0.7rem;border:1px solid rgba(0,0,0,0.07);">
+            <div style="font-size:0.46rem;font-weight:700;color:#555;margin-bottom:0.3rem;display:flex;align-items:center;gap:0.3rem;"><div style="width:6px;height:6px;border-radius:2px;background:#059669;flex-shrink:0;"></div>Applications</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.25rem;">
+              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">Teams</span>
+              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">Outlook</span>
+              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">email</span>
+              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">calendar</span>
+              <span style="font-size:0.5rem;background:#ECFDF5;color:#047857;border-radius:100px;padding:0.1rem 0.45rem;font-weight:600;">SharePoint</span>
+            </div>
+          </div>
+        </div>
+        <div class="vcaps"><div class="vcap"><div class="vcap-v">Free text clustering</div></div><div class="vcap"><div class="vcap-v">400k+ employees</div></div></div>
       </div>
     </a>
       <a class="proj" href="portfolio/project2.html">
@@ -310,10 +390,56 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:#E8F0EC;">
-        <img src="img/portfolio/thumbnails/1.webp" style="object-position:center;"/>
-        <div class="fade"></div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-l">Scale</div><div class="vcap-v">30M+ users/yr</div></div><div class="vcap"><div class="vcap-l">Cert</div><div class="vcap-v">NCQA Certified</div></div></div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#E8F2EC 0%,#D4E8DA 100%); overflow:hidden;">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:1rem;">
+          <!-- Kiosk illustration -->
+          <div style="display:flex;align-items:flex-end;gap:1rem;">
+            <!-- Person silhouette -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.2rem;flex-shrink:0;">
+              <div style="width:22px;height:22px;border-radius:50%;background:rgba(40,100,60,0.25);"></div>
+              <div style="width:28px;height:36px;border-radius:6px 6px 0 0;background:rgba(40,100,60,0.2);"></div>
+            </div>
+            <!-- Kiosk -->
+            <div style="background:#fff;border-radius:10px 10px 4px 4px;border:2px solid rgba(40,140,80,0.25);box-shadow:0 4px 24px rgba(0,0,0,0.1);width:130px;overflow:hidden;flex-shrink:0;">
+              <!-- Kiosk header bar -->
+              <div style="background:#1a6b3a;padding:0.3rem 0.5rem;display:flex;align-items:center;gap:0.3rem;">
+                <div style="font-size:0.45rem;color:#fff;font-weight:700;">Health Age Assessment</div>
+                <div style="margin-left:auto;font-size:0.4rem;color:rgba(255,255,255,0.7);">Cleveland Clinic</div>
+              </div>
+              <!-- Score display -->
+              <div style="padding:0.5rem;text-align:center;border-bottom:1px solid rgba(0,0,0,0.06);">
+                <div style="font-size:0.44rem;color:#888;margin-bottom:0.15rem;">Your Health Age</div>
+                <div style="font-size:1.4rem;font-weight:800;color:#1a6b3a;letter-spacing:-0.04em;line-height:1;">42</div>
+                <div style="font-size:0.4rem;color:#15803d;margin-top:0.15rem;">▼ 3 years younger than calendar age</div>
+              </div>
+              <!-- Metrics -->
+              <div style="padding:0.4rem 0.5rem;display:flex;flex-direction:column;gap:0.25rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.42rem;">
+                  <span style="color:#666;">BMI</span>
+                  <div style="flex:1;height:3px;background:#E5E7EB;border-radius:2px;margin:0 0.4rem;overflow:hidden;"><div style="width:65%;height:100%;background:#1a6b3a;border-radius:2px;"></div></div>
+                  <span style="color:#1a6b3a;font-weight:600;">Good</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.42rem;">
+                  <span style="color:#666;">Blood pressure</span>
+                  <div style="flex:1;height:3px;background:#E5E7EB;border-radius:2px;margin:0 0.4rem;overflow:hidden;"><div style="width:80%;height:100%;background:#1a6b3a;border-radius:2px;"></div></div>
+                  <span style="color:#1a6b3a;font-weight:600;">Normal</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.42rem;">
+                  <span style="color:#666;">Stress</span>
+                  <div style="flex:1;height:3px;background:#E5E7EB;border-radius:2px;margin:0 0.4rem;overflow:hidden;"><div style="width:45%;height:100%;background:#f59e0b;border-radius:2px;"></div></div>
+                  <span style="color:#f59e0b;font-weight:600;">Moderate</span>
+                </div>
+              </div>
+              <div style="background:#1a6b3a;margin:0.35rem 0.5rem 0.5rem;border-radius:4px;padding:0.3rem;text-align:center;font-size:0.44rem;color:#fff;font-weight:600;">View full report →</div>
+            </div>
+            <!-- Walmart shelf suggestion -->
+            <div style="display:flex;flex-direction:column;gap:0.3rem;flex-shrink:0;">
+              <div style="background:rgba(255,255,255,0.7);border-radius:5px;padding:0.3rem 0.4rem;font-size:0.4rem;color:#333;border:1px solid rgba(0,0,0,0.08);max-width:55px;line-height:1.4;">Walmart Health Kiosk</div>
+              <div style="background:rgba(34,197,94,0.12);border-radius:5px;padding:0.25rem 0.4rem;font-size:0.4rem;color:#15803d;border:1px solid rgba(34,197,94,0.2);max-width:55px;line-height:1.4;font-weight:600;">NCQA ✓</div>
+            </div>
+          </div>
+        </div>
+        <div class="vcaps"><div class="vcap"><div class="vcap-v">30M+ users/yr</div></div><div class="vcap"><div class="vcap-v">NCQA Certified</div></div></div>
       </div>
     </a>
       <a class="proj" href="portfolio/project4.html">
@@ -327,10 +453,39 @@ footer { border-top: 1px solid var(--border); }
           <div class="proj-arrow">→</div>
         </div>
       </div>
-      <div class="proj-vis" style="background:#E4F0EE;">
-        <img src="img/portfolio/thumbnails/10.webp" style="object-position:center;"/>
-        <div class="fade"></div>
-        <div class="vcaps"><div class="vcap"><div class="vcap-l">Standard</div><div class="vcap-v">WCAG 2.0 AA</div></div><div class="vcap"><div class="vcap-l">Duration</div><div class="vcap-v">3-year initiative</div></div></div>
+      <div class="proj-vis" style="background:linear-gradient(150deg,#E6F2EE 0%,#D0E8E2 100%); overflow:hidden;">
+        <div style="position:absolute;inset:0;padding:1rem;display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.48rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#2d7a60;margin-bottom:0.1rem;">Accessibility audit results</div>
+          <!-- Compliance badges row -->
+          <div style="display:flex;gap:0.35rem;margin-bottom:0.15rem;">
+            <div style="background:#fff;border:1.5px solid rgba(34,197,94,0.4);border-radius:100px;padding:0.2rem 0.6rem;font-size:0.46rem;font-weight:700;color:#15803d;">✓ WCAG 2.0 AA</div>
+            <div style="background:#fff;border:1.5px solid rgba(34,197,94,0.4);border-radius:100px;padding:0.2rem 0.6rem;font-size:0.46rem;font-weight:700;color:#15803d;">✓ CFR 382.57(c)</div>
+          </div>
+          <!-- Checklist items -->
+          <div style="background:#fff;border-radius:8px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;">
+            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
+              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
+              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Heading structure — H1 → H3 hierarchy</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
+              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
+              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Color contrast — 4.5:1 minimum ratio</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
+              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
+              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Screen reader markup — ARIA labels</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.05);">
+              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
+              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Storm keypad — audio tactile navigation</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;padding:0.38rem 0.6rem;">
+              <div style="width:13px;height:13px;border-radius:3px;background:#dcfce7;border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.45rem;color:#15803d;font-weight:700;">✓</div>
+              <div style="font-size:0.5rem;font-weight:500;color:#1A1A1A;">Error messages — form field association</div>
+            </div>
+          </div>
+        </div>
+        <div class="vcaps"><div class="vcap"><div class="vcap-v">WCAG 2.0 AA</div></div><div class="vcap"><div class="vcap-v">3-year initiative</div></div></div>
       </div>
     </a>
     </div>
