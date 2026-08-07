@@ -154,74 +154,48 @@ footer { border-top: 1px solid var(--border); }
 
   <div class="doc-section">
     <h2>Project artifacts</h2>
-    <p class="doc-p">Four deliverables supported the Device Needs strategy — from early research synthesis through workshop facilitation to the final target state roadmap. Select an artifact to explore the work.</p>
+    <p class="doc-p">The strategy emerged through four connected phases of work — each building on the last. What follows is the project journey: the research that revealed the problem, the workshop that defined the north star, the strategy that charted the path, and the analysis that prioritized the work.</p>
+  </div>
 
-    <div class="artifact-browser">
+  <div class="doc-section">
+    <h2>Phase 1 — Understanding the current state</h2>
+    <p class="doc-p">We began with a comprehensive service blueprint of the shipped device refresh journey — mapping every touchpoint, interaction, and backstage process across the Engage, Provision, and Setup phases. This wasn't a hypothetical model. It was built from actual stakeholder interviews, real system screenshots, and 2022 US Depot process documentation.</p>
+    <p class="doc-p">The blueprint became the foundation for everything that followed. Overlaying research data directly onto each journey moment made the pain visible in a way that stakeholders across IT, operations, and leadership could engage with — not just UX. We documented issues like generic refresh emails that didn't reflect actual device availability, device selection forms missing technical specifications, and a setup experience with no role-based guidance.</p>
+    <img class="doc-img" src="../img/ey-artifact-blueprint.png" alt="Service blueprint — full journey map with sticky note insights across all phases"/>
+    <p style="font-size:0.72rem;color:var(--ink-dim);text-align:center;margin-top:-0.5rem;margin-bottom:1rem;">Workshop journey map — Refresh Eligibility through Feedback Loop, with research insights and success metrics at each phase</p>
+    <div class="callout"><div class="callout-icon">🔍</div><p>Key finding: The experience was fragmented at every seam. Notification, selection, delivery, setup, and return were treated as separate operational problems — not as a single continuous employee experience. No one owned the end-to-end.</p></div>
+  </div>
 
-      <!-- SELECTOR CARDS (first) -->
-      <div class="artifact-grid" style="margin-bottom:1rem;">
+  <div class="doc-section">
+    <h2>Phase 2 — Defining the north star</h2>
+    <p class="doc-p">With the current state documented, we hosted a series of vision workshops with cross-functional stakeholders to establish a shared north star for the device refresh experience. The goal wasn't to design solutions — it was to align on what "great" looked like before anyone started building.</p>
+    <p class="doc-p">We broke the journey into 11 key moments — Refresh Eligibility, Notification, Device Selection, Delivery Method Selection, Confirmation, Shipping and Delivery, Unboxing, Device Setup, Software Acquisition, Return, and Feedback Loop — and worked through each one collaboratively. For each moment, we captured what users should feel, what success looks like, and what the key design principles should be.</p>
+    <img class="doc-img" src="../img/ey-artifact-workshop.png" alt="Vision workshop sticky notes — delivery logistics and tracking north star"/>
+    <p style="font-size:0.72rem;color:var(--ink-dim);text-align:center;margin-top:-0.5rem;margin-bottom:1rem;">Workshop output — delivery logistics north star: sequential notifications, shipment tracking, and confirmation that device has been received</p>
+    <p class="doc-p">The workshops surfaced clear patterns. Employees wanted to be treated like consumers — choice, transparency, and personalization at every step. They wanted notifications that inspired confidence, not anxiety. Device selection that offered guidance, not a dropdown of model numbers. A setup experience that felt self-directed and fast, not confusing and slow.</p>
+    <div class="callout"><div class="callout-icon">💡</div><p>The workshops produced something more valuable than a list of features: a shared language. When stakeholders left the room, they understood what "consumer grade" meant for this specific program — and why it mattered for talent retention and the EY employer brand.</p></div>
+  </div>
 
-        <button class="artifact-btn active" onclick="selectArtifact(this,'Strategy deck','Target State Roadmap','A high-level strategic roadmap synthesizing the three-pillar framework — mapping eight design recommendations across every key moment in the device journey.','This deliverable gave EY technology leadership a shared, actionable north star: moving device experience from a transactional process to a differentiated employer brand touchpoint.','#F0EDE6','📋')">
-          <div class="artifact-btn-thumb" style="background:#F0EDE6;">
-            <div style="font-size:1.5rem;">📋</div>
-          </div>
-          <div class="artifact-btn-type">Strategy</div>
-          <div class="artifact-btn-name">Target State Roadmap</div>
-          <div class="artifact-btn-desc">Eight design recommendations mapped across the full journey</div>
-        </button>
+  <div class="doc-section">
+    <h2>Phase 3 — The target state strategy</h2>
+    <p class="doc-p">The target state deck translated the north star into a strategic roadmap organized around the three pillars. It wasn't a solution spec — it was a directional framework that showed how the three pillars would work together to transform the experience across every phase of the journey.</p>
+    <img class="doc-img" src="../img/ey-artifact-strategy.png" alt="Target state — phase strip showing Engage, Provision, Setup across the journey"/>
+    <p style="font-size:0.72rem;color:var(--ink-dim);text-align:center;margin-top:-0.5rem;margin-bottom:1rem;">The shipped device refresh journey segmented into three key phases: Engage (device selection), Provision (shipping and logistics), and Setup (unboxing through return)</p>
+    <h3>The three pillars in practice</h3>
+    <p class="doc-p"><strong>Consumer Grade Experience Layer</strong> — Eight design recommendations spanning the full journey. Notifications sequenced for user readiness and personalized where possible. Device selection guided by segmentation data rather than open menus. Setup experience self-directed with role-based onboarding. Each recommendation mapped to the specific journey moment it addressed, with success outcomes defined.</p>
+    <p class="doc-p"><strong>Segmentation Model</strong> — Device offerings tailored to role-driven performance needs rather than a one-size-fits-all catalog. Matching the right device to the right employee using telemetry and application-level analysis across 191 specialist applications. This was the mechanism that made consumer grade experience possible at EY scale.</p>
+    <p class="doc-p"><strong>Telemetry-Driven Refresh</strong> — Moving from temporal refresh cycles to performance-triggered replacement. Poor-performing devices addressed before users were impacted, improving NPS and extending asset lifecycles where data supported it. This pillar connected IT operations efficiency directly to employee experience quality.</p>
+    <div class="callout"><div class="callout-icon">🎯</div><p>The target state gave EY technology leadership something they hadn't had before: a holistic picture of what the device experience could become — and a framework for making decisions about where to invest first.</p></div>
+  </div>
 
-        <button class="artifact-btn" onclick="selectArtifact(this,'Workshop deck','Workshop Summary','A facilitated visioning session establishing the north star experience across 11 key journey moments — aligning cross-functional stakeholders on desired end states before any solution design began.','Built the shared ownership necessary to move a large, global stakeholder group from problem awareness to a unified vision — a critical foundation for the strategy.','#EAF0EC','🗓️')">
-          <div class="artifact-btn-thumb" style="background:#EAF0EC;">
-            <div style="font-size:1.5rem;">🗓️</div>
-          </div>
-          <div class="artifact-btn-type">Workshop</div>
-          <div class="artifact-btn-name">Workshop Summary</div>
-          <div class="artifact-btn-desc">North star visioning across 11 key journey moments</div>
-        </button>
-
-        <button class="artifact-btn" onclick="selectArtifact(this,'Research deck','Experience Insights','Research and data synthesis integrated directly into the service blueprint — translating complex findings into a format accessible to non-design stakeholders across the program.','Surfaced the gap between the intended employee experience and the lived reality — grounding the strategy in evidence and building credibility with business stakeholders.','#EAF0F5','🔍')">
-          <div class="artifact-btn-thumb" style="background:#EAF0F5;">
-            <div style="font-size:1.5rem;">🔍</div>
-          </div>
-          <div class="artifact-btn-type">Research</div>
-          <div class="artifact-btn-name">Experience Insights</div>
-          <div class="artifact-btn-desc">Research synthesis layered into the service blueprint</div>
-        </button>
-
-        <button class="artifact-btn" onclick="selectArtifact(this,'Analysis deck','Enhancement Analysis','A detailed evaluation of improvement opportunities across the device journey — assessing feasibility, employee impact, and alignment with the three strategic pillars.','Provided the prioritization framework that focused effort where it would deliver the most meaningful improvement — preventing the strategy from spreading too thin.','#F5F0E8','📊')">
-          <div class="artifact-btn-thumb" style="background:#F5F0E8;">
-            <div style="font-size:1.5rem;">📊</div>
-          </div>
-          <div class="artifact-btn-type">Analysis</div>
-          <div class="artifact-btn-name">Enhancement Analysis</div>
-          <div class="artifact-btn-desc">Feasibility and impact mapping across opportunity areas</div>
-        </button>
-
-      </div>
-
-      <!-- VIEWER (below selectors) -->
-      <div class="artifact-preview">
-        <div class="artifact-visual" id="a-visual" style="background:#F0EDE6;">
-          <div style="text-align:center;opacity:0.45;">
-            <div style="font-size:2.5rem;margin-bottom:0.5rem;" id="a-icon">📋</div>
-            <div style="font-size:0.8rem;color:var(--ink-mid);font-weight:500;" id="a-visual-label">Target State Roadmap</div>
-          </div>
-        </div>
-        <div class="artifact-preview-header">
-          <div class="artifact-type" id="a-type">Strategy deck</div>
-          <div class="artifact-name" id="a-name">Target State Roadmap</div>
-          <div class="artifact-purpose" id="a-purpose">A high-level strategic roadmap synthesizing the three-pillar framework — mapping eight design recommendations across every key moment in the device journey.</div>
-          <div class="artifact-takeaway">
-            <div style="font-size:1rem;flex-shrink:0;">🎯</div>
-            <div>
-              <div class="artifact-takeaway-label">Why it mattered</div>
-              <div class="artifact-takeaway-text" id="a-takeaway">This deliverable gave EY technology leadership a shared, actionable north star: moving device experience from a transactional process to a differentiated employer brand touchpoint.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  <div class="doc-section">
+    <h2>Phase 4 — Prioritizing near-term enhancements</h2>
+    <p class="doc-p">Alongside the long-term strategy, we conducted a detailed near-term enhancement analysis — systematically assessing each key journey moment for improvement opportunities that could be addressed quickly, without waiting for full platform transformation.</p>
+    <img class="doc-img" src="../img/ey-artifact-analysis.png" alt="EY Help Portal — current state device management experience"/>
+    <p style="font-size:0.72rem;color:var(--ink-dim);text-align:center;margin-top:-0.5rem;margin-bottom:1rem;">Current state: the EY Help Portal device management view — a starting point for identifying near-term improvements to the selection and tracking experience</p>
+    <p class="doc-p">For each moment in the journey, we documented the current state experience with real screenshots of the actual systems employees used — the refresh notification email, the ServiceNow device selection form, the UPS tracking portal, the laptop return knowledge base article. This grounded the analysis in the literal experience employees were having, not an abstraction of it.</p>
+    <p class="doc-p">Recommendations were assessed for feasibility, business impact, and alignment with the three strategic pillars — creating a prioritized roadmap of near-term improvements that could begin immediately alongside longer-term strategy work.</p>
+    <div class="callout"><div class="callout-icon">📊</div><p>Thirteen near-term enhancement opportunities identified across nine journey moments — from simplifying the notification email to adding device specifications at the point of selection to improving return instructions. Each mapped to a measurable success outcome.</p></div>
   </div>
 
 </div>
@@ -248,20 +222,7 @@ footer { border-top: 1px solid var(--border); }
   </div>
 </footer>
 
-<script>
-function selectArtifact(btn, type, name, purpose, takeaway, bg, icon) {
-  document.querySelectorAll('.artifact-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('a-type').textContent = type;
-  document.getElementById('a-name').textContent = name;
-  document.getElementById('a-purpose').textContent = purpose;
-  document.getElementById('a-takeaway').textContent = takeaway;
-  const vis = document.getElementById('a-visual');
-  vis.style.background = bg;
-  document.getElementById('a-icon').textContent = icon;
-  document.getElementById('a-visual-label').textContent = name;
-}
-</script>
+
 
 </body>
 </html>
