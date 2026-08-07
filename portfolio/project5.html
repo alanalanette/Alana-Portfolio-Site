@@ -4,7 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Employee Device Experience Strategy — Alana Lanette</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap"/></noscript>
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -12,7 +15,7 @@
   --border: rgba(0,0,0,0.08); --border-mid: rgba(0,0,0,0.14); --surface: #FFFFFF;
   --sans: 'Inter', system-ui, sans-serif;
   --serif: 'Playfair Display', Georgia, serif;
-  --gutter: clamp(1.25rem, 5vw, 3.5rem); --max: 860px; --r: 14px;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem); --max: 860px;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
@@ -23,47 +26,57 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92)
 .nav-links { display: flex; gap: 0.15rem; align-items: center; }
 .nav-links a { font-size: 0.82rem; color: var(--ink-mid); text-decoration: none; padding: 0.35rem 0.75rem; border-radius: 8px; transition: background 0.15s; }
 .nav-links a:hover { background: rgba(0,0,0,0.05); color: var(--ink); }
-.nav-cta { background: var(--ink) !important; color: #fff !important; border-radius: 100px !important; font-weight: 500 !important; }
-.nav-cta:hover { background: #333 !important; }
 .back-wrap { padding: 1.5rem 0 0; }
-.back-link { font-size: 0.78rem; color: var(--ink-dim); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.15s; }
-.back-link:hover { color: var(--ink); }
+.back-link { font-size: 0.78rem; color: var(--ink-dim); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
 .back-link::before { content: '←'; }
+.back-link:hover { color: var(--ink); }
 .proj-header { padding: 2rem 0 2.5rem; border-bottom: 1px solid var(--border); }
 .proj-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.65rem; }
 .proj-title { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1.1; color: var(--ink); margin-bottom: 0.85rem; }
 .proj-summary { font-size: 1rem; color: var(--ink-mid); max-width: 560px; line-height: 1.7; margin-bottom: 1.75rem; }
-.meta-table { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.25rem; }
+.meta-table { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1.25rem; }
 .meta-cell { padding: 0.75rem 1rem; border-right: 1px solid var(--border); }
 .meta-cell:last-child { border-right: none; }
 .meta-k { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.25rem; }
 .meta-v { font-size: 0.82rem; font-weight: 600; color: var(--ink); }
 .tag-row { display: flex; gap: 0.35rem; flex-wrap: wrap; }
 .tag { font-size: 0.62rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 6px; background: rgba(0,0,0,0.06); color: var(--ink-dim); }
-.hero-card { border-radius: 14px; overflow: hidden; margin: 2rem 0; border: 1px solid var(--border); }
-.hero-card-visual { min-height: 240px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
 .doc-section { margin: 2.5rem 0; }
-.doc-section h2 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; font-style: normal; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.doc-section h2 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .doc-section h2:first-child { border-top: none; padding-top: 0; }
 .doc-section h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin: 1.25rem 0 0.4rem; }
 .doc-p { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 0.85rem; }
-.doc-list { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 0.85rem; }
-.doc-list li { margin-bottom: 0.3rem; }
-.doc-img { width: 100%; border-radius: 10px; border: 1px solid var(--border); margin: 1.25rem 0; display: block; }
 .callout { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1.25rem 0; display: flex; gap: 0.75rem; }
 .callout-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.7; }
 .callout p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.75; margin: 0; }
-.callout p strong { color: var(--ink); }
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1.25rem 0; }
 .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem; text-align: center; }
 .stat-n { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
 .stat-l { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-dim); margin-top: 0.25rem; }
-.deliverable { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1.1rem; text-decoration: none; color: inherit; margin: 0.5rem 0; transition: background 0.15s; }
-.deliverable:hover { background: rgba(0,0,0,0.02); }
-.dl-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.15rem; }
-.dl-n { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
-.dl-arr { font-size: 0.9rem; color: var(--ink-dim); }
-.divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+/* Artifact browser */
+.artifact-browser { margin-top: 1.5rem; }
+.artifact-preview { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 1rem; }
+.artifact-preview-header { padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); }
+.artifact-type { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.35rem; }
+.artifact-name { font-size: 1.1rem; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.artifact-purpose { font-size: 0.85rem; color: var(--ink-mid); line-height: 1.65; margin-bottom: 0.85rem; }
+.artifact-takeaway { display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg); border-radius: 8px; padding: 0.85rem 1rem; }
+.artifact-takeaway-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.2rem; }
+.artifact-takeaway-text { font-size: 0.82rem; color: var(--ink-mid); line-height: 1.6; }
+.artifact-visual { min-height: 180px; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+.artifact-footer { padding: 1rem 1.75rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.artifact-footer-note { font-size: 0.75rem; color: var(--ink-dim); }
+.open-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; color: var(--ink); text-decoration: none; background: var(--bg); border: 1px solid var(--border-mid); padding: 0.45rem 1rem; border-radius: 100px; transition: background 0.15s; }
+.open-btn:hover { background: #EEECEA; }
+.artifact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.artifact-btn { text-align: left; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; cursor: pointer; transition: all 0.15s; width: 100%; }
+.artifact-btn:hover { border-color: var(--border-mid); background: #FAFAF8; }
+.artifact-btn.active { border: 1.5px solid var(--ink); background: var(--surface); }
+.artifact-btn-thumb { width:100%; height:72px; border-radius:6px; display:flex; align-items:center; justify-content:center; margin-bottom:0.65rem; }
+.artifact-btn-type { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.3rem; }
+.artifact-btn-name { font-size: 0.85rem; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 0.25rem; }
+.artifact-btn-desc { font-size: 0.75rem; color: var(--ink-mid); line-height: 1.5; }
+/* Next / Footer */
 .next-bar { border-top: 1px solid var(--border); background: var(--surface); margin-top: 4rem; }
 .next-inner { max-width: 1180px; margin: 0 auto; padding: 2rem var(--gutter); }
 .next-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 1rem; }
@@ -82,12 +95,14 @@ footer { border-top: 1px solid var(--border); }
   .meta-table { grid-template-columns: 1fr 1fr; }
   .meta-cell { border-bottom: 1px solid var(--border); }
   .stat-row { grid-template-columns: 1fr 1fr; }
+  .artifact-grid { grid-template-columns: 1fr; }
   .next-grid { grid-template-columns: 1fr; }
   .footer-wrap { flex-direction: column; gap: 0.75rem; text-align: center; }
 }
-</style>
+  </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-wrap">
     <a class="nav-logo" href="../index.html">Alana Lanette</a>
@@ -95,7 +110,6 @@ footer { border-top: 1px solid var(--border); }
       <a href="../index.html#work">Work</a>
       <a href="../index.html#about">About</a>
       <a href="../resume/alanalanette_resume.pdf" target="_blank">Résumé</a>
-      <a href="mailto:alanalanette@gmail.com" class="nav-cta">Get in touch</a>
     </div>
   </div>
 </nav>
@@ -114,11 +128,6 @@ footer { border-top: 1px solid var(--border); }
     </div>
     <div class="tag-row"><span class="tag">UX Strategy</span><span class="tag">Service Design</span><span class="tag">Enterprise</span><span class="tag">Research</span><span class="tag">Roadmapping</span></div>
   </header>
-</div>
-<div class="wrap">
-  <div class="hero-card">
-    <img style="width:100%;max-height:420px;object-fit:cover;display:block;" src="../img/woman_devices.webp" alt="Device strategy"/>
-  </div>
 
   <div class="doc-section">
     <h2>The problem</h2>
@@ -144,17 +153,87 @@ footer { border-top: 1px solid var(--border); }
   </div>
 
   <div class="doc-section">
-    <h2>Deliverables</h2>
-    <a class="deliverable" href="https://docs.google.com/presentation/d/1DAvGrP9KSVj-_Z_hZRZXr8i4_DL1YjaZ/view" target="_blank"><div><div class="dl-l">Workshop deck</div><div class="dl-n">Refresh Shipped Device — Workshop Summary</div></div><span class="dl-arr">↗</span></a>
-    <a class="deliverable" href="https://docs.google.com/presentation/d/1PuChe9gMmWl910mW37JA9SPlC5z6-z22/view" target="_blank"><div><div class="dl-l">Strategy deck</div><div class="dl-n">Refresh Shipped Device — Target State</div></div><span class="dl-arr">↗</span></a>
-    <a class="deliverable" href="https://docs.google.com/presentation/d/1cqrMLjfJOpPinxYwnFiQwexZX5EpVtuq/view" target="_blank"><div><div class="dl-l">Research deck</div><div class="dl-n">Experience Insights</div></div><span class="dl-arr">↗</span></a>
-    <a class="deliverable" href="https://docs.google.com/presentation/d/1ueqJ4rPlZdC98xKIXi4D8cz6hhUptUGa/view" target="_blank"><div><div class="dl-l">Analysis</div><div class="dl-n">Experience Enhancement Analysis</div></div><span class="dl-arr">↗</span></a>
+    <h2>Project artifacts</h2>
+    <p class="doc-p">Four deliverables supported the Device Needs strategy — from early research synthesis through workshop facilitation to the final target state roadmap. Select an artifact to explore the work.</p>
+
+    <div class="artifact-browser">
+
+      <!-- SELECTOR CARDS (first) -->
+      <div class="artifact-grid" style="margin-bottom:1rem;">
+
+        <button class="artifact-btn active" onclick="selectArtifact(this,'Strategy deck','Target State Roadmap','A high-level strategic roadmap synthesizing the three-pillar framework — mapping eight design recommendations across every key moment in the device journey.','This deliverable gave EY technology leadership a shared, actionable north star: moving device experience from a transactional process to a differentiated employer brand touchpoint.','#F0EDE6','📋')">
+          <div class="artifact-btn-thumb" style="background:#F0EDE6;">
+            <div style="font-size:1.5rem;">📋</div>
+          </div>
+          <div class="artifact-btn-type">Strategy</div>
+          <div class="artifact-btn-name">Target State Roadmap</div>
+          <div class="artifact-btn-desc">Eight design recommendations mapped across the full journey</div>
+        </button>
+
+        <button class="artifact-btn" onclick="selectArtifact(this,'Workshop deck','Workshop Summary','A facilitated visioning session establishing the north star experience across 11 key journey moments — aligning cross-functional stakeholders on desired end states before any solution design began.','Built the shared ownership necessary to move a large, global stakeholder group from problem awareness to a unified vision — a critical foundation for the strategy.','#EAF0EC','🗓️')">
+          <div class="artifact-btn-thumb" style="background:#EAF0EC;">
+            <div style="font-size:1.5rem;">🗓️</div>
+          </div>
+          <div class="artifact-btn-type">Workshop</div>
+          <div class="artifact-btn-name">Workshop Summary</div>
+          <div class="artifact-btn-desc">North star visioning across 11 key journey moments</div>
+        </button>
+
+        <button class="artifact-btn" onclick="selectArtifact(this,'Research deck','Experience Insights','Research and data synthesis integrated directly into the service blueprint — translating complex findings into a format accessible to non-design stakeholders across the program.','Surfaced the gap between the intended employee experience and the lived reality — grounding the strategy in evidence and building credibility with business stakeholders.','#EAF0F5','🔍')">
+          <div class="artifact-btn-thumb" style="background:#EAF0F5;">
+            <div style="font-size:1.5rem;">🔍</div>
+          </div>
+          <div class="artifact-btn-type">Research</div>
+          <div class="artifact-btn-name">Experience Insights</div>
+          <div class="artifact-btn-desc">Research synthesis layered into the service blueprint</div>
+        </button>
+
+        <button class="artifact-btn" onclick="selectArtifact(this,'Analysis deck','Enhancement Analysis','A detailed evaluation of improvement opportunities across the device journey — assessing feasibility, employee impact, and alignment with the three strategic pillars.','Provided the prioritization framework that focused effort where it would deliver the most meaningful improvement — preventing the strategy from spreading too thin.','#F5F0E8','📊')">
+          <div class="artifact-btn-thumb" style="background:#F5F0E8;">
+            <div style="font-size:1.5rem;">📊</div>
+          </div>
+          <div class="artifact-btn-type">Analysis</div>
+          <div class="artifact-btn-name">Enhancement Analysis</div>
+          <div class="artifact-btn-desc">Feasibility and impact mapping across opportunity areas</div>
+        </button>
+
+      </div>
+
+      <!-- VIEWER (below selectors) -->
+      <div class="artifact-preview">
+        <div class="artifact-visual" id="a-visual" style="background:#F0EDE6;">
+          <div style="text-align:center;opacity:0.45;">
+            <div style="font-size:2.5rem;margin-bottom:0.5rem;" id="a-icon">📋</div>
+            <div style="font-size:0.8rem;color:var(--ink-mid);font-weight:500;" id="a-visual-label">Target State Roadmap</div>
+          </div>
+        </div>
+        <div class="artifact-preview-header">
+          <div class="artifact-type" id="a-type">Strategy deck</div>
+          <div class="artifact-name" id="a-name">Target State Roadmap</div>
+          <div class="artifact-purpose" id="a-purpose">A high-level strategic roadmap synthesizing the three-pillar framework — mapping eight design recommendations across every key moment in the device journey.</div>
+          <div class="artifact-takeaway">
+            <div style="font-size:1rem;flex-shrink:0;">🎯</div>
+            <div>
+              <div class="artifact-takeaway-label">Why it mattered</div>
+              <div class="artifact-takeaway-text" id="a-takeaway">This deliverable gave EY technology leadership a shared, actionable north star: moving device experience from a transactional process to a differentiated employer brand touchpoint.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+
 </div>
+
 <div class="next-bar">
   <div class="next-inner">
     <div class="next-label">More work</div>
-    <div class="next-grid"><a class="next-card" href="project1.html"><div class="next-co">EY</div><div class="next-title">Free Text Analysis Tool</div></a><a class="next-card" href="project2.html"><div class="next-co">NCR Corporation</div><div class="next-title">Self-checkout Benchmark Audit</div></a><a class="next-card" href="project3.html"><div class="next-co">Pursuant Health</div><div class="next-title">Cleveland Clinic Health Age</div></a></div>
+    <div class="next-grid">
+      <a class="next-card" href="project1.html"><div class="next-co">EY</div><div class="next-title">Free Text Analysis Tool</div></a>
+      <a class="next-card" href="project2.html"><div class="next-co">NCR Corporation</div><div class="next-title">Self-checkout Benchmark Audit</div></a>
+      <a class="next-card" href="project3.html"><div class="next-co">Pursuant Health</div><div class="next-title">Cleveland Clinic Health Age</div></a>
+    </div>
   </div>
 </div>
 
@@ -168,5 +247,21 @@ footer { border-top: 1px solid var(--border); }
     </div>
   </div>
 </footer>
+
+<script>
+function selectArtifact(btn, type, name, purpose, takeaway, bg, icon) {
+  document.querySelectorAll('.artifact-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('a-type').textContent = type;
+  document.getElementById('a-name').textContent = name;
+  document.getElementById('a-purpose').textContent = purpose;
+  document.getElementById('a-takeaway').textContent = takeaway;
+  const vis = document.getElementById('a-visual');
+  vis.style.background = bg;
+  document.getElementById('a-icon').textContent = icon;
+  document.getElementById('a-visual-label').textContent = name;
+}
+</script>
+
 </body>
 </html>
