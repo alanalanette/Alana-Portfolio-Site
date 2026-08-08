@@ -4,7 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MCP Credential Experience — Alana Lanette</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@400;500;600;700;800&display=swap"/></noscript>
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -16,7 +20,7 @@
 }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); overflow: hidden; }
 nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
 .nav-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); height: 52px; display: flex; justify-content: space-between; align-items: center; }
 .nav-logo { font-size: 0.9rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
@@ -49,7 +53,7 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(247,246,243,0.92)
 .doc-p { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 0.85rem; }
 .doc-list { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 0.85rem; }
 .doc-list li { margin-bottom: 0.3rem; }
-.doc-img { width: 100%; border-radius: 10px; border: 1px solid var(--border); margin: 1.25rem 0; display: block; }
+.doc-img { width: 100%; max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); margin: 1.25rem 0; display: block; box-sizing: border-box; }
 .callout { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.35rem; margin: 1.25rem 0; display: flex; gap: 0.75rem; }
 .callout-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.7; }
 .callout p { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.75; margin: 0; }
@@ -119,9 +123,9 @@ footer { border-top: 1px solid var(--border); }
 
   <header class="proj-header">
     <div class="platform-chip">✦ Part of a larger AI-first platform strategy</div>
-    <div class="proj-cat">MCP · Site Admin Experience · OneTrust</div>
+    <div class="proj-cat">MCP · Developer Experience · OneTrust</div>
     <h1 class="proj-title">Governing AI agent access<br>to OneTrust.</h1>
-    <p class="proj-summary">OneTrust is building toward an AI-first platform. One critical piece of that is serving AI-advanced customers – enterprises who are building their own copilots, agents, and automation layers and need governed access to OneTrust data and workflows. This case study focuses on the MCP credential experience: the UX that lets site admins create, scope, and audit AI agent credentials safely.</p>
+    <p class="proj-summary">OneTrust is building toward an AI-first platform. One critical piece of that is serving AI-advanced customers — enterprises who are building their own copilots, agents, and automation layers and need governed access to OneTrust data and workflows. This case study focuses on the MCP credential experience: the UX that lets developers create, scope, and audit AI agent credentials safely.</p>
     <div class="meta-table">
       <div class="meta-cell"><div class="meta-k">Company</div><div class="meta-v">OneTrust</div></div>
       <div class="meta-cell"><div class="meta-k">Role</div><div class="meta-v">Principal UX Designer</div></div>
@@ -133,20 +137,20 @@ footer { border-top: 1px solid var(--border); }
 
   <div class="doc-section">
     <h2>Context</h2>
-    <p class="doc-p">OneTrust is transforming from a monolithic governance suite into an AI-first platform. That transformation has many facets – in-product AI discovery, guided enablement, AI state transparency, and more. This case study covers one specific piece: building the MCP platform access layer for AI-advanced customers.</p>
-    <p class="doc-p">AI-advanced customers are enterprises actively building their own agents, copilots, and automation layers. They need a production-ready, governed way to connect those systems to OneTrust – with the right scopes, user-context binding, and a full audit trail. Without this, they either can't integrate at all or rely on overly broad API credentials with no governance story.</p>
-    <div class="callout"><div class="callout-icon">🎯</div><p><strong>The goal:</strong> Let site admins create the right credential with the right scope, bind it to the right user context, and test safely – while giving admins the visibility to govern and audit exactly what each agent can do and has done.</p></div>
+    <p class="doc-p">OneTrust is transforming from a monolithic governance suite into an AI-first platform. That transformation has many facets — in-product AI discovery, guided enablement, AI state transparency, and more. This case study covers one specific piece: building the MCP platform access layer for AI-advanced customers.</p>
+    <p class="doc-p">AI-advanced customers are enterprises actively building their own agents, copilots, and automation layers. They need a production-ready, governed way to connect those systems to OneTrust — with the right scopes, user-context binding, and a full audit trail. Without this, they either can't integrate at all or rely on overly broad API credentials with no governance story.</p>
+    <div class="callout"><div class="callout-icon">🎯</div><p><strong>The goal:</strong> Let developers create the right credential with the right scope, bind it to the right user context, and test safely — while giving admins the visibility to govern and audit exactly what each agent can do and has done.</p></div>
   </div>
 
   <div class="doc-section">
     <h2>The problem</h2>
-    <p class="doc-p">OneTrust's existing credential system was built for traditional server-to-server API integrations – module –scoped, no user-context binding, no AI attribution in audit logs. It wasn't designed for agents acting on behalf of users, or for the governance visibility that enterprise security and compliance teams require.</p>
-    <p class="doc-p">At the same time, the concepts involved – OAuth bearer tokens, mTLS, OBO (on-behalf-of) user binding, least-privilege scoping – are inherently complex. The UX challenge was to make these concepts legible and actionable for admins/developers setting up credentials and admins overseeing them.</p>
+    <p class="doc-p">OneTrust's existing credential system was built for traditional server-to-server API integrations — module-scoped, no user-context binding, no AI attribution in audit logs. It wasn't designed for agents acting on behalf of users, or for the governance visibility that enterprise security and compliance teams require.</p>
+    <p class="doc-p">At the same time, the concepts involved — OAuth bearer tokens, mTLS, OBO (on-behalf-of) user binding, least-privilege scoping — are inherently complex. The UX challenge was to make these concepts legible and actionable for both developers setting up credentials and admins overseeing them.</p>
   </div>
 
   <div class="doc-section">
     <h2>Experience strategy</h2>
-    <p class="doc-p">I led the UX strategy for the MCP credentialing experience across three connected surfaces: the credential creation flow for site admin, the credential detail and governance view for admins, and the intent-based scope model that bridges both.</p>
+    <p class="doc-p">I led the UX strategy for the MCP credentialing experience across three connected surfaces: the credential creation flow for developers, the credential detail and governance view for admins, and the intent-based scope model that bridges both.</p>
 
     <h3>Intent-based scoping</h3>
     <p class="doc-p">Rather than exposing raw API modules, the scope model is organized by workflows and tools — each with a plain-language description of what data it touches, what it can change, and what auth it requires. This shifts the mental model from technical permissions to business intent.</p>
@@ -163,40 +167,40 @@ footer { border-top: 1px solid var(--border); }
     <p class="doc-p">The AI Management section gives admins a single place to govern all AI activity across the tenant — MCP credential counts, usage metrics, OBO failure rates, and an entry point to create new agent credentials. This surface makes AI activity visible before anything goes wrong.</p>
 
     <div class="screen-block">
-      <img src="../img/onetrust/mcp-ai-management.png" alt="AI Management overview — MCP access stats, credential count, AI usage"/>
+      <img src="../img/onetrust/mcp-credentials-list.png" alt="MCP credentials list — Vendor intake agent, Risk review agent, Contract summary bot"/>
       <div class="screen-caption">AI Management overview — 3 active MCP credentials, 24 recent actions, AI usage metrics, and a new feature callout for Copilot risk assessments</div>
     </div>
   </div>
 
   <div class="doc-section">
     <h2>The credential creation flow</h2>
-    <p class="doc-p">The creation experience is a five-step wizard: credential type → name & options → define access → user context → review & issue. A persistent summary panel on the right keeps the admin oriented throughout, showing exactly what they've configured so far.</p>
+    <p class="doc-p">The creation experience is a five-step wizard: credential type → name & options → define access → user context → review & issue. A persistent summary panel on the right keeps the developer oriented throughout, showing exactly what they've configured so far.</p>
 
     <p class="doc-p">Step one makes the fork explicit: AI Agent / MCP credentials (OBO user binding, tool-level scoping) versus Standard API credentials (module-based, no OBO). Getting this decision right upfront prevents misconfigured access and sets the right governance expectations from the start.</p>
 
     <div class="screen-block">
-      <img src="../img/onetrust/mcp-step1-type.png" alt="Create credential — Step 1 credential type selector"/>
+      <img src="../img/onetrust/mcp-create-step1.png" alt="Create MCP credential — Add details form with credential name, redirect URL, token lifetime"/>
       <div class="screen-caption">Step 1 — Credential type. The two options are clearly differentiated by use case, not just by name. The live summary panel confirms the selection immediately.</div>
     </div>
 
     <p class="doc-p">Step two configures name, description, access token lifetime, and IP restrictions. The placeholder copy ("e.g. Vendor Intake Agent") reinforces the mental model — this is a named agent, not a generic API key.</p>
 
     <div class="screen-block">
-      <img src="../img/onetrust/mcp-step2-name.png" alt="Create credential — Step 2 name and options"/>
+      <img src="../img/onetrust/mcp-create-step1.png" alt="Create MCP credential — Step 1 details form"/>
       <div class="screen-caption">Step 2 — Name & options. Token lifetime defaults to 1 hour — short by design, reinforcing least-privilege and reducing exposure from leaked credentials.</div>
     </div>
 
     <p class="doc-p">Step three is where the governance model comes to life — a matrix of OneTrust objects (Vendor, Assessment, Risk, Contract, Consent record, etc.) across permission types (Read, Create, Update, Delete, Launch workflow, Approve/reject). Developers grant only what the agent needs. This is an early prototype exploring the interaction model for granular object-level scoping.</p>
 
     <div class="screen-block">
-      <img src="../img/onetrust/mcp-step3-access.png" alt="Create credential — Step 3 define access permissions matrix"/>
+      <img src="../img/onetrust/mcp-define-access.png" alt="Define access — object permission matrix with TPRM, Privacy, Platform categories"/>
       <div class="screen-caption">Step 3 — Define access. Object-level permission matrix across OneTrust's product domains. Early prototype — the column header treatment and visual hierarchy are areas actively being refined.</div>
     </div>
 
-    <p class="doc-p">Step four is arguably the most important governance decision: how should OneTrust identify the human user behind actions taken by the agent? Dynamic user context (OBO) means the agent passes the current user's identity at token exchange, so every action is attributed to the real person operating the agent, not a generic service account. The activity attribution preview makes this concrete before the admin commits.</p>
+    <p class="doc-p">Step four is arguably the most important governance decision: how should OneTrust identify the human user behind actions taken by the agent? Dynamic user context (OBO) means the agent passes the current user's identity at token exchange — so every action is attributed to the real person operating the agent, not a generic service account. The activity attribution preview makes this concrete before the developer commits.</p>
 
     <div class="screen-block">
-      <img src="../img/onetrust/mcp-step4-context.png" alt="Create credential — Step 4 user context OBO binding"/>
+      <img src="../img/onetrust/mcp-credential-scope.png" alt="Vendor intake agent scope — access definition with tools enabled by selection"/>
       <div class="screen-caption">Step 4 — User context. "Alana Pendleton via Vendor Intake Agent" — the attribution preview shows exactly how AI-mediated actions will appear in audit logs, making the governance implications tangible at setup time.</div>
     </div>
   </div>
@@ -212,7 +216,7 @@ footer { border-top: 1px solid var(--border); }
       </div>
       <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:1.1rem 1.25rem;">
         <div style="font-size:0.8rem; font-weight:700; color:#1A1A1A; margin-bottom:0.35rem;">Make risk legible at the moment of choice</div>
-        <div style="font-size:0.78rem; color:#555; line-height:1.65;">Show what data a tool touches, what it can change, and what auth it requires before the admin commits.</div>
+        <div style="font-size:0.78rem; color:#555; line-height:1.65;">Show what data a tool touches, what it can change, and what auth it requires — before the developer commits.</div>
       </div>
       <div style="background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:10px; padding:1.1rem 1.25rem;">
         <div style="font-size:0.8rem; font-weight:700; color:#1A1A1A; margin-bottom:0.35rem;">Prefer intent over implementation</div>
